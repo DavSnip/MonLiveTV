@@ -6,6 +6,9 @@
   <title>MonLiveTv</title>
   <link rel="icon" type="image/png" href="logo.png" />
 
+  <!-- Lecteur HLS pour les liens .m3u8 -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   <style>
     :root {
       --bg: #f5f7fb;
@@ -287,12 +290,14 @@
       background: #000;
     }
 
-    .video-frame iframe {
+    .video-frame iframe,
+    .video-frame video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
+      background: #000;
     }
 
     .grid {
@@ -456,14 +461,14 @@
     </header>
 
     <section class="hero">
-      <h2>Choisis une vidéo et regarde-la directement ici.</h2>
+      <h2>Choisis une chaîne et regarde-la directement ici.</h2>
       <p>
         Utilise la recherche ou le menu des catégories pour filtrer les contenus. Le site s’adapte automatiquement sur mobile, ordinateur et grand écran TV.
       </p>
     </section>
 
     <section class="controls">
-      <input id="searchInput" class="search-box" type="search" placeholder="Rechercher une vidéo, une chaîne, un thème..." />
+      <input id="searchInput" class="search-box" type="search" placeholder="Rechercher une chaîne, une vidéo, un thème..." />
       <select id="categorySelect">
         <option value="Tout">Tout</option>
         <option value="Généraliste">Généraliste</option>
@@ -495,43 +500,43 @@
         title: "Chaîne généraliste",
         category: "Généraliste",
         icon: "icones/exemple.png",
-        description: "Une sélection de contenus variés pour toute la famille.",
-        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        description: "Une chaîne généraliste en direct.",
+        videoUrl: "https://exemple.com/live/generaliste.m3u8"
       },
       {
         title: "Programme jeunesse",
         category: "Jeunesse",
         icon: "icones/exemple2.png",
-        description: "Des vidéos adaptées aux plus jeunes.",
-        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        description: "Une chaîne jeunesse en direct.",
+        videoUrl: "https://exemple.com/live/jeunesse.m3u8"
       },
       {
         title: "Ligue1+",
         category: "Sport",
         icon: "icones/ligue1+.png",
-        description: "Résumés, débats et moments forts sportifs.",
-        embedUrl: "http://4kpro2.com/live/KMP63827/HBZ25174/139428.m3u8"
+        description: "Une chaîne sport en direct.",
+        videoUrl: "http://4kpro2.com/live/KMP63827/HBZ25174/139428.m3u8"
       },
       {
         title: "Sélection cinéma",
         category: "Cinéma",
         icon: "icones/exemple4.png",
-        description: "Bandes-annonces, critiques et découvertes cinéma.",
-        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        description: "Une chaîne cinéma en direct.",
+        videoUrl: "https://exemple.com/live/cinema.m3u8"
       },
       {
         title: "Documentaire découverte",
         category: "Découverte",
         icon: "icones/exemple5.png",
-        description: "Culture, nature, histoire et exploration.",
-        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        description: "Une chaîne découverte en direct.",
+        videoUrl: "https://exemple.com/live/decouverte.m3u8"
       },
       {
         title: "Journal d’infos",
         category: "Infos",
         icon: "icones/exemple6.png",
-        description: "Actualités, reportages et analyses.",
-        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        description: "Une chaîne info en direct.",
+        videoUrl: "https://exemple.com/live/infos.m3u8"
       }
     ];
 
@@ -545,6 +550,8 @@
     const playerTitle = document.getElementById("playerTitle");
     const videoFrame = document.getElementById("videoFrame");
     const closePlayer = document.getElementById("closePlayer");
+
+    let currentHls = null;
 
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -597,22 +604,95 @@
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
 
+    function getYouTubeEmbedUrl(url) {
+      try {
+        const videoUrl = new URL(url);
+
+        if (videoUrl.hostname.includes("youtube.com") && videoUrl.pathname === "/watch") {
+          const videoId = videoUrl.searchParams.get("v");
+          return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        if (videoUrl.hostname.includes("youtube.com") && videoUrl.pathname.startsWith("/shorts/")) {
+          const videoId = videoUrl.pathname.split("/shorts/")[1];
+          return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        if (videoUrl.hostname.includes("youtu.be")) {
+          const videoId = videoUrl.pathname.replace("/", "");
+          return `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        return url;
+      } catch (error) {
+        return url;
+      }
+    }
+
+    function stopCurrentVideo() {
+      if (currentHls) {
+        currentHls.destroy();
+        currentHls = null;
+      }
+      videoFrame.innerHTML = "";
+    }
+
     function openVideo(video) {
+      stopCurrentVideo();
+
+      const url = video.videoUrl;
       playerTitle.textContent = video.title;
-      videoFrame.innerHTML = `
-        <iframe
-          src="${video.embedUrl}?autoplay=1"
-          title="${video.title}"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-          allowfullscreen>
-        </iframe>
-      `;
       playerSection.classList.add("active");
+
+      if (url.includes(".m3u8")) {
+        videoFrame.innerHTML = `
+          <video id="videoPlayer" controls autoplay playsinline></video>
+        `;
+
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        if (Hls.isSupported()) {
+          currentHls = new Hls();
+          currentHls.loadSource(url);
+          currentHls.attachMedia(videoPlayer);
+          currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
+            videoPlayer.play().catch(() => {
+              console.log("Lecture automatique bloquée par le navigateur.");
+            });
+          });
+        } else if (videoPlayer.canPlayType("application/vnd.apple.mpegurl")) {
+          videoPlayer.src = url;
+          videoPlayer.addEventListener("loadedmetadata", () => {
+            videoPlayer.play().catch(() => {
+              console.log("Lecture automatique bloquée par le navigateur.");
+            });
+          });
+        } else {
+          videoFrame.innerHTML = `
+            <div style="color:white; padding:24px; text-align:center;">
+              Ce navigateur ne supporte pas la lecture HLS.
+            </div>
+          `;
+        }
+      } else {
+        const embedUrl = getYouTubeEmbedUrl(url);
+        const separator = embedUrl.includes("?") ? "&" : "?";
+
+        videoFrame.innerHTML = `
+          <iframe
+            src="${embedUrl}${separator}autoplay=1&rel=0"
+            title="${video.title}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            allowfullscreen>
+          </iframe>
+        `;
+      }
+
       playerSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     closePlayer.addEventListener("click", () => {
-      videoFrame.innerHTML = "";
+      stopCurrentVideo();
       playerSection.classList.remove("active");
     });
 
