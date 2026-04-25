@@ -6,9 +6,6 @@
   <title>MonLiveTv</title>
   <link rel="icon" type="image/png" href="logo.png" />
 
-  <!-- Lecteur HLS pour les liens .m3u8 -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
   <style>
     :root {
       --bg: #f5f7fb;
@@ -245,61 +242,6 @@
       border-color: var(--primary);
     }
 
-    .player-section {
-      display: none;
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      overflow: hidden;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-    }
-
-    .player-section.active {
-      display: block;
-    }
-
-    .player-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .player-title {
-      font-weight: 800;
-      font-size: 1.05rem;
-    }
-
-    .close-player {
-      border: 0;
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 9px 13px;
-      cursor: pointer;
-    }
-
-    .video-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-    }
-
-    .video-frame iframe,
-    .video-frame video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      background: #000;
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -312,7 +254,6 @@
       box-shadow: var(--shadow);
       border-radius: 24px;
       overflow: hidden;
-      cursor: pointer;
       transition: transform 0.22s ease, border-color 0.22s ease;
       backdrop-filter: blur(18px);
     }
@@ -361,10 +302,29 @@
     }
 
     .card p {
-      margin: 0;
+      margin: 0 0 16px;
       color: var(--muted);
       line-height: 1.55;
       font-size: 0.95rem;
+    }
+
+    .watch-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 16px;
+      padding: 13px 16px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 0.98rem;
+      color: white;
+      background: linear-gradient(135deg, #2563eb, #9333ea);
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.25);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .watch-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
     }
 
     .empty {
@@ -454,16 +414,16 @@
         </div>
         <div>
           <h1>MonLiveTv</h1>
-          <p class="subtitle">Recherche, catégories et lecteur intégré.</p>
+          <p class="subtitle">Recherche, catégories et ouverture directe du flux.</p>
         </div>
       </div>
       <button class="theme-toggle" id="themeToggle">🌙 Mode sombre</button>
     </header>
 
     <section class="hero">
-      <h2>Choisis une chaîne et regarde-la directement ici.</h2>
+      <h2>Choisis une chaîne et ouvre le direct.</h2>
       <p>
-        Utilise la recherche ou le menu des catégories pour filtrer les contenus. Le site s’adapte automatiquement sur mobile, ordinateur et grand écran TV.
+        Utilise la recherche ou le menu des catégories pour filtrer les contenus. En cliquant sur “Regarder”, le flux s’ouvre dans un nouvel onglet du navigateur.
       </p>
     </section>
 
@@ -480,14 +440,6 @@
       </select>
     </section>
 
-    <section class="player-section" id="playerSection">
-      <div class="player-header">
-        <div class="player-title" id="playerTitle">Lecture</div>
-        <button class="close-player" id="closePlayer">Fermer</button>
-      </div>
-      <div class="video-frame" id="videoFrame"></div>
-    </section>
-
     <section class="grid" id="videoGrid"></section>
     <div class="empty" id="emptyState">Aucun résultat trouvé.</div>
   </main>
@@ -501,14 +453,14 @@
         category: "Généraliste",
         icon: "icones/exemple.png",
         description: "Une chaîne généraliste en direct.",
-        videoUrl: "https://exemple.com/live/generaliste.m3u8"
+        videoUrl: "http://exemple.com/live/generaliste.m3u8"
       },
       {
         title: "Programme jeunesse",
         category: "Jeunesse",
         icon: "icones/exemple2.png",
         description: "Une chaîne jeunesse en direct.",
-        videoUrl: "https://exemple.com/live/jeunesse.m3u8"
+        videoUrl: "http://exemple.com/live/jeunesse.m3u8"
       },
       {
         title: "Ligue1+",
@@ -522,21 +474,21 @@
         category: "Cinéma",
         icon: "icones/exemple4.png",
         description: "Une chaîne cinéma en direct.",
-        videoUrl: "https://exemple.com/live/cinema.m3u8"
+        videoUrl: "http://exemple.com/live/cinema.m3u8"
       },
       {
         title: "Documentaire découverte",
         category: "Découverte",
         icon: "icones/exemple5.png",
         description: "Une chaîne découverte en direct.",
-        videoUrl: "https://exemple.com/live/decouverte.m3u8"
+        videoUrl: "http://exemple.com/live/decouverte.m3u8"
       },
       {
         title: "Journal d’infos",
         category: "Infos",
         icon: "icones/exemple6.png",
         description: "Une chaîne info en direct.",
-        videoUrl: "https://exemple.com/live/infos.m3u8"
+        videoUrl: "http://exemple.com/live/infos.m3u8"
       }
     ];
 
@@ -546,12 +498,6 @@
     const categorySelect = document.getElementById("categorySelect");
     const videoGrid = document.getElementById("videoGrid");
     const emptyState = document.getElementById("emptyState");
-    const playerSection = document.getElementById("playerSection");
-    const playerTitle = document.getElementById("playerTitle");
-    const videoFrame = document.getElementById("videoFrame");
-    const closePlayer = document.getElementById("closePlayer");
-
-    let currentHls = null;
 
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -565,6 +511,10 @@
       themeToggle.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
       localStorage.setItem("theme", isDark ? "dark" : "light");
     });
+
+    function openStream(url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
 
     function renderVideos() {
       const search = searchInput.value.toLowerCase().trim();
@@ -594,107 +544,19 @@
             <span class="tag">${video.category}</span>
             <h3>${video.title}</h3>
             <p>${video.description}</p>
+            <button class="watch-btn" type="button">▶ Regarder</button>
           </div>
         `;
 
-        card.addEventListener("click", () => openVideo(video));
+        card.querySelector(".watch-btn").addEventListener("click", () => {
+          openStream(video.videoUrl);
+        });
+
         videoGrid.appendChild(card);
       });
 
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
-
-    function getYouTubeEmbedUrl(url) {
-      try {
-        const videoUrl = new URL(url);
-
-        if (videoUrl.hostname.includes("youtube.com") && videoUrl.pathname === "/watch") {
-          const videoId = videoUrl.searchParams.get("v");
-          return `https://www.youtube.com/embed/${videoId}`;
-        }
-
-        if (videoUrl.hostname.includes("youtube.com") && videoUrl.pathname.startsWith("/shorts/")) {
-          const videoId = videoUrl.pathname.split("/shorts/")[1];
-          return `https://www.youtube.com/embed/${videoId}`;
-        }
-
-        if (videoUrl.hostname.includes("youtu.be")) {
-          const videoId = videoUrl.pathname.replace("/", "");
-          return `https://www.youtube.com/embed/${videoId}`;
-        }
-
-        return url;
-      } catch (error) {
-        return url;
-      }
-    }
-
-    function stopCurrentVideo() {
-      if (currentHls) {
-        currentHls.destroy();
-        currentHls = null;
-      }
-      videoFrame.innerHTML = "";
-    }
-
-    function openVideo(video) {
-      stopCurrentVideo();
-
-      const url = video.videoUrl;
-      playerTitle.textContent = video.title;
-      playerSection.classList.add("active");
-
-      if (url.includes(".m3u8")) {
-        videoFrame.innerHTML = `
-          <video id="videoPlayer" controls autoplay playsinline></video>
-        `;
-
-        const videoPlayer = document.getElementById("videoPlayer");
-
-        if (Hls.isSupported()) {
-          currentHls = new Hls();
-          currentHls.loadSource(url);
-          currentHls.attachMedia(videoPlayer);
-          currentHls.on(Hls.Events.MANIFEST_PARSED, () => {
-            videoPlayer.play().catch(() => {
-              console.log("Lecture automatique bloquée par le navigateur.");
-            });
-          });
-        } else if (videoPlayer.canPlayType("application/vnd.apple.mpegurl")) {
-          videoPlayer.src = url;
-          videoPlayer.addEventListener("loadedmetadata", () => {
-            videoPlayer.play().catch(() => {
-              console.log("Lecture automatique bloquée par le navigateur.");
-            });
-          });
-        } else {
-          videoFrame.innerHTML = `
-            <div style="color:white; padding:24px; text-align:center;">
-              Ce navigateur ne supporte pas la lecture HLS.
-            </div>
-          `;
-        }
-      } else {
-        const embedUrl = getYouTubeEmbedUrl(url);
-        const separator = embedUrl.includes("?") ? "&" : "?";
-
-        videoFrame.innerHTML = `
-          <iframe
-            src="${embedUrl}${separator}autoplay=1&rel=0"
-            title="${video.title}"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-            allowfullscreen>
-          </iframe>
-        `;
-      }
-
-      playerSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    closePlayer.addEventListener("click", () => {
-      stopCurrentVideo();
-      playerSection.classList.remove("active");
-    });
 
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
