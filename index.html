@@ -295,7 +295,24 @@
     .favorite-btn.active {
       background: #e50914;
     }
+.remove-history-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.62);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
 
+.remove-history-btn:hover {
+  background: #e50914;
+}
 
     .thumb {
       min-height: 150px;
@@ -889,13 +906,20 @@
     }
 
     function addToHistory(video) {
-      const key = getVideoKey(video);
-      history = history.filter(item => item !== key);
-      history.unshift(key);
-      history = history.slice(0, 6);
-      saveHistory();
-      renderHomeRows();
-    }
+  const key = getVideoKey(video);
+  history = history.filter(item => item !== key);
+  history.unshift(key);
+  history = history.slice(0, 6);
+  saveHistory();
+  renderHomeRows();
+}
+
+function removeFromHistory(video) {
+  const key = getVideoKey(video);
+  history = history.filter(item => item !== key);
+  saveHistory();
+  renderHomeRows();
+}
 
     function getVideosFromKeys(keys) {
       return keys
@@ -903,82 +927,112 @@
         .filter(Boolean);
     }
 
-    function createCard(video, mode = "grid") {
-      const originalIndex = videos.indexOf(video);
-      const key = getVideoKey(video);
-      const isFavorite = favorites.includes(key);
+    function createCard(video, mode = "grid", options = {}) {
+  const originalIndex = videos.indexOf(video);
+  const key = getVideoKey(video);
+  const isFavorite = favorites.includes(key);
 
-      const card = document.createElement("article");
-      card.className = "card";
+  const card = document.createElement("article");
+  card.className = "card";
 
-      card.innerHTML = `
-        <button class="favorite-btn ${isFavorite ? "active" : ""}" type="button" title="Favori">
-          ${isFavorite ? "★" : "☆"}
-        </button>
+  card.innerHTML = `
+    ${options.showRemoveHistory ? `
+      <button class="remove-history-btn" type="button" title="Retirer de la reprise">✕</button>
+    ` : ""}
 
-        <div class="thumb">
-          <img src="${video.icon}" alt="${video.title}" loading="lazy">
-        </div>
+    <button class="favorite-btn ${isFavorite ? "active" : ""}" type="button" title="Favori">
+      ${isFavorite ? "★" : "☆"}
+    </button>
 
-        <div class="content">
-          <span class="tag">${video.category}</span>
-          <h3>${video.title}</h3>
-          <p>${video.description}</p>
-          <button class="watch-btn" type="button">▶ Regarder</button>
-        </div>
-      `;
+    <div class="thumb">
+      <img src="${video.icon}" alt="${video.title}" loading="lazy">
+    </div>
 
-      card.querySelector(".favorite-btn").addEventListener("click", (event) => {
-        event.stopPropagation();
-        toggleFavorite(video);
-      });
+    <div class="content">
+      <span class="tag">${video.category}</span>
+      <h3>${video.title}</h3>
+      <p>${video.description}</p>
+      <button class="watch-btn" type="button">▶ Regarder</button>
+    </div>
+  `;
 
-      card.querySelector(".watch-btn").addEventListener("click", () => {
-        openStream(originalIndex);
-      });
+  // bouton supprimer dans "reprendre"
+  const removeBtn = card.querySelector(".remove-history-btn");
+  if (removeBtn) {
+    removeBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      removeFromHistory(video);
+    });
+  }
 
-      return card;
-    }
+  // favoris
+  card.querySelector(".favorite-btn").addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleFavorite(video);
+  });
+
+  // lecture
+  card.querySelector(".watch-btn").addEventListener("click", () => {
+    openStream(originalIndex);
+  });
+
+  return card;
+}
 
     function renderHomeRows() {
-      const historyVideos = getVideosFromKeys(history).slice(0, 4);
-      const favoriteVideos = getVideosFromKeys(favorites);
+  const historyVideos = getVideosFromKeys(history).slice(0, 4);
+  const favoriteVideos = getVideosFromKeys(favorites);
 
-      continueRow.innerHTML = "";
-      favoritesRow.innerHTML = "";
+  continueRow.innerHTML = "";
+  favoritesRow.innerHTML = "";
 
-      historyVideos.forEach(video => {
-        continueRow.appendChild(createCard(video, "row"));
-      });
+  // reprise avec bouton supprimer
+  historyVideos.forEach(video => {
+    continueRow.appendChild(
+      createCard(video, "row", { showRemoveHistory: true })
+    );
+  });
 
-      favoriteVideos.forEach(video => {
-        favoritesRow.appendChild(createCard(video, "row"));
-      });
+  // favoris normal
+  favoriteVideos.forEach(video => {
+    favoritesRow.appendChild(createCard(video, "row"));
+  });
 
-      continueSection.style.display = historyVideos.length ? "block" : "none";
-      favoritesSection.style.display = favoriteVideos.length ? "block" : "none";
-    }
-
-    heroPlayBtn.addEventListener("click", () => {
-      const firstHistory = getVideosFromKeys(history)[0];
-      if (firstHistory) {
-        openStream(videos.indexOf(firstHistory));
-      } else {
-        openStream(0);
-      }
-    });
-
-    heroFavoritesBtn.addEventListener("click", () => {
-      favoritesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+  continueSection.style.display = historyVideos.length ? "block" : "none";
+  favoritesSection.style.display = favoriteVideos.length ? "block" : "none";
+};
 
     function isM3u8(url) {
       return String(url).toLowerCase().includes(".m3u8");
     }
 
-    function buildLivewatchUrl(url) {
-      return "https://livewatch.top/player?rl=" + encodeURIComponent(url);
+   function buildLivewatchUrl(rawUrl) {
+  try {
+    const parsed = new URL(rawUrl);
+
+    // Si c’est déjà un player livewatch → on ne touche pas
+    if (parsed.hostname.includes("livewatch.top") && parsed.pathname.includes("/player")) {
+      return rawUrl;
     }
+
+    // Si c’est un proxy livewatch → on récupère le vrai flux
+    if (parsed.hostname.includes("livewatch.top") && parsed.pathname.includes("/api/proxy")) {
+      const originalUrl = parsed.searchParams.get("url");
+
+      if (originalUrl) {
+        return "https://livewatch.top/player?rl=" + encodeURIComponent(originalUrl);
+      }
+
+      return rawUrl;
+    }
+
+    // Cas normal
+    return "https://livewatch.top/player?rl=" + encodeURIComponent(rawUrl);
+
+  } catch {
+    return "https://livewatch.top/player?rl=" + encodeURIComponent(rawUrl);
+  }
+}
 
     function stopHls() {
       if (hls) {
@@ -1025,44 +1079,44 @@
     }
 
     function loadHls(video) {
-      playerFrame.style.display = "none";
-      hlsVideo.style.display = "block";
-      playPauseBtn.style.display = "inline-block";
-      playPauseBtn.textContent = "⏸";
+  playerFrame.style.display = "none";
+  hlsVideo.style.display = "block";
+  playPauseBtn.style.display = "inline-block";
+  playPauseBtn.textContent = "⏸";
 
-      if (!isM3u8(video.videoUrl)) {
-        playerError.classList.add("active");
-        return;
-      }
+  if (!isM3u8(video.videoUrl)) {
+    playerError.classList.add("active");
+    return;
+  }
 
-      if (hlsVideo.canPlayType("application/vnd.apple.mpegurl")) {
-        hlsVideo.src = video.videoUrl;
-        hlsVideo.play().catch(() => {});
-        return;
-      }
+  if (hlsVideo.canPlayType("application/vnd.apple.mpegurl")) {
+    hlsVideo.src = video.videoUrl;
+    hlsVideo.play().catch(() => {});
+    return;
+  }
 
-      if (window.Hls && Hls.isSupported()) {
-        hls = new Hls({
-          enableWorker: true,
-          lowLatencyMode: true,
-          backBufferLength: 90
-        });
+  if (window.Hls && Hls.isSupported()) {
+    hls = new Hls({
+      enableWorker: true,
+      lowLatencyMode: true,
+      backBufferLength: 90
+    });
 
-        hls.loadSource(video.videoUrl);
-        hls.attachMedia(hlsVideo);
+    hls.loadSource(video.videoUrl);
+    hls.attachMedia(hlsVideo);
 
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          hlsVideo.play().catch(() => {});
-        });
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      hlsVideo.play().catch(() => {});
+    });
 
-        hls.on(Hls.Events.ERROR, (event, data) => {
-          if (data && data.fatal) {
-            playerError.classList.add("active");
-          }
-        });
-      } else {
+    hls.on(Hls.Events.ERROR, (event, data) => {
+      if (data && data.fatal) {
         playerError.classList.add("active");
       }
+    });
+  } else {
+    playerError.classList.add("active");
+  }
     }
 
     function openStream(index) {
