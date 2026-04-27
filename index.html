@@ -7,17 +7,36 @@
   <link rel="icon" type="image/png" href="logo.png">
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: rgba(17,24,39,0.12);
+      --primary: #2563eb;
+      --input: #ffffff;
+      --shadow: 0 15px 35px rgba(15,23,42,0.12);
     }
+
+    body.dark {
+      --bg: #0b1020;
+      --card: #111827;
+      --text: #f9fafb;
+      --muted: #a1a1aa;
+      --border: rgba(255,255,255,0.14);
+      --primary: #60a5fa;
+      --input: #020617;
+      --shadow: 0 15px 35px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
-      width: 100%;
       min-height: 100%;
       font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
     }
 
     .intro-screen {
@@ -51,16 +70,12 @@
     }
 
     @keyframes logoZoom {
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
     .tap-text {
+      color: white;
       font-size: 17px;
       font-weight: bold;
       text-transform: uppercase;
@@ -69,21 +84,15 @@
     }
 
     @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.25;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
     }
 
     .app {
       display: none;
-      padding: 24px;
-      background: #f5f7fb;
-      color: #111827;
-      min-height: 100vh;
+      width: min(1280px, 94%);
+      margin: 0 auto;
+      padding: 28px 0 46px;
     }
 
     .app.show {
@@ -93,50 +102,177 @@
     header {
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 24px;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
     }
 
-    header img {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
       width: 56px;
       height: 56px;
+      border-radius: 18px;
+      background: rgba(37,99,235,0.12);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      padding: 5px;
     }
 
     h1 {
       margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+    }
+
+    .subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .hero h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .search-box,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--input);
+      color: var(--text);
+      border-radius: 18px;
+      padding: 15px 17px;
+      font-size: 1rem;
+      outline: none;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
     .card {
-      background: white;
-      color: #111827;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
     }
 
-    .card img {
-      width: 70px;
-      height: 70px;
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .thumb {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      background: rgba(37,99,235,0.10);
+    }
+
+    .thumb img {
+      width: 78px;
+      height: 78px;
       object-fit: contain;
+    }
+
+    .content {
+      padding: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.12);
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     .watch-btn {
       width: 100%;
-      margin-top: 14px;
       border: none;
-      border-radius: 12px;
-      padding: 12px;
+      border-radius: 16px;
+      padding: 13px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.98rem;
       color: white;
       background: linear-gradient(135deg, #2563eb, #9333ea);
-      font-weight: bold;
-      cursor: pointer;
+    }
+
+    .empty {
+      display: none;
+      text-align: center;
+      border: 1px dashed var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      color: var(--muted);
+      background: var(--card);
+    }
+
+    .empty.active {
+      display: block;
     }
 
     .player-page {
@@ -144,7 +280,7 @@
       position: fixed;
       inset: 0;
       z-index: 5000;
-      background: black;
+      background: #000;
     }
 
     .player-page.show {
@@ -155,7 +291,7 @@
       width: 100vw;
       height: 100dvh;
       border: none;
-      background: black;
+      background: #000;
       display: block;
     }
 
@@ -171,6 +307,46 @@
       color: white;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .author {
+      position: fixed;
+      right: 16px;
+      bottom: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .theme-toggle {
+        width: 100%;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-logo {
+        width: 125px;
+        height: 125px;
+      }
     }
   </style>
 </head>
@@ -188,14 +364,43 @@
 
   <main class="app" id="app">
     <header>
-      <img src="logo.png" alt="MonLiveTv">
-      <div>
-        <h1>MonLiveTv</h1>
-        <p>Choisis une chaîne et ouvre le direct.</p>
+      <div class="brand">
+        <div class="logo">
+          <img src="logo.png" alt="MonLiveTv">
+        </div>
+        <div>
+          <h1>MonLiveTv</h1>
+          <p class="subtitle">Recherche, catégories et lecture directe du flux.</p>
+        </div>
       </div>
+
+      <button class="theme-toggle" id="themeToggle">🌙 Mode sombre</button>
     </header>
 
+    <section class="hero">
+      <h2>Choisis une chaîne et ouvre le direct.</h2>
+      <p>
+        Utilise la recherche ou les catégories pour filtrer les contenus.
+        Chaque chaîne peut utiliser Livewatch, YouTube ou un embed direct.
+      </p>
+    </section>
+
+    <section class="controls">
+      <input id="searchInput" class="search-box" type="search" placeholder="Rechercher une chaîne, une vidéo, un thème...">
+
+      <select id="categorySelect">
+        <option value="Tout">Tout</option>
+        <option value="Généraliste">Généraliste</option>
+        <option value="Jeunesse">Jeunesse</option>
+        <option value="Sport">Sport</option>
+        <option value="Cinéma">Cinéma</option>
+        <option value="Découverte">Découverte</option>
+        <option value="Infos">Infos</option>
+      </select>
+    </section>
+
     <section class="grid" id="videoGrid"></section>
+    <div class="empty" id="emptyState">Aucun résultat trouvé.</div>
   </main>
 
   <section class="player-page" id="playerPage">
@@ -210,43 +415,99 @@
     </iframe>
   </section>
 
+  <div class="author">SnipDav</div>
+
   <script>
     const videos = [
+      {
+        title: "Chaîne généraliste",
+        category: "Généraliste",
+        icon: "icones/exemple.png",
+        description: "Flux généraliste en direct.",
+        videoUrl: "http://exemple.com/live/generaliste.m3u8",
+        playerType: "livewatch"
+      },
+      {
+        title: "Programme jeunesse",
+        category: "Jeunesse",
+        icon: "icones/exemple2.png",
+        description: "Chaîne jeunesse en direct.",
+        videoUrl: "http://exemple.com/live/jeunesse.m3u8",
+        playerType: "livewatch"
+      },
       {
         title: "Ligue1+ HD",
         category: "Sport",
         icon: "icones/ligue1+.png",
         description: "Chaîne sport en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/22.m3u8",
-        playerType: "embed"
+        videoUrl: "http://pythontv.net:8789/live/x9607/2018123/555898.m3u8",
+        playerType: "livewatch"
       },
       {
-        title: "YouTube Test",
-        category: "YouTube",
+        title: "Vidéo YouTube",
+        category: "Généraliste",
         icon: "icones/youtube.png",
-        description: "Vidéo YouTube de test.",
+        description: "Vidéo YouTube intégrée.",
         videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         playerType: "youtube"
       },
       {
+        title: "Sélection cinéma",
+        category: "Cinéma",
+        icon: "icones/exemple4.png",
+        description: "Chaîne cinéma en direct.",
+        videoUrl: "http://exemple.com/live/cinema.m3u8",
+        playerType: "livewatch"
+      },
+      {
+        title: "Documentaire découverte",
+        category: "Découverte",
+        icon: "icones/exemple5.png",
+        description: "Chaîne découverte en direct.",
+        videoUrl: "http://exemple.com/live/decouverte.m3u8",
+        playerType: "livewatch"
+      },
+      {
+        title: "Journal d’infos",
+        category: "Infos",
+        icon: "icones/exemple6.png",
+        description: "Chaîne info en direct.",
+        videoUrl: "http://exemple.com/live/infos.m3u8",
+        playerType: "livewatch"
+      },
+      {
         title: "Embed direct",
-        category: "Embed",
+        category: "Infos",
         icon: "icones/exemple.png",
-        description: "Lecteur intégré direct.",
+        description: "Lecteur embarqué direct.",
         videoUrl: "https://exemple.com/player",
         playerType: "embed"
       }
     ];
 
+    const body = document.body;
     const introScreen = document.getElementById("introScreen");
     const app = document.getElementById("app");
     const startSound = document.getElementById("startSound");
+
+    const themeToggle = document.getElementById("themeToggle");
+    const searchInput = document.getElementById("searchInput");
+    const categorySelect = document.getElementById("categorySelect");
     const videoGrid = document.getElementById("videoGrid");
+    const emptyState = document.getElementById("emptyState");
+
     const playerPage = document.getElementById("playerPage");
     const playerFrame = document.getElementById("playerFrame");
     const backBtn = document.getElementById("backBtn");
 
     let started = false;
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      body.classList.add("dark");
+      themeToggle.textContent = "☀️ Mode clair";
+    }
 
     function startSite() {
       if (started) return;
@@ -276,19 +537,34 @@
     introScreen.addEventListener("click", startSite);
     introScreen.addEventListener("touchend", startSite);
 
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      const isDark = body.classList.contains("dark");
+
+      themeToggle.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
     function getYoutubeEmbedUrl(url) {
       try {
         const parsedUrl = new URL(url);
 
         if (parsedUrl.hostname.includes("youtube.com")) {
           const videoId = parsedUrl.searchParams.get("v");
+
           if (videoId) {
             return "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
+          }
+
+          if (parsedUrl.pathname.includes("/embed/")) {
+            return url;
           }
         }
 
         if (parsedUrl.hostname.includes("youtu.be")) {
           const videoId = parsedUrl.pathname.replace("/", "");
+
           if (videoId) {
             return "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0";
           }
@@ -331,17 +607,38 @@
     backBtn.addEventListener("click", closePlayer);
 
     function renderVideos() {
+      const search = searchInput.value.toLowerCase().trim();
+      const selectedCategory = categorySelect.value;
+
+      const filteredVideos = videos.filter((video) => {
+        const matchesSearch =
+          video.title.toLowerCase().includes(search) ||
+          video.category.toLowerCase().includes(search) ||
+          video.description.toLowerCase().includes(search);
+
+        const matchesCategory =
+          selectedCategory === "Tout" || video.category === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+      });
+
       videoGrid.innerHTML = "";
 
-      videos.forEach((video) => {
+      filteredVideos.forEach((video) => {
         const card = document.createElement("article");
         card.className = "card";
 
         card.innerHTML = `
-          <img src="${video.icon}" alt="${video.title}">
-          <h3>${video.title}</h3>
-          <p>${video.description}</p>
-          <button class="watch-btn" type="button">▶ Regarder</button>
+          <div class="thumb">
+            <img src="${video.icon}" alt="${video.title}" loading="lazy">
+          </div>
+
+          <div class="content">
+            <span class="tag">${video.category}</span>
+            <h3>${video.title}</h3>
+            <p>${video.description}</p>
+            <button class="watch-btn" type="button">▶ Regarder</button>
+          </div>
         `;
 
         card.querySelector(".watch-btn").addEventListener("click", () => {
@@ -350,7 +647,12 @@
 
         videoGrid.appendChild(card);
       });
+
+      emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
+
+    searchInput.addEventListener("input", renderVideos);
+    categorySelect.addEventListener("change", renderVideos);
 
     renderVideos();
   </script>
