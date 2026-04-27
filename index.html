@@ -1,272 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MonLiveTv Premium</title>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <style>
-        :root {
-            --bg: #050505;
-            --card: #141414;
-            --text: #ffffff;
-            --primary: #e50914; /* Rouge Netflix */
-            --shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonLiveTv</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    :root {  
+      --bg: #f5f7fb; --card: #ffffff; --text: #111827; --muted: #6b7280;  
+      --border: rgba(17,24,39,0.12); --primary: #2563eb; --input: #ffffff;  
+      --shadow: 0 15px 35px rgba(15,23,42,0.12);  
+    }  
+    body.dark {  
+      --bg: #0b1020; --card: #111827; --text: #f9fafb; --muted: #a1a1aa;  
+      --border: rgba(255,255,255,0.14); --primary: #60a5fa; --input: #020617;  
+      --shadow: 0 15px 35px rgba(0,0,0,0.35);  
+    }  
+    * { box-sizing: border-box; }  
+    html, body { margin: 0; min-height: 100%; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }  
 
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            overflow-x: hidden;
-        }
+    /* --- TON ECRAN D'ACCUEIL ORIGINAL --- */
+    .intro-screen { position: fixed; inset: 0; z-index: 9999; background: #020617; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: opacity 0.8s ease; }  
+    .intro-screen.hide { opacity: 0; pointer-events: none; }  
+    .intro-logo { width: 150px; height: 150px; object-fit: contain; margin: 0 auto 28px; animation: logoZoom 2s ease-in-out infinite; display: block; }  
+    @keyframes logoZoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }  
+    .tap-text { color: white; font-size: 17px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; animation: blink 1.1s infinite; text-align: center; }  
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }  
 
-        /* --- INTRO SCREEN --- */
-        .intro-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        .intro-logo { width: 120px; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+    /* --- TON APP ORIGINALE --- */
+    .app { display: none; width: min(1280px, 94%); margin: 0 auto; padding: 28px 0 46px; }  
+    .app.show { display: block; }  
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 28px; }  
+    .brand { display: flex; align-items: center; gap: 14px; }  
+    .logo { width: 56px; height: 56px; border-radius: 18px; background: rgba(37,99,235,0.12); display: grid; place-items: center; overflow: hidden; }  
+    .logo img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }  
+    h1 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.5rem); }  
+    .theme-toggle { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 999px; padding: 11px 16px; cursor: pointer; font-weight: bold; }  
+    .hero { background: var(--card); border: 1px solid var(--border); border-radius: 28px; padding: 28px; box-shadow: var(--shadow); margin-bottom: 22px; }  
+    .controls { display: grid; grid-template-columns: 1fr 240px; gap: 14px; margin: 22px 0; }  
+    .search-box, select { width: 100%; border: 1px solid var(--border); background: var(--input); color: var(--text); border-radius: 18px; padding: 15px 17px; outline: none; }  
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }  
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.2s ease; cursor: pointer; }  
+    .card:hover { transform: translateY(-5px); }  
+    .thumb { min-height: 150px; display: grid; place-items: center; background: rgba(37,99,235,0.10); }  
+    .thumb img { width: 78px; height: 78px; object-fit: contain; }  
+    .content { padding: 18px; }  
+    .tag { display: inline-block; padding: 7px 10px; border-radius: 999px; background: rgba(37,99,235,0.12); color: var(--primary); font-weight: bold; font-size: 0.78rem; margin-bottom: 12px; }  
+    .watch-btn { width: 100%; border: none; border-radius: 16px; padding: 13px 16px; cursor: pointer; font-weight: bold; color: white; background: linear-gradient(135deg, #2563eb, #9333ea); }  
 
-        /* --- MAIN APP --- */
-        .app { display: none; padding: 20px; max-width: 1400px; margin: 0 auto; }
-        .app.show { display: block; }
+    /* --- NOUVEAU LECTEUR PREMIUM (SANS BORDURES) --- */
+    .player-page { display: none; position: fixed; inset: 0; z-index: 10000; background: #000; }  
+    .player-page.show { display: block; }  
+    .video-container { width: 100%; height: 100%; position: relative; }  
+    video, iframe { width: 100%; height: 100%; border: none; background: #000; }  
 
-        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        .logo-text { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
+    .player-overlay {  
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px;  
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));  
+      display: flex; align-items: center; justify-content: center; gap: 20px;  
+      opacity: 0; transition: opacity 0.3s; z-index: 10;  
+    }  
+    .video-container:hover .player-overlay { opacity: 1; }  
+    .player-btn { background: rgba(255,255,255,0.2); border: none; color: white; padding: 12px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; backdrop-filter: blur(5px); }  
+    .back-btn { position: absolute; top: 20px; left: 20px; z-index: 11; background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; }  
 
-        .controls { display: flex; gap: 10px; margin-bottom: 30px; }
-        .search-box, .category-select {
-            background: #222;
-            border: 1px solid #333;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        .search-box { flex-grow: 1; }
-
-        /* --- GRID --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: var(--card);
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            cursor: pointer;
-            position: relative;
-        }
-        .card:hover { transform: scale(1.05); z-index: 10; }
-        .thumb { height: 125px; background: #222; display: grid; place-items: center; }
-        .thumb img { width: 60px; height: 60px; object-fit: contain; }
-        .card-info { padding: 12px; }
-        .card-info h3 { margin: 0; font-size: 0.9rem; }
-        .tag { font-size: 0.7rem; color: var(--primary); font-weight: bold; }
-
-        /* --- PREMIUM PLAYER PAGE --- */
-        #playerPage {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: #000;
-            z-index: 10000;
-        }
-        #playerPage.show { display: block; }
-
-        .video-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            background: #000;
-        }
-        video, iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            object-fit: contain;
-        }
-
-        /* Player Controls Overlay */
-        .player-controls {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 40px 20px 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .video-container:hover .player-controls { opacity: 1; }
-
-        .player-btn {
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            backdrop-filter: blur(10px);
-            transition: 0.2s;
-        }
-        .player-btn:hover { background: var(--primary); }
-        .close-btn { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.5); z-index: 10001; }
-
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-            .player-btn { padding: 10px 15px; font-size: 0.8rem; }
-        }
-    </style>
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .controls { grid-template-columns: 1fr; } }  
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }  
+  </style>
 </head>
 <body>
 
-<div class="intro-screen" id="introScreen">
-    <img src="logo.png" class="intro-logo" alt="Logo">
-</div>
+  <audio id="startSound" src="sound.wav" preload="auto"></audio>
 
-<main class="app" id="app">
-    <header>
-        <div class="logo-text">MonLiveTv</div>
-    </header>
+  <div class="intro-screen" id="introScreen">  
+    <div class="intro-content">  
+      <img src="logo.png" alt="MonLiveTv" class="intro-logo">  
+      <div class="tap-text">Touchez pour démarrer</div>  
+    </div>  
+  </div>
 
-    <div class="controls">
-        <input type="text" id="searchInput" class="search-box" placeholder="Rechercher une chaîne...">
-        <select id="categorySelect" class="category-select">
-            <option value="Tout">Tout</option>
-            <option value="Généraliste">Généraliste</option>
-            <option value="Sport">Sport</option>
-            <option value="Infos">Infos</option>
-        </select>
-    </div>
+  <main class="app" id="app">  
+    <header>  
+      <div class="brand">  
+        <div class="logo"><img src="logo.png" alt="MonLiveTv"></div>  
+        <div><h1>MonLiveTv</h1><p style="color: var(--muted); margin:0;">Votre direct en un clic.</p></div>  
+      </div>  
+      <button class="theme-toggle" id="themeToggle">🌙 Mode sombre</button>  
+    </header>  
 
-    <div class="grid" id="videoGrid"></div>
-</main>
+    <section class="hero">  
+      <h2>Choisis une chaîne et ouvre le direct.</h2>  
+      <p>Utilisez le zapping directement dans le lecteur pour changer de chaîne.</p>  
+    </section>  
 
-<section id="playerPage">
-    <button class="player-btn close-btn" onclick="closePlayer()">✕ Fermer</button>
-    
+    <section class="controls">  
+      <input id="searchInput" class="search-box" type="search" placeholder="Rechercher une chaîne...">  
+      <select id="categorySelect">  
+        <option value="Tout">Tout</option>  
+        <option value="Généraliste">Généraliste</option>  
+        <option value="Sport">Sport</option>  
+        <option value="Cinéma">Cinéma</option>  
+        <option value="Infos">Infos</option>  
+      </select>  
+    </section>  
+
+    <section class="grid" id="videoGrid"></section>  
+  </main>
+
+  <section class="player-page" id="playerPage">
+    <button class="back-btn" onclick="closePlayer()">← Retour</button>
     <div class="video-container" id="videoContainer">
-        <div id="mediaPlaceholder" style="width:100%; height:100%;"></div>
-
-        <div class="player-controls">
-            <button class="player-btn" onclick="zap(-1)">❮ Précédent</button>
-            <div id="currentChannelTitle" style="font-weight: bold;">Nom de la chaîne</div>
-            <button class="player-btn" onclick="zap(1)">Suivant ❯</button>
-        </div>
+      <div id="mediaArea" style="width:100%; height:100%;"></div>
+      <div class="player-overlay">
+        <button class="player-btn" onclick="zap(-1)">❮ Chaîne Précédente</button>
+        <div id="currentTitle" style="color:white; font-weight:bold; min-width: 150px; text-align:center;">Chaîne</div>
+        <button class="player-btn" onclick="zap(1)">Chaîne Suivante ❯</button>
+      </div>
     </div>
-</section>
+  </section>
 
-<script>
-    const videos = [
-        { title: "Ligue1+ HD", category: "Sport", icon: "icones/ligue1+.png", videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/22.m3u8", type: "hls" },
-        { title: "Chaîne Infos", category: "Infos", icon: "icones/exemple6.png", videoUrl: "http://exemple.com/live/infos.m3u8", type: "hls" },
-        { title: "Généraliste", category: "Généraliste", icon: "icones/exemple.png", videoUrl: "http://exemple.com/live/generaliste.m3u8", type: "livewatch" }
+  <script>
+    const videos = [  
+      { title: "Ligue1+ HD", category: "Sport", icon: "icones/ligue1+.png", description: "Direct Sport", videoUrl: "http://pythontv.net:8789/live/x9607/2018123/555898.m3u8", type: "livewatch" },
+      { title: "Chaîne Infos", category: "Infos", icon: "icones/exemple6.png", description: "Infos 24/24", videoUrl: "http://exemple.com/live/infos.m3u8", type: "hls" }
     ];
 
     let currentIndex = 0;
+    const body = document.body;
+    const introScreen = document.getElementById("introScreen");
+    const app = document.getElementById("app");
+    const startSound = document.getElementById("startSound");
     const videoGrid = document.getElementById("videoGrid");
-    const playerPage = document.getElementById("playerPage");
-    const mediaPlaceholder = document.getElementById("mediaPlaceholder");
+    const mediaArea = document.getElementById("mediaArea");
 
-    // Démarrage
-    document.getElementById("introScreen").addEventListener("click", () => {
-        document.getElementById("introScreen").style.display = "none";
-        document.getElementById("app").classList.add("show");
-        renderVideos();
+    // --- GESTION THÈME ET DÉMARRAGE ---
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const isDark = body.classList.contains("dark");
+      themeToggle.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
     });
 
+    function startSite() {
+      startSound.play().catch(() => {});
+      introScreen.classList.add("hide");
+      setTimeout(() => { 
+        introScreen.style.display = "none"; 
+        app.classList.add("show"); 
+        renderVideos();
+      }, 800);
+    }
+    introScreen.addEventListener("click", startSite);
+
+    // --- LOGIQUE LECTEUR ---
     function renderVideos() {
-        const search = document.getElementById("searchInput").value.toLowerCase();
-        const cat = document.getElementById("categorySelect").value;
-        
-        videoGrid.innerHTML = "";
-        videos.forEach((v, index) => {
-            if ((cat === "Tout" || v.category === cat) && v.title.toLowerCase().includes(search)) {
-                const card = document.createElement("div");
-                card.className = "card";
-                card.innerHTML = `
-                    <div class="thumb"><img src="${v.icon}"></div>
-                    <div class="card-info">
-                        <div class="tag">${v.category}</div>
-                        <h3>${v.title}</h3>
-                    </div>
-                `;
-                card.onclick = () => openPlayer(index);
-                videoGrid.appendChild(card);
-            }
-        });
+      const search = document.getElementById("searchInput").value.toLowerCase();
+      const cat = document.getElementById("categorySelect").value;
+      videoGrid.innerHTML = "";
+
+      videos.forEach((video, index) => {
+        if ((cat === "Tout" || video.category === cat) && video.title.toLowerCase().includes(search)) {
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+            <div class="thumb"><img src="${video.icon}"></div>
+            <div class="content">
+              <span class="tag">${video.category}</span>
+              <h3>${video.title}</h3>
+              <button class="watch-btn">▶ Regarder</button>
+            </div>
+          `;
+          card.onclick = () => openPlayer(index);
+          videoGrid.appendChild(card);
+        }
+      });
     }
 
     function openPlayer(index) {
-        currentIndex = index;
-        const video = videos[index];
-        const container = document.getElementById("videoContainer");
-        
-        mediaPlaceholder.innerHTML = "";
-        document.getElementById("currentChannelTitle").innerText = video.title;
+      currentIndex = index;
+      const video = videos[index];
+      mediaArea.innerHTML = "";
+      document.getElementById("currentTitle").innerText = video.title;
 
-        if (video.type === "livewatch") {
-            const ifr = document.createElement("iframe");
-            ifr.src = "https://livewatch.top/player?rl=" + encodeURIComponent(video.videoUrl);
-            ifr.allow = "autoplay; fullscreen";
-            mediaPlaceholder.appendChild(ifr);
-        } else {
-            const vid = document.createElement("video");
-            vid.controls = true;
-            vid.autoplay = true;
-            mediaPlaceholder.appendChild(vid);
-            
-            if (Hls.isSupported()) {
-                const hls = new Hls();
-                hls.loadSource(video.videoUrl);
-                hls.attachMedia(vid);
-            } else if (vid.canPlayType('application/vnd.apple.mpegurl')) {
-                vid.src = video.videoUrl;
-            }
-        }
+      if (video.type === "livewatch") {
+        const ifr = document.createElement("iframe");
+        ifr.src = "https://livewatch.top/player?rl=" + encodeURIComponent(video.videoUrl);
+        ifr.allow = "autoplay; fullscreen";
+        mediaArea.appendChild(ifr);
+      } else {
+        const vid = document.createElement("video");
+        vid.autoplay = true; vid.controls = true;
+        mediaArea.appendChild(vid);
+        if (Hls.isSupported()) {
+          const hls = new Hls(); hls.loadSource(video.videoUrl); hls.attachMedia(vid);
+        } else { vid.src = video.videoUrl; }
+      }
 
-        playerPage.classList.add("show");
-        
-        // Tentative de Plein écran auto
-        setTimeout(() => {
-            if (container.requestFullscreen) container.requestFullscreen();
-            else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-        }, 500);
+      document.getElementById("playerPage").classList.add("show");
+      
+      // PLEIN ÉCRAN AUTO
+      const container = document.getElementById("videoContainer");
+      if (container.requestFullscreen) container.requestFullscreen();
+      else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
     }
 
-    function zap(direction) {
-        currentIndex += direction;
-        if (currentIndex < 0) currentIndex = videos.length - 1;
-        if (currentIndex >= videos.length) currentIndex = 0;
-        openPlayer(currentIndex);
+    function zap(dir) {
+      currentIndex = (currentIndex + dir + videos.length) % videos.length;
+      openPlayer(currentIndex);
     }
 
     function closePlayer() {
-        mediaPlaceholder.innerHTML = "";
-        playerPage.classList.remove("show");
-        if (document.fullscreenElement) document.exitFullscreen();
+      mediaArea.innerHTML = "";
+      document.getElementById("playerPage").classList.remove("show");
+      if (document.fullscreenElement) document.exitFullscreen();
     }
 
     document.getElementById("searchInput").oninput = renderVideos;
     document.getElementById("categorySelect").onchange = renderVideos;
-</script>
-
+  </script>
 </body>
 </html>
