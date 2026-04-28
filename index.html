@@ -1268,7 +1268,7 @@ function openWithChoice(type) {
 
   const index = selectedChoiceIndex;
   const video = videos[index];
-
+  addToHistory(video);
   closePlayerChoice();
 
   if (type === "hls") {
