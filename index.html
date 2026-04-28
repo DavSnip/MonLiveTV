@@ -1245,6 +1245,24 @@ function closePlayerChoice() {
   selectedChoiceIndex = null;
 }
 
+function openExternalPlayer(video) {
+  const url = video.externalUrl || video.videoUrl;
+
+  if (!url) return;
+
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  if (isAndroid && url.startsWith("http")) {
+    const cleanUrl = url.replace(/^https?:\/\//, "");
+    const scheme = url.startsWith("https") ? "https" : "http";
+
+    window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;end`;
+    return;
+  }
+
+  window.open(url, "_blank");
+}
+
 function openWithChoice(type) {
   if (selectedChoiceIndex === null) return;
 
@@ -1254,8 +1272,10 @@ function openWithChoice(type) {
   closePlayerChoice();
 
   if (type === "hls") {
-    video.useLivewatch = false;
-    openStream(index);
+    setTimeout(() => {
+      video.useLivewatch = false;
+      openStream(index);
+    }, 100);
   }
 
   if (type === "livewatch") {
@@ -1263,7 +1283,7 @@ function openWithChoice(type) {
   }
 
   if (type === "external") {
-    window.open(video.externalUrl || video.videoUrl, "_blank");
+    openExternalPlayer(video);
   }
 }
 
