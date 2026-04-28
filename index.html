@@ -1259,11 +1259,12 @@ function openWithChoice(type) {
   }
 
   if (type === "livewatch") {
-  window.open(buildLivewatchUrl(video.videoUrl), "_blank");
-}
+    window.open(buildLivewatchUrl(video.videoUrl), "_blank");
+  }
 
   if (type === "external") {
-  window.open(video.externalUrl || video.videoUrl, "_blank");
+    window.open(video.externalUrl || video.videoUrl, "_blank");
+  }
 }
 
     function openStream(index) {
