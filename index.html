@@ -820,12 +820,31 @@
   <script>
     const videos = [
       {
-        title: "Chaîne généraliste",
+        title: "Canal+ HD",
         category: "Généraliste",
-        icon: "icones/exemple.png",
+        icon: "icones/canal+.png",
         description: "Flux généraliste en direct.",
-        videoUrl: "http://exemple.com/live/generaliste.m3u8",
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/20.m3u8",
+        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/20.m3u8",
+        useLivewatch: false
+      },
+      {
+        title: "Canal+ HD backup",
+        category: "Généraliste",
+        icon: "icones/canal+.png",
+        description: "Flux généraliste en direct.",
+        videoUrl: "https://livewatch.top/player?url=vavoo_CANAL%252B%7Cgroup%3Afr",
+        externalUrl: "https://livewatch.top/player?url=vavoo_CANAL%252B%7Cgroup%3Afr",
         useLivewatch: true
+      },
+      {
+        title: "Disney Channel HD",
+        category: "Jeunesse",
+        icon: "icones/disneychannel.png",
+        description: "Chaîne jeunesse en direct.",
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/72.m3u8",
+        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/72.m3u8",
+        useLivewatch: false
       },
       {
         title: "Disney Channel HD backup",
@@ -861,22 +880,33 @@
         description: "Chaîne cinéma en direct.",
         videoUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr",
-        useLivewatch: false
-      },
-      {
-        title: "Documentaire découverte",
-        category: "Découverte",
-        icon: "icones/exemple5.png",
-        description: "Chaîne découverte en direct.",
-        videoUrl: "http://exemple.com/live/decouverte.m3u8",
         useLivewatch: true
       },
       {
-        title: "Journal d’infos",
+        title: "RMC Découverte",
+        category: "Découverte",
+        icon: "icones/rmcdecouverte.png",
+        description: "Chaîne découverte en direct.",
+        videoUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr",
+        externalUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr",
+        useLivewatch: true
+      },
+      {
+        title: "LCI HD",
         category: "Infos",
-        icon: "icones/exemple6.png",
+        icon: "icones/lci.png",
         description: "Chaîne info en direct.",
-        videoUrl: "http://exemple.com/live/infos.m3u8",
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8",
+        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8",
+        useLivewatch: false
+      },
+      {
+        title: "LCI HD backup",
+        category: "Infos",
+        icon: "icones/lci.png",
+        description: "Chaîne info en direct.",
+        videoUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr",
+        externalUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr",
         useLivewatch: true
       },
       {
