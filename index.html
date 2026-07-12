@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>MonLiveTv</title>
   <link rel="icon" type="image/png" href="logo.png">
- 
+  
   <style>
     :root {
       --bg: #f5f7fb;
@@ -295,24 +295,25 @@
     .favorite-btn.active {
       background: #e50914;
     }
-.remove-history-btn {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 3;
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(0,0,0,0.62);
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-}
+    
+    .remove-history-btn {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.62);
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
 
-.remove-history-btn:hover {
-  background: #e50914;
-}
+    .remove-history-btn:hover {
+      background: #e50914;
+    }
 
     .thumb {
       min-height: 150px;
@@ -600,80 +601,81 @@
         justify-content: space-between;
       }
     }
-.choice-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 8000;
-  background: rgba(0,0,0,0.78);
-  backdrop-filter: blur(10px);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
+    
+    .choice-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 8000;
+      background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-.choice-modal.show {
-  display: flex;
-}
+    .choice-modal.show {
+      display: flex;
+    }
 
-.choice-box {
-  width: min(520px, 100%);
-  position: relative;
-  border-radius: 28px;
-  padding: 30px;
-  background:
-    radial-gradient(circle at top right, rgba(229,9,20,0.45), transparent 35%),
-    #111;
-  color: white;
-  box-shadow: 0 25px 80px rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.12);
-}
+    .choice-box {
+      width: min(520px, 100%);
+      position: relative;
+      border-radius: 28px;
+      padding: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(229,9,20,0.45), transparent 35%),
+        #111;
+      color: white;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
 
-.choice-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 38px;
-  height: 38px;
-  border: none;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.12);
-  color: white;
-  cursor: pointer;
-  font-weight: 900;
-}
+    .choice-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      cursor: pointer;
+      font-weight: 900;
+    }
 
-.choice-box h2 {
-  margin: 0 0 10px;
-  font-size: 1.8rem;
-}
+    .choice-box h2 {
+      margin: 0 0 10px;
+      font-size: 1.8rem;
+    }
 
-.choice-box p {
-  margin: 0 0 22px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.5;
-}
+    .choice-box p {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
 
-.choice-buttons {
-  display: grid;
-  gap: 12px;
-}
+    .choice-buttons {
+      display: grid;
+      gap: 12px;
+    }
 
-.choice-btn {
-  border: none;
-  border-radius: 18px;
-  padding: 15px 17px;
-  cursor: pointer;
-  font-weight: 900;
-  font-size: 1rem;
-  color: white;
-  background: rgba(255,255,255,0.12);
-  text-align: left;
-}
+    .choice-btn {
+      border: none;
+      border-radius: 18px;
+      padding: 15px 17px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 1rem;
+      color: white;
+      background: rgba(255,255,255,0.12);
+      text-align: left;
+    }
 
-.choice-btn:hover {
-  background: #e50914;
-}
+    .choice-btn:hover {
+      background: #e50914;
+    }
   </style>
 </head>
 
@@ -766,7 +768,7 @@
       <div class="player-error" id="playerError">
         <div class="player-error-box">
           <h2>Lecture impossible</h2>
-          <p>Ce flux ne se lance pas dans le lecteur intégré. Essaie avec Livewatch ou vérifie le lien m3u8.</p>
+          <p>Ce flux ne se lance pas dans le lecteur intégré. L'URL est peut-être invalide ou nécessite un navigateur Web externe.</p>
         </div>
       </div>
 
@@ -801,20 +803,20 @@
   </section>
 
   <div class="author">SnipDav</div>
-<div class="choice-modal" id="choiceModal">
-  <div class="choice-box">
-    <button class="choice-close" id="choiceClose">✕</button>
+  <div class="choice-modal" id="choiceModal">
+    <div class="choice-box">
+      <button class="choice-close" id="choiceClose">✕</button>
 
-    <h2 id="choiceTitle">Choisir un lecteur</h2>
-    <p id="choiceText">Sélectionne comment tu veux ouvrir cette chaîne.</p>
+      <h2 id="choiceTitle">Choisir un lecteur</h2>
+      <p id="choiceText">Sélectionne comment tu veux ouvrir cette chaîne.</p>
 
-    <div class="choice-buttons">
-      <button class="choice-btn" id="choiceHls">▶ HLS intégré</button>
-      <button class="choice-btn" id="choiceLivewatch">🌐 Livewatch</button>
-      <button class="choice-btn" id="choiceExternal">📺 App vidéo</button>
+      <div class="choice-buttons">
+        <button class="choice-btn" id="choiceHls">▶ HLS intégré</button>
+        <button class="choice-btn" id="choiceExternal">📺 App vidéo / Extérieur</button>
+      </div>
     </div>
   </div>
-</div>
+  
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
   <script>
@@ -832,12 +834,12 @@
         title: "Canal+ HD backup",
         category: "Généraliste",
         icon: "icones/canal+.png",
-        description: "Flux généraliste en direct.",
+        description: "Flux généraliste en direct (Lien Web).",
         videoUrl: "https://livewatch.top/embed/40213668447d8ff3bec243-8e2eee7d914ecf",
         externalUrl: "https://livewatch.top/embed/40213668447d8ff3bec243-8e2eee7d914ecf",
         useLivewatch: true
       },
-{
+      {
         title: "Canal+ HD backup2",
         category: "Généraliste",
         icon: "icones/canal+.png",
@@ -859,7 +861,7 @@
         title: "Disney Channel HD backup",
         category: "Jeunesse",
         icon: "icones/disneychannel.png",
-        description: "Chaîne jeunesse en direct.",
+        description: "Chaîne jeunesse en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr",
         useLivewatch: true
@@ -882,10 +884,10 @@
         useLivewatch: false
       },
       {
-        title: "Syfy HD bachup",
+        title: "Syfy HD backup",
         category: "Cinéma",
         icon: "icones/syfy.png",
-        description: "Chaîne cinéma en direct.",
+        description: "Chaîne cinéma en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr",
         useLivewatch: true
@@ -894,7 +896,7 @@
         title: "RMC Découverte HD",
         category: "Découverte",
         icon: "icones/rmcdecouverte.png",
-        description: "Chaîne découverte en direct.",
+        description: "Chaîne découverte en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr",
         useLivewatch: true
@@ -912,7 +914,7 @@
         title: "LCI HD backup",
         category: "Infos",
         icon: "icones/lci.png",
-        description: "Chaîne info en direct.",
+        description: "Chaîne info en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr",
         useLivewatch: true
@@ -921,7 +923,7 @@
         title: "Ligue1+ HD backup",
         category: "Sport",
         icon: "icones/ligue1+.png",
-        description: "Chaîne sport en direct.",
+        description: "Chaîne sport en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr",  
         useLivewatch: true
@@ -930,43 +932,43 @@
         title: "Manga HD",
         category: "Jeunesse",
         icon: "icones/mangas.png",
-        description: "Chaîne sport en direct.",
+        description: "Chaîne manga en direct.",
         videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8",
         externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8",  
         useLivewatch: false
       },
-       {
-        title: "Manga HD bachup",
+      {
+        title: "Manga HD backup",
         category: "Jeunesse",
         icon: "icones/mangas.png",
-        description: "Chaîne sport en direct.",
+        description: "Chaîne manga en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr",  
         useLivewatch: true
       },
-       {
+      {
         title: "Télétoon+ HD",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
-        description: "Chaîne sport en direct.",
+        description: "Chaîne jeunesse en direct.",
         videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8",
         externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8",  
         useLivewatch: false
       },
-       {
+      {
         title: "Télétoon+ HD backup",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
-        description: "Chaîne sport en direct.",
+        description: "Chaîne jeunesse en direct (Lien Web).",
         videoUrl: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr",
         externalUrl: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr",  
         useLivewatch: true
       },
-{
+      {
         title: "Télétoon+ HD backup2",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
-        description: "Chaîne sport en direct.",
+        description: "Chaîne jeunesse en direct.",
         videoUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Gt6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8",
         externalUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Gt6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8",  
         useLivewatch: false
@@ -1007,16 +1009,14 @@
     const nextBtn = document.getElementById("nextBtn");
     const playPauseBtn = document.getElementById("playPauseBtn");
     const fullscreenBtn = document.getElementById("fullscreenBtn");
-const choiceModal = document.getElementById("choiceModal");
-const choiceClose = document.getElementById("choiceClose");
-const choiceTitle = document.getElementById("choiceTitle");
-const choiceText = document.getElementById("choiceText");
-const choiceHls = document.getElementById("choiceHls");
-const choiceLivewatch = document.getElementById("choiceLivewatch");
-const choiceExternal = document.getElementById("choiceExternal");
+    const choiceModal = document.getElementById("choiceModal");
+    const choiceClose = document.getElementById("choiceClose");
+    const choiceTitle = document.getElementById("choiceTitle");
+    const choiceText = document.getElementById("choiceText");
+    const choiceHls = document.getElementById("choiceHls");
+    const choiceExternal = document.getElementById("choiceExternal");
 
-let selectedChoiceIndex = null;
-
+    let selectedChoiceIndex = null;
     let started = false;
     let currentIndex = 0;
     let hls = null;
@@ -1098,20 +1098,20 @@ let selectedChoiceIndex = null;
     }
 
     function addToHistory(video) {
-  const key = getVideoKey(video);
-  history = history.filter(item => item !== key);
-  history.unshift(key);
-  history = history.slice(0, 6);
-  saveHistory();
-  renderHomeRows();
-}
+      const key = getVideoKey(video);
+      history = history.filter(item => item !== key);
+      history.unshift(key);
+      history = history.slice(0, 6);
+      saveHistory();
+      renderHomeRows();
+    }
 
-function removeFromHistory(video) {
-  const key = getVideoKey(video);
-  history = history.filter(item => item !== key);
-  saveHistory();
-  renderHomeRows();
-}
+    function removeFromHistory(video) {
+      const key = getVideoKey(video);
+      history = history.filter(item => item !== key);
+      saveHistory();
+      renderHomeRows();
+    }
 
     function getVideosFromKeys(keys) {
       return keys
@@ -1120,111 +1120,78 @@ function removeFromHistory(video) {
     }
 
     function createCard(video, mode = "grid", options = {}) {
-  const originalIndex = videos.indexOf(video);
-  const key = getVideoKey(video);
-  const isFavorite = favorites.includes(key);
+      const originalIndex = videos.indexOf(video);
+      const key = getVideoKey(video);
+      const isFavorite = favorites.includes(key);
 
-  const card = document.createElement("article");
-  card.className = "card";
+      const card = document.createElement("article");
+      card.className = "card";
 
-  card.innerHTML = `
-    ${options.showRemoveHistory ? `
-      <button class="remove-history-btn" type="button" title="Retirer de la reprise">✕</button>
-    ` : ""}
+      card.innerHTML = `
+        ${options.showRemoveHistory ? `
+          <button class="remove-history-btn" type="button" title="Retirer de la reprise">✕</button>
+        ` : ""}
 
-    <button class="favorite-btn ${isFavorite ? "active" : ""}" type="button" title="Favori">
-      ${isFavorite ? "★" : "☆"}
-    </button>
+        <button class="favorite-btn ${isFavorite ? "active" : ""}" type="button" title="Favori">
+          ${isFavorite ? "★" : "☆"}
+        </button>
 
-    <div class="thumb">
-      <img src="${video.icon}" alt="${video.title}" loading="lazy">
-    </div>
+        <div class="thumb">
+          <img src="${video.icon}" alt="${video.title}" loading="lazy">
+        </div>
 
-    <div class="content">
-      <span class="tag">${video.category}</span>
-      <h3>${video.title}</h3>
-      <p>${video.description}</p>
-      <button class="watch-btn" type="button">▶ Regarder</button>
-    </div>
-  `;
+        <div class="content">
+          <span class="tag">${video.category}</span>
+          <h3>${video.title}</h3>
+          <p>${video.description}</p>
+          <button class="watch-btn" type="button">▶ Regarder</button>
+        </div>
+      `;
 
-  // bouton supprimer dans "reprendre"
-  const removeBtn = card.querySelector(".remove-history-btn");
-  if (removeBtn) {
-    removeBtn.addEventListener("click", (event) => {
-      event.stopPropagation();
-      removeFromHistory(video);
-    });
-  }
+      const removeBtn = card.querySelector(".remove-history-btn");
+      if (removeBtn) {
+        removeBtn.addEventListener("click", (event) => {
+          event.stopPropagation();
+          removeFromHistory(video);
+        });
+      }
 
-  // favoris
-  card.querySelector(".favorite-btn").addEventListener("click", (event) => {
-    event.stopPropagation();
-    toggleFavorite(video);
-  });
+      card.querySelector(".favorite-btn").addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleFavorite(video);
+      });
 
-  // lecture
-  card.querySelector(".watch-btn").addEventListener("click", () => {
-  showPlayerChoice(originalIndex);
-});
+      card.querySelector(".watch-btn").addEventListener("click", () => {
+        showPlayerChoice(originalIndex);
+      });
 
-  return card;
-}
+      return card;
+    }
 
     function renderHomeRows() {
-  const historyVideos = getVideosFromKeys(history).slice(0, 4);
-  const favoriteVideos = getVideosFromKeys(favorites);
+      const historyVideos = getVideosFromKeys(history).slice(0, 4);
+      const favoriteVideos = getVideosFromKeys(favorites);
 
-  continueRow.innerHTML = "";
-  favoritesRow.innerHTML = "";
+      continueRow.innerHTML = "";
+      favoritesRow.innerHTML = "";
 
-  // reprise avec bouton supprimer
-  historyVideos.forEach(video => {
-    continueRow.appendChild(
-      createCard(video, "row", { showRemoveHistory: true })
-    );
-  });
+      historyVideos.forEach(video => {
+        continueRow.appendChild(
+          createCard(video, "row", { showRemoveHistory: true })
+        );
+      });
 
-  // favoris normal
-  favoriteVideos.forEach(video => {
-    favoritesRow.appendChild(createCard(video, "row"));
-  });
+      favoriteVideos.forEach(video => {
+        favoritesRow.appendChild(createCard(video, "row"));
+      });
 
-  continueSection.style.display = historyVideos.length ? "block" : "none";
-  favoritesSection.style.display = favoriteVideos.length ? "block" : "none";
-};
+      continueSection.style.display = historyVideos.length ? "block" : "none";
+      favoritesSection.style.display = favoriteVideos.length ? "block" : "none";
+    }
 
     function isM3u8(url) {
       return String(url).toLowerCase().includes(".m3u8");
     }
-
-   function buildLivewatchUrl(rawUrl) {
-  try {
-    const parsed = new URL(rawUrl);
-
-    // Si c’est déjà un player livewatch → on ne touche pas
-    if (parsed.hostname.includes("livewatch.top") && parsed.pathname.includes("/player")) {
-      return rawUrl;
-    }
-
-    // Si c’est un proxy livewatch → on récupère le vrai flux
-    if (parsed.hostname.includes("livewatch.top") && parsed.pathname.includes("/api/proxy")) {
-      const originalUrl = parsed.searchParams.get("url");
-
-      if (originalUrl) {
-        return "https://livewatch.top/player?rl=" + encodeURIComponent(originalUrl);
-      }
-
-      return rawUrl;
-    }
-
-    // Cas normal
-    return "https://livewatch.top/player?rl=" + encodeURIComponent(rawUrl);
-
-  } catch {
-    return "https://livewatch.top/player?rl=" + encodeURIComponent(rawUrl);
-  }
-}
 
     function stopHls() {
       if (hls) {
@@ -1266,113 +1233,108 @@ function removeFromHistory(video) {
     function loadLivewatch(video) {
       playerFrame.style.display = "block";
       hlsVideo.style.display = "none";
-      playerFrame.src = buildLivewatchUrl(video.videoUrl);
+      playerFrame.src = video.videoUrl;
       playPauseBtn.style.display = "none";
     }
 
     function loadHls(video) {
-  playerFrame.style.display = "none";
-  hlsVideo.style.display = "block";
-  playPauseBtn.style.display = "inline-block";
-  playPauseBtn.textContent = "⏸";
+      playerFrame.style.display = "none";
+      hlsVideo.style.display = "block";
+      playPauseBtn.style.display = "inline-block";
+      playPauseBtn.textContent = "⏸";
 
-  if (!isM3u8(video.videoUrl)) {
-    playerError.classList.add("active");
-    return;
-  }
+      if (!isM3u8(video.videoUrl)) {
+        playerError.classList.add("active");
+        return;
+      }
 
-  if (hlsVideo.canPlayType("application/vnd.apple.mpegurl")) {
-    hlsVideo.src = video.videoUrl;
-    hlsVideo.play().catch(() => {});
-    return;
-  }
+      if (hlsVideo.canPlayType("application/vnd.apple.mpegurl")) {
+        hlsVideo.src = video.videoUrl;
+        hlsVideo.play().catch(() => {});
+        return;
+      }
 
-  if (window.Hls && Hls.isSupported()) {
-    hls = new Hls({
-      enableWorker: true,
-      lowLatencyMode: true,
-      backBufferLength: 90
-    });
+      if (window.Hls && Hls.isSupported()) {
+        hls = new Hls({
+          enableWorker: true,
+          lowLatencyMode: true,
+          backBufferLength: 90
+        });
 
-    hls.loadSource(video.videoUrl);
-    hls.attachMedia(hlsVideo);
+        hls.loadSource(video.videoUrl);
+        hls.attachMedia(hlsVideo);
 
-    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      hlsVideo.play().catch(() => {});
-    });
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          hlsVideo.play().catch(() => {});
+        });
 
-    hls.on(Hls.Events.ERROR, (event, data) => {
-      if (data && data.fatal) {
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          if (data && data.fatal) {
+            playerError.classList.add("active");
+          }
+        });
+      } else {
         playerError.classList.add("active");
       }
-    });
-  } else {
-    playerError.classList.add("active");
-  }
     }
-function showPlayerChoice(index) {
-  selectedChoiceIndex = index;
-  const video = videos[index];
 
-  choiceTitle.textContent = video.title;
-  choiceText.textContent = "Choisis le lecteur à utiliser pour cette chaîne.";
+    function showPlayerChoice(index) {
+      selectedChoiceIndex = index;
+      const video = videos[index];
 
-  choiceModal.classList.add("show");
-  document.body.style.overflow = "hidden";
-}
+      choiceTitle.textContent = video.title;
+      choiceText.textContent = "Choisis le lecteur à utiliser pour cette chaîne.";
 
-function closePlayerChoice() {
-  choiceModal.classList.remove("show");
+      choiceModal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
 
-  // On réactive le scroll seulement si le player n'est pas ouvert
-  if (!playerPage.classList.contains("show")) {
-    document.body.style.overflow = "";
-  }
+    function closePlayerChoice() {
+      choiceModal.classList.remove("show");
 
-  selectedChoiceIndex = null;
-}
+      if (!playerPage.classList.contains("show")) {
+        document.body.style.overflow = "";
+      }
 
-function openExternalPlayer(video) {
-  const url = video.externalUrl || video.videoUrl;
+      selectedChoiceIndex = null;
+    }
 
-  if (!url) return;
+    function openExternalPlayer(video) {
+      const url = video.externalUrl || video.videoUrl;
 
-  const isAndroid = /Android/i.test(navigator.userAgent);
+      if (!url) return;
 
-  if (isAndroid && url.startsWith("http")) {
-    const cleanUrl = url.replace(/^https?:\/\//, "");
-    const scheme = url.startsWith("https") ? "https" : "http";
+      const isAndroid = /Android/i.test(navigator.userAgent);
 
-    window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;end`;
-    return;
-  }
+      if (isAndroid && url.startsWith("http")) {
+        const cleanUrl = url.replace(/^https?:\/\//, "");
+        const scheme = url.startsWith("https") ? "https" : "http";
 
-  window.open(url, "_blank");
-}
+        window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;end`;
+        return;
+      }
 
-function openWithChoice(type) {
-  if (selectedChoiceIndex === null) return;
+      window.open(url, "_blank");
+    }
 
-  const index = selectedChoiceIndex;
-  const video = videos[index];
-  addToHistory(video);
-  closePlayerChoice();
+    function openWithChoice(type) {
+      if (selectedChoiceIndex === null) return;
 
-  if (type === "hls") {
-    setTimeout(() => {
-      video.useLivewatch = false;
-      openStream(index);
-    }, 100);
-  }
+      const index = selectedChoiceIndex;
+      const video = videos[index];
+      addToHistory(video);
+      closePlayerChoice();
 
-  if (type === "livewatch") {
-    window.open(buildLivewatchUrl(video.videoUrl), "_blank");
-  }
+      if (type === "hls") {
+        setTimeout(() => {
+          openStream(index);
+        }, 100);
+      }
 
-  if (type === "external") {
-    openExternalPlayer(video);
-  }
-}
+      if (type === "external") {
+        openExternalPlayer(video);
+      }
+    }
 
     function openStream(index) {
       currentIndex = index;
@@ -1381,7 +1343,7 @@ function openWithChoice(type) {
       hideAllPlayers();
 
       playerTitle.textContent = video.title;
-      playerCategory.textContent = video.category + " • " + (video.useLivewatch ? "Livewatch" : "Lecteur HLS intégré");
+      playerCategory.textContent = video.category + " • " + (video.useLivewatch ? "Lecteur Iframe" : "Lecteur HLS intégré");
 
       playerPage.classList.add("show", "playing");
       document.body.style.overflow = "hidden";
@@ -1389,6 +1351,7 @@ function openWithChoice(type) {
       addToHistory(video);
       renderChannelStrip();
 
+      // Si c'est un flux livewatch embarqué (Iframe), on utilise l'Iframe, sinon le moteur HLS standard (.m3u8)
       if (video.useLivewatch) {
         loadLivewatch(video);
       } else {
@@ -1474,17 +1437,16 @@ function openWithChoice(type) {
     nextBtn.addEventListener("click", () => zap(1));
     playPauseBtn.addEventListener("click", togglePlayPause);
     fullscreenBtn.addEventListener("click", toggleFullscreen);
-choiceClose.addEventListener("click", closePlayerChoice);
+    choiceClose.addEventListener("click", closePlayerChoice);
 
-choiceModal.addEventListener("click", (event) => {
-  if (event.target === choiceModal) {
-    closePlayerChoice();
-  }
-});
+    choiceModal.addEventListener("click", (event) => {
+      if (event.target === choiceModal) {
+        closePlayerChoice();
+      }
+    });
 
-choiceHls.addEventListener("click", () => openWithChoice("hls"));
-choiceLivewatch.addEventListener("click", () => openWithChoice("livewatch"));
-choiceExternal.addEventListener("click", () => openWithChoice("external"));
+    choiceHls.addEventListener("click", () => openWithChoice("hls"));
+    choiceExternal.addEventListener("click", () => openWithChoice("external"));
 
     playerStage.addEventListener("mousemove", showOverlayTemporarily);
     playerStage.addEventListener("touchstart", showOverlayTemporarily);
