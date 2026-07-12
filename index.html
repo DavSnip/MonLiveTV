@@ -373,6 +373,133 @@
 
     .empty.active { display: block; }
 
+    /* --- STYLE DU MODULE DE CHOIX --- */
+    .choice-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 8000;
+      background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .choice-modal.show { display: flex; }
+
+    .choice-box {
+      width: min(480px, 100%);
+      position: relative;
+      border-radius: 28px;
+      padding: 30px;
+      background: radial-gradient(circle at top right, rgba(37,99,235,0.35), transparent 45%), #111827;
+      color: white;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .choice-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .choice-box h2 { margin: 0 0 10px; font-size: 1.6rem; }
+    .choice-box p { margin: 0 0 22px; color: #a1a1aa; line-height: 1.5; }
+    .choice-buttons { display: grid; gap: 12px; }
+
+    .choice-btn {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 1rem;
+      color: white;
+      background: rgba(255,255,255,0.06);
+      text-align: left;
+      transition: background 0.2s;
+    }
+    .choice-btn:hover { background: #2563eb; }
+
+    /* --- STYLE DU LECTEUR INTEGRÉ --- */
+    .custom-player-page {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: #000;
+      color: white;
+    }
+    .custom-player-page.show { display: block; }
+
+    .player-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: #000;
+    }
+
+    #myInternalVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .player-ui {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent 25%, transparent 75%, rgba(0,0,0,0.9));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: calc(15px + env(safe-area-inset-top)) calc(15px + env(safe-area-inset-right)) calc(15px + env(safe-area-inset-bottom)) calc(15px + env(safe-area-inset-left));
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+    
+    .player-ui.idle { opacity: 0; }
+    .player-ui * { pointer-events: auto; }
+
+    .player-header, .player-footer { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    
+    .player-btn {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: bold;
+      backdrop-filter: blur(8px);
+    }
+    .player-btn:hover { background: #2563eb; }
+    .player-controls { display: flex; gap: 10px; }
+
+    .player-error {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      z-index: 9050;
+    }
+    .player-error.active { display: grid; }
+    .error-box { max-width: 480px; border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 24px; background: rgba(255,255,255,0.05); }
+
     .author {
       position: fixed;
       right: 16px;
@@ -394,19 +521,12 @@
     }
 
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
+      header { flex-direction: column; align-items: flex-start; }
       .theme-toggle { width: 100%; }
       .grid { grid-template-columns: 1fr; }
       .row .card { flex-basis: 82%; }
-
-      .intro-logo {
-        width: 125px;
-        height: 125px;
-      }
+      .intro-logo { width: 125px; height: 125px; }
+      .player-footer { flex-direction: column; gap: 14px; }
     }
   </style>
 </head>
@@ -414,6 +534,7 @@
 <body>
   <audio id="startSound" src="sound.wav" preload="auto"></audio>
 
+  <!-- Ecran de démarrage -->
   <div class="intro-screen" id="introScreen">
     <div class="intro-content">
       <img src="logo.png" alt="MonLiveTv" class="intro-logo">
@@ -421,6 +542,7 @@
     </div>
   </div>
 
+  <!-- Application Principale -->
   <main class="app" id="app">
     <header>
       <div class="brand">
@@ -429,10 +551,9 @@
         </div>
         <div>
           <h1>MonLiveTv</h1>
-          <p class="subtitle">Vos favoris externes en un clic.</p>
+          <p class="subtitle">Lecteur intégré ou diffusion externe.</p>
         </div>
       </div>
-
       <button class="theme-toggle" id="themeToggle">🌙 Mode sombre</button>
     </header>
 
@@ -440,19 +561,19 @@
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="live-dot"></span>
-          <span>DIFFUSION EXTERNE DIRECTE</span>
+          <span>SYSTEME DE LECTURE UNIFIE</span>
         </div>
-        <h2>Envoyez vos chaînes instantanément.</h2>
-        <p>Ajoutez vos chaînes préférées en favoris et reprenez instantanément vos dernières lectures sur vos applications et lecteurs externes compatibles.</p>
+        <h2>Prenez le contrôle de vos flux.</h2>
+        <p>Regardez vos chaînes directement sur votre écran grâce au lecteur interne, ou basculez en un clic vers votre application de cast préférée.</p>
         <div class="hero-actions">
-          <button class="hero-btn" id="heroPlayBtn">▶ Diffuser la 1ère chaîne</button>
+          <button class="hero-btn" id="heroPlayBtn">▶ Lancer la première chaîne</button>
           <button class="hero-btn secondary" id="heroFavoritesBtn">★ Mes favoris</button>
         </div>
       </div>
     </section>
 
     <section id="continueSection">
-      <h2 class="section-title">Reprendre la lecture externe</h2>
+      <h2 class="section-title">Reprendre la lecture</h2>
       <div class="row" id="continueRow"></div>
     </section>
 
@@ -463,7 +584,6 @@
 
     <section class="controls">
       <input id="searchInput" class="search-box" type="search" placeholder="Rechercher une chaîne, un thème...">
-
       <select id="categorySelect">
         <option value="Tout">Tout</option>
         <option value="Généraliste">Généraliste</option>
@@ -479,8 +599,58 @@
     <div class="empty" id="emptyState">Aucun résultat trouvé.</div>
   </main>
 
+  <!-- Boîte de Dialogue de Choix du Lecteur -->
+  <div class="choice-modal" id="choiceModal">
+    <div class="choice-box">
+      <button class="choice-close" id="choiceClose">✕</button>
+      <h2 id="choiceTitle">Options de lecture</h2>
+      <p>Sélectionnez la méthode de diffusion pour cette chaîne.</p>
+      <div class="choice-buttons">
+        <button class="choice-btn" id="choiceInternal">📱 Ouvrir dans le lecteur interne</button>
+        <button class="choice-btn" id="choiceExternal">📺 Envoyer vers l'application externe / Cast</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ton Lecteur Intégré Plein Écran -->
+  <section class="custom-player-page" id="customPlayerPage">
+    <div class="player-container" id="playerContainer">
+      <video id="myInternalVideo" playsinline autoplay></video>
+      
+      <!-- Écran de gestion des erreurs de protocole (HTTP/HTTPS) -->
+      <div class="player-error" id="playerInternalError">
+        <div class="error-box">
+          <h2>Blocage de sécurité (Contenu Mixte)</h2>
+          <p style="margin-bottom:20px; color:#a1a1aa;">Ce flux utilise une adresse non sécurisée (HTTP) que votre navigateur bloque à l'intérieur de cette page sécurisée (HTTPS).</p>
+          <button class="player-btn" id="errorSwitchExternal" style="background:#2563eb;">📺 Ouvrir via l'application externe</button>
+          <button class="player-btn" id="errorClose" style="margin-left:8px;">Fermer</button>
+        </div>
+      </div>
+
+      <!-- Interface utilisateur du lecteur -->
+      <div class="player-ui" id="playerUi">
+        <div class="player-header">
+          <button class="player-btn" id="closePlayerBtn">✕ Retour</button>
+          <h2 id="internalPlayerTitle" style="margin:0; font-size:clamp(1rem, 2.5vw, 1.4rem); text-shadow:0 2px 4px rgba(0,0,0,0.8);">Chaîne</h2>
+        </div>
+        
+        <div class="player-footer">
+          <div class="player-controls">
+            <button class="player-btn" id="playerZapPrev">⟵ Zapper</button>
+            <button class="player-btn" id="playerTogglePlay">⏸ Pause</button>
+            <button class="player-btn" id="playerZapNext">Zapper ⟶</button>
+          </div>
+          <button class="player-btn" id="playerFullscreenBtn">⛶ Plein écran</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="author">SnipDav</div>
   
+  <!-- Script du Moteur HLS Universel -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
   <script>
     const videos = [
       {
@@ -488,136 +658,119 @@
         category: "Généraliste",
         icon: "icones/canal+.png",
         description: "Flux généraliste en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/20.m3u8",
-        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/20.m3u8"
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/20.m3u8"
       },
       {
         title: "Canal+ HD backup",
         category: "Généraliste",
         icon: "icones/canal+.png",
         description: "Flux généraliste en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/embed/40213668447d8ff3bec243-8e2eee7d914ecf",
-        externalUrl: "https://livewatch.top/embed/40213668447d8ff3bec243-8e2eee7d914ecf"
+        videoUrl: "https://livewatch.top/embed/40213668447d8ff3bec243-8e2eee7d914ecf"
       },
       {
         title: "Canal+ HD backup2",
         category: "Généraliste",
         icon: "icones/canal+.png",
         description: "Flux généraliste en direct.",
-        videoUrl: "https://mjkskdvpfpb1fbv.ngolpdkyoctjcddxshli469r.org/sunshine/_FZYcoajXHKkx77mSxjSuRwwnOFhzSpCcbqnWjgO21AFeKijPCMiiBY-nGfGZWLehZC2qMR1PC44GoNrT1WXRcR6fjoefCPLjlfbE9bFSaNjY6bs-A0Fr76v8qvWj7Q-nGZfYPCMV4eWY70MFQiKQs53QMj7empuaN54zuzqtMbLT4ftNmr-X3DJffofNqanAWdy_kGHmCv_n3a3wnsIEvxPJASSH7XKTfuCRnAF6D-tR2hMlhoye-C-rAT3LLgnh0dXgDIo3J42K7J7BvvNfA/hls/index.m3u8",
-        externalUrl: "https://mjkskdvpfpb1fbv.ngolpdkyoctjcddxshli469r.org/sunshine/_FZYcoajXHKkx77mSxjSuRwwnOFhzSpCcbqnWjgO21AFeKijPCMiiBY-nGfGZWLehZC2qMR1PC44GoNrT1WXRcR6fjoefCPLjlfbE9bFSaNjY6bs-A0Fr76v8qvWj7Q-nGZfYPCMV4eWY70MFQiKQs53QMj7empuaN54zuzqtMbLT4ftNmr-X3DJffofNqanAWdy_kGHmCv_n3a3wnsIEvxPJASSH7XKTfuCRnAF6D-tR2hMlhoye-C-rAT3LLgnh0dXgDIo3J42K7J7BvvNfA/hls/index.m3u8"
+        videoUrl: "https://mjkskdvpfpb1fbv.ngolpdkyoctjcddxshli469r.org/sunshine/_FZYcoajXHKkx77mSxjSuRwwnOFhzSpCcbqnWjgO21AFeKijPCMiiBY-nGfGZWLehZC2qMR1PC44GoNrT1WXRcR6fjoefCPLjlfbE9bFSaNjY6bs-A0Fr76v8qvWj7Q-nGZfYPCMV4eWY70MFQiKQs53QMj7empuaN54zuzqtMbLT4ftNmr-X3DJffofNqanAWdy_kGHmCv_n3a3wnsIEvxPJASSH7XKTfuCRnAF6D-tR2hMlhoye-C-rAT3LLgnh0dXgDIo3J42K7J7BvvNfA/hls/index.m3u8"
       },
       {
         title: "Disney Channel HD",
         category: "Jeunesse",
         icon: "icones/disneychannel.png",
         description: "Chaîne jeunesse en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/72.m3u8",
-        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/72.m3u8"
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/72.m3u8"
       },
       {
         title: "Disney Channel HD backup",
         category: "Jeunesse",
         icon: "icones/disneychannel.png",
         description: "Chaîne jeunesse en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr"
       },
       {
         title: "Ligue1+ HD",
         category: "Sport",
         icon: "icones/ligue1+.png",
         description: "Chaîne sport en direct.",
-        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8",
-        externalUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8"
+        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8"
       },
       {
         title: "Syfy HD",
         category: "Cinéma",
         icon: "icones/syfy.png",
         description: "Chaîne cinéma en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/35.m3u8",
-        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/35.m3u8"
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/35.m3u8"
       },
       {
         title: "Syfy HD backup",
         category: "Cinéma",
         icon: "icones/syfy.png",
         description: "Chaîne cinéma en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr"
       },
       {
         title: "RMC Découverte HD",
         category: "Découverte",
         icon: "icones/rmcdecouverte.png",
         description: "Chaîne découverte en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr"
       },
       {
         title: "LCI HD",
         category: "Infos",
         icon: "icones/lci.png",
         description: "Chaîne info en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8",
-        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8"
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8"
       },
       {
         title: "LCI HD backup",
         category: "Infos",
         icon: "icones/lci.png",
         description: "Chaîne info en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr"
       },
       {
         title: "Ligue1+ HD backup",
         category: "Sport",
         icon: "icones/ligue1+.png",
         description: "Chaîne sport en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr"
       },
       {
         title: "Manga HD",
         category: "Jeunesse",
         icon: "icones/mangas.png",
         description: "Chaîne manga en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8",
-        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8"
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8"
       },
       {
         title: "Manga HD backup",
         category: "Jeunesse",
         icon: "icones/mangas.png",
         description: "Chaîne manga en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr"
       },
       {
         title: "Télétoon+ HD",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
         description: "Chaîne jeunesse en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8",
-        externalUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8"
+        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8"
       },
       {
         title: "Télétoon+ HD backup",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
         description: "Chaîne jeunesse en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr",
-        externalUrl: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr"
+        videoUrl: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr"
       },
       {
         title: "Télétoon+ HD backup2",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
         description: "Chaîne jeunesse en direct.",
-        videoUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Gt6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8",
-        externalUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Gt6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8"
+        videoUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Gt6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8"
       }
     ];
 
@@ -625,7 +778,6 @@
     const introScreen = document.getElementById("introScreen");
     const app = document.getElementById("app");
     const startSound = document.getElementById("startSound");
-
     const themeToggle = document.getElementById("themeToggle");
     const searchInput = document.getElementById("searchInput");
     const categorySelect = document.getElementById("categorySelect");
@@ -640,7 +792,31 @@
     const heroPlayBtn = document.getElementById("heroPlayBtn");
     const heroFavoritesBtn = document.getElementById("heroFavoritesBtn");
 
+    /* Eléments Modale et Lecteur Interne */
+    const choiceModal = document.getElementById("choiceModal");
+    const choiceClose = document.getElementById("choiceClose");
+    const choiceTitle = document.getElementById("choiceTitle");
+    const choiceInternal = document.getElementById("choiceInternal");
+    const choiceExternal = document.getElementById("choiceExternal");
+
+    const customPlayerPage = document.getElementById("customPlayerPage");
+    const myVideo = document.getElementById("myInternalVideo");
+    const closePlayerBtn = document.getElementById("closePlayerBtn");
+    const internalPlayerTitle = document.getElementById("internalPlayerTitle");
+    const playerTogglePlay = document.getElementById("playerTogglePlay");
+    const playerZapPrev = document.getElementById("playerZapPrev");
+    const playerZapNext = document.getElementById("playerZapNext");
+    const playerFullscreenBtn = document.getElementById("playerFullscreenBtn");
+    const playerUi = document.getElementById("playerUi");
+    const playerContainer = document.getElementById("playerContainer");
+    const playerInternalError = document.getElementById("playerInternalError");
+    const errorSwitchExternal = document.getElementById("errorSwitchExternal");
+    const errorClose = document.getElementById("errorClose");
+
     let started = false;
+    let selectedIndex = null;
+    let internalHls = null;
+    let uiTimer = null;
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     let history = JSON.parse(localStorage.getItem("watchHistory") || "[]");
 
@@ -720,11 +896,27 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    function launchExternalApp(video) {
-      const url = video.externalUrl || video.videoUrl;
+    /* GESTION DE L'OUVERTURE ET DU CHOIX */
+    function openChoiceModal(video) {
+      const sorted = getSortedVideos();
+      selectedIndex = sorted.findIndex(v => getVideoKey(v) === getVideoKey(video));
+      choiceTitle.textContent = video.title;
+      choiceModal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeChoiceModal() {
+      choiceModal.classList.remove("show");
+      if(!customPlayerPage.classList.contains("show")) document.body.style.overflow = "";
+    }
+
+    function launchExternalApp() {
+      const video = getSortedVideos()[selectedIndex];
+      const url = video.videoUrl;
       if (!url) return;
 
       addToHistory(video);
+      closeChoiceModal();
 
       const isAndroid = /Android/i.test(navigator.userAgent);
       if (isAndroid && url.startsWith("http")) {
@@ -734,6 +926,77 @@
         return;
       }
       window.open(url, "_blank");
+    }
+
+    /* LOGIQUE DU LECTEUR INTERNE AVANCÉ */
+    function launchInternalPlayer() {
+      closeChoiceModal();
+      playerInternalError.classList.remove("active");
+      
+      const video = getSortedVideos()[selectedIndex];
+      addToHistory(video);
+
+      internalPlayerTitle.textContent = video.title;
+      customPlayerPage.classList.add("show");
+      document.body.style.overflow = "hidden";
+
+      const url = video.videoUrl;
+
+      // Détection Contenu Mixte (Bloqué par sécurité par les navigateurs)
+      if (window.location.protocol === 'https:' && url.startsWith('http://')) {
+        playerInternalError.classList.add("active");
+        return;
+      }
+
+      if (myVideo.canPlayType('application/vnd.apple.mpegurl')) {
+        myVideo.src = url;
+        myVideo.play().catch(() => { playerInternalError.classList.add("active"); });
+      } 
+      else if (Hls.isSupported()) {
+        if (internalHls) internalHls.destroy();
+        internalHls = new Hls({ enableWorker: true, lowLatencyMode: true });
+        internalHls.loadSource(url);
+        internalHls.attachMedia(myVideo);
+        internalHls.on(Hls.Events.MANIFEST_PARSED, () => {
+          myVideo.play().catch(() => { playerInternalError.classList.add("active"); });
+        });
+        internalHls.on(Hls.Events.ERROR, (event, data) => {
+          if (data.fatal) playerInternalError.classList.add("active");
+        });
+      } else {
+        playerInternalError.classList.add("active");
+      }
+      
+      resetUiTimeout();
+    }
+
+    function closeInternalPlayer() {
+      if (internalHls) { internalHls.destroy(); internalHls = null; }
+      myVideo.pause();
+      myVideo.src = "";
+      customPlayerPage.classList.remove("show");
+      document.body.style.overflow = "";
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    }
+
+    function internalZap(direction) {
+      const sorted = getSortedVideos();
+      selectedIndex += direction;
+      if (selectedIndex < 0) selectedIndex = sorted.length - 1;
+      if (selectedIndex >= sorted.length) selectedIndex = 0;
+      
+      if (internalHls) internalHls.destroy();
+      myVideo.pause();
+      launchInternalPlayer();
+    }
+
+    /* EFFET D'AUTO-HIDE DE L'INTERFACE */
+    function resetUiTimeout() {
+      playerUi.classList.remove("idle");
+      clearTimeout(uiTimer);
+      uiTimer = setTimeout(() => {
+        if (!myVideo.paused) playerUi.classList.add("idle");
+      }, 3500);
     }
 
     function createCard(video, mode = "grid", options = {}) {
@@ -755,7 +1018,7 @@
           <span class="tag">${video.category}</span>
           <h3>${video.title}</h3>
           <p>${video.description}</p>
-          <button class="watch-btn" type="button">📺 Diffuser</button>
+          <button class="watch-btn" type="button">▶ Regarder</button>
         </div>
       `;
 
@@ -764,7 +1027,7 @@
         removeBtn.addEventListener("click", (e) => { e.stopPropagation(); removeFromHistory(video); });
       }
       card.querySelector(".favorite-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleFavorite(video); });
-      card.querySelector(".watch-btn").addEventListener("click", () => launchExternalApp(video));
+      card.querySelector(".watch-btn").addEventListener("click", () => openChoiceModal(video));
 
       return card;
     }
@@ -811,10 +1074,44 @@
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
 
-    heroPlayBtn.addEventListener("click", () => { if(videos.length > 0) launchExternalApp(getSortedVideos()[0]); });
+    /* EVENEMENTS ECOUTEURS */
+    heroPlayBtn.addEventListener("click", () => { if(videos.length > 0) openChoiceModal(getSortedVideos()[0]); });
     heroFavoritesBtn.addEventListener("click", () => { favoritesSection.scrollIntoView({ behavior: 'smooth' }); });
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
+    
+    choiceClose.addEventListener("click", closeChoiceModal);
+    choiceInternal.addEventListener("click", launchInternalPlayer);
+    choiceExternal.addEventListener("click", launchExternalApp);
+    
+    closePlayerBtn.addEventListener("click", closeInternalPlayer);
+    playerZapPrev.addEventListener("click", () => internalZap(-1));
+    playerZapNext.addEventListener("click", () => internalZap(1));
+    
+    playerTogglePlay.addEventListener("click", () => {
+      if (myVideo.paused) { myVideo.play(); playerTogglePlay.textContent = "⏸ Pause"; } 
+      else { myVideo.pause(); playerTogglePlay.textContent = "▶ Lecture"; }
+    });
+
+    playerFullscreenBtn.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        playerContainer.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    errorSwitchExternal.addEventListener("click", () => {
+      const currentVid = getSortedVideos()[selectedIndex];
+      closeInternalPlayer();
+      openChoiceModal(currentVid);
+      launchExternalApp();
+    });
+    errorClose.addEventListener("click", closeInternalPlayer);
+
+    playerContainer.addEventListener("mousemove", resetUiTimeout);
+    playerContainer.addEventListener("touchstart", resetUiTimeout);
+    playerContainer.addEventListener("click", resetUiTimeout);
 
     renderHomeRows();
     renderVideos();
