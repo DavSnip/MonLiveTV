@@ -701,7 +701,7 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* REDIRECTION FORCEE ET EXCLUSIVE VERS WEB VIDEO CASTER */
+    /* FORMAT FORCE POUR DEVERROUILLER LA LECTURE AUTOMATIQUE DIRECTE */
     function launchWebVideoCaster(video) {
       const url = video.videoUrl;
       if (!url) return;
@@ -710,14 +710,14 @@
 
       const isAndroid = /Android/i.test(navigator.userAgent);
       if (isAndroid) {
-        const cleanUrl = url.replace(/^https?:\/\//, "");
-        const scheme = url.startsWith("https") ? "https" : "http";
+        // Encodage strict du flux pour éviter les erreurs d'interprétation d'URL par Android
+        const encodedUrl = encodeURIComponent(url);
         
-        // Ciblage strict de l'application Web Video Caster officielle
-        window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;end`;
+        // Utilisation du format intent alternatif direct-to-activity (action VIEW) 
+        // avec flag de réutilisation (Brings existing to front) pour empêcher le bug d'application déjà lancée
+        window.location.href = `intent:#Intent;action=android.intent.action.VIEW;data=${encodedUrl};type=video/*;package=com.instantbits.cast.webvideo;S.android.intent.extra.TEXT=${encodedUrl};launchFlags=0x10000000;end`;
         return;
       }
-      // Solution de secours pour PC/iOS
       window.open(url, "_blank");
     }
 
