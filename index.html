@@ -438,7 +438,7 @@
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="live-dot"></span>
-          <span>INTENT EXCLUSIF WEB VIDEO CASTER</span>
+          <span>REDIRECTION WEB VIDEO CASTER</span>
         </div>
         <h2>Vos flux sans aucune coupure.</h2>
         <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers l'application externe pour une lecture fluide et continue sur votre écran.</p>
@@ -701,7 +701,7 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* FORMAT FORCE POUR DEVERROUILLER LA LECTURE AUTOMATIQUE DIRECTE */
+    /* FORMAT DE CONTOURNE COMPATIBLE STANDARD AVEC LE BON PACKAGE MOBILE */
     function launchWebVideoCaster(video) {
       const url = video.videoUrl;
       if (!url) return;
@@ -710,12 +710,11 @@
 
       const isAndroid = /Android/i.test(navigator.userAgent);
       if (isAndroid) {
-        // Encodage strict du flux pour éviter les erreurs d'interprétation d'URL par Android
-        const encodedUrl = encodeURIComponent(url);
+        // Retour au format d'URL Intent de base, ultra-compatible
+        const cleanUrl = url.replace(/^https?:\/\//, "");
+        const scheme = url.startsWith("https") ? "https" : "http";
         
-        // Utilisation du format intent alternatif direct-to-activity (action VIEW) 
-        // avec flag de réutilisation (Brings existing to front) pour empêcher le bug d'application déjà lancée
-        window.location.href = `intent:#Intent;action=android.intent.action.VIEW;data=${encodedUrl};type=video/*;package=com.instantbits.cast.webvideo;S.android.intent.extra.TEXT=${encodedUrl};launchFlags=0x10000000;end`;
+        window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;end`;
         return;
       }
       window.open(url, "_blank");
