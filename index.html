@@ -427,7 +427,7 @@
         </div>
         <div>
           <h1>MonLiveTv</h1>
-          <p class="subtitle">Lecture continue optimisée dans Web Video Caster.</p>
+          <p class="subtitle">Lecture forcée et continue dans Web Video Caster.</p>
         </div>
       </div>
 
@@ -438,7 +438,7 @@
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="live-dot"></span>
-          <span>INTENT INTÉLLIGENT WEB VIDEO CASTER</span>
+          <span>CIBLAGE FORCE DE LECTURE</span>
         </div>
         <h2>Vos flux sans aucune coupure.</h2>
         <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers l'application externe pour une lecture fluide et continue sur votre écran.</p>
@@ -701,7 +701,7 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* GESTION INTELLIGENTE INTEGREE / INTENT */
+    /* REDIRECTION FORCEE COMPOSANT INTERNE DE LECTURE WVC */
     function launchWebVideoCaster(video) {
       const url = video.videoUrl;
       if (!url) return;
@@ -711,25 +711,21 @@
       const ua = navigator.userAgent.toLowerCase();
       const isAndroid = /android/i.test(ua);
       
-      // DETECTION : Si le site est déjà ouvert dans le navigateur web interne de Web Video Caster
       const isAlreadyInWebVideoCaster = ua.includes("wvc") || ua.includes("webvideocaster");
 
       if (isAndroid) {
         if (isAlreadyInWebVideoCaster) {
-          // Si on est déjà dedans, on ouvre simplement le lien brute directement.
-          // L'application va détecter le flux vidéo HLS et proposer de le caster sans planter.
           window.location.href = url;
           return;
         } else {
-          // Si on est sur Chrome externe, on force l'ouverture vers l'application principale
-          const cleanUrl = url.replace(/^https?:\/\//, "");
-          const scheme = url.startsWith("https") ? "https" : "http";
-          window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;launchFlags=0x20000000;end`;
+          // Utilisation du composant interne exact de lecture vidéo (wvcactivity)
+          // Cela force l'ouverture directe du lecteur vidéo sans passer par le navigateur de l'application
+          const intentUrl = `intent:${url}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.instantbits.cast.webvideo;component=com.instantbits.cast.webvideo/.wvcactivity;launchFlags=0x20000000;end`;
+          window.location.href = intentUrl;
           return;
         }
       }
       
-      // Fallback PC / iOS / Télécommandes Web
       window.open(url, "_blank");
     }
 
