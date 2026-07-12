@@ -427,7 +427,7 @@
         </div>
         <div>
           <h1>MonLiveTv</h1>
-          <p class="subtitle">Sélection libre de vos lecteurs externes.</p>
+          <p class="subtitle">Lecture continue optimisée dans Web Video Caster.</p>
         </div>
       </div>
 
@@ -438,10 +438,10 @@
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="live-dot"></span>
-          <span>LECTEUR EXTERNE AU CHOIX</span>
+          <span>INTENT INTÉLLIGENT WEB VIDEO CASTER</span>
         </div>
-        <h2>Ouvrez vos chaînes librement.</h2>
-        <p>Ajoutez vos chaînes préférées en favoris et basculez en un clic vers la fenêtre de sélection Android pour choisir instantanément votre application préférée.</p>
+        <h2>Vos flux sans aucune coupure.</h2>
+        <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers l'application externe pour une lecture fluide et continue sur votre écran.</p>
         <div class="hero-actions">
           <button class="hero-btn" id="heroPlayBtn">▶ Lancer la première chaîne</button>
           <button class="hero-btn secondary" id="heroFavoritesBtn">★ Mes favoris</button>
@@ -450,7 +450,7 @@
     </section>
 
     <section id="continueSection">
-      <h2 class="section-title">Reprendre la lecture externe</h2>
+      <h2 class="section-title">Reprendre la lecture</h2>
       <div class="row" id="continueRow"></div>
     </section>
 
@@ -598,7 +598,7 @@
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
         description: "Chaîne jeunesse en direct.",
-        videoUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Gt6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8"
+        videoUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Rl6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8"
       }
     ];
 
@@ -701,24 +701,35 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* FORMAT D'INTENT GENERIQUE SANS AUCUN PACKAGE PRE-DÉFINI */
-    function launchGenericIntent(video) {
+    /* GESTION INTELLIGENTE INTEGREE / INTENT */
+    function launchWebVideoCaster(video) {
       const url = video.videoUrl;
       if (!url) return;
 
       addToHistory(video);
 
-      const isAndroid = /Android/i.test(navigator.userAgent);
+      const ua = navigator.userAgent.toLowerCase();
+      const isAndroid = /android/i.test(ua);
+      
+      // DETECTION : Si le site est déjà ouvert dans le navigateur web interne de Web Video Caster
+      const isAlreadyInWebVideoCaster = ua.includes("wvc") || ua.includes("webvideocaster");
+
       if (isAndroid) {
-        // En enlevant le paramètre "package=", Android va obligatoirement ouvrir
-        // son menu de sélection natif pour te proposer toutes tes applications compatibles.
-        const cleanUrl = url.replace(/^https?:\/\//, "");
-        const scheme = url.startsWith("https") ? "https" : "http";
-        
-        window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;end`;
-        return;
+        if (isAlreadyInWebVideoCaster) {
+          // Si on est déjà dedans, on ouvre simplement le lien brute directement.
+          // L'application va détecter le flux vidéo HLS et proposer de le caster sans planter.
+          window.location.href = url;
+          return;
+        } else {
+          // Si on est sur Chrome externe, on force l'ouverture vers l'application principale
+          const cleanUrl = url.replace(/^https?:\/\//, "");
+          const scheme = url.startsWith("https") ? "https" : "http";
+          window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;launchFlags=0x20000000;end`;
+          return;
+        }
       }
-      // Ouverture classique si tu es sur PC ou iOS
+      
+      // Fallback PC / iOS / Télécommandes Web
       window.open(url, "_blank");
     }
 
@@ -750,7 +761,7 @@
         removeBtn.addEventListener("click", (e) => { e.stopPropagation(); removeFromHistory(video); });
       }
       card.querySelector(".favorite-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleFavorite(video); });
-      card.querySelector(".watch-btn").addEventListener("click", () => launchGenericIntent(video));
+      card.querySelector(".watch-btn").addEventListener("click", () => launchWebVideoCaster(video));
 
       return card;
     }
@@ -797,7 +808,7 @@
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
 
-    heroPlayBtn.addEventListener("click", () => { if(videos.length > 0) launchGenericIntent(getSortedVideos()[0]); });
+    heroPlayBtn.addEventListener("click", () => { if(videos.length > 0) launchWebVideoCaster(getSortedVideos()[0]); });
     heroFavoritesBtn.addEventListener("click", () => { favoritesSection.scrollIntoView({ behavior: 'smooth' }); });
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
