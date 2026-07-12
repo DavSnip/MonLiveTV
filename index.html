@@ -438,7 +438,7 @@
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="live-dot"></span>
-          <span>ROUTAGE EXCLUSIF SANS ERREUR</span>
+          <span>INTENT INTÉLLIGENT WEB VIDEO CASTER</span>
         </div>
         <h2>Vos flux sans aucune coupure.</h2>
         <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers l'application externe pour une lecture fluide et continue sur votre écran.</p>
@@ -701,7 +701,7 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* PROTECTION RESEAU DOUBLE FLUX SANS ERREUR */
+    /* GESTION INTELLIGENTE INTEGREE / INTENT */
     function launchWebVideoCaster(video) {
       const url = video.videoUrl;
       if (!url) return;
@@ -711,25 +711,25 @@
       const ua = navigator.userAgent.toLowerCase();
       const isAndroid = /android/i.test(ua);
       
-      // Détection fiable pour savoir si la navigation se fait DEPUIS l'appli Web Video Caster
+      // DETECTION : Si le site est déjà ouvert dans le navigateur web interne de Web Video Caster
       const isAlreadyInWebVideoCaster = ua.includes("wvc") || ua.includes("webvideocaster");
 
       if (isAndroid) {
         if (isAlreadyInWebVideoCaster) {
-          // PROTECTION DOUBLE INTEGRATION :
-          // Si on est déjà dans l'application, l'utilisation de "intent:" fait planter l'activité.
-          // On envoie le flux en url brute. L'appli l'intercepte proprement à la volée.
+          // Si on est déjà dedans, on ouvre simplement le lien brute directement.
+          // L'application va détecter le flux vidéo HLS et proposer de le caster sans planter.
           window.location.href = url;
           return;
         } else {
-          // Si on clique depuis Chrome externe : on force le lancement du lecteur embarqué direct (.wvcactivity)
-          // Sans passer par l'étape du choix de l'URL dans le navigateur interne.
-          const intentUrl = `intent:${url}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.instantbits.cast.webvideo;component=com.instantbits.cast.webvideo/.wvcactivity;launchFlags=0x20000000;end`;
-          window.location.href = intentUrl;
+          // Si on est sur Chrome externe, on force l'ouverture vers l'application principale
+          const cleanUrl = url.replace(/^https?:\/\//, "");
+          const scheme = url.startsWith("https") ? "https" : "http";
+          window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;launchFlags=0x20000000;end`;
           return;
         }
       }
       
+      // Fallback PC / iOS / Télécommandes Web
       window.open(url, "_blank");
     }
 
