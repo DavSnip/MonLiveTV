@@ -373,6 +373,99 @@
 
     .empty.active { display: block; }
 
+    /* STYLE DE LA FENETRE MODALE DE SOURCES */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: var(--card);
+      color: var(--text);
+      width: min(440px, 90%);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      transform: translateY(25px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+      transform: translateY(0);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.6rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+    }
+
+    .close-modal:hover { opacity: 1; }
+
+    .modal h3 {
+      margin: 0 0 6px;
+      font-size: 1.4rem;
+    }
+
+    .modal-subtitle {
+      color: var(--muted);
+      margin: 0 0 20px;
+      font-size: 0.9rem;
+    }
+
+    .source-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .source-btn {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      padding: 14px 18px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .source-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: transparent;
+      transform: scale(1.01);
+    }
+
     .author {
       position: fixed;
       right: 16px;
@@ -415,6 +508,16 @@
     <div class="intro-content">
       <img src="logo.png" alt="MonLiveTv" class="intro-logo">
       <div class="tap-text">Touchez pour démarrer</div>
+    </div>
+  </div>
+
+  <!-- Fenêtre Modale de Sélection de Sources -->
+  <div class="modal" id="sourceModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModalBtn" title="Fermer">&times;</button>
+      <h3 id="modalTitle">Nom de la Chaîne</h3>
+      <p class="modal-subtitle">Choisissez une source de lecture :</p>
+      <div class="source-list" id="modalSourceList"></div>
     </div>
   </div>
 
@@ -480,125 +583,96 @@
   <div class="author">SnipDav</div>
   
   <script>
+    // Les chaînes sont désormais regroupées de façon unique avec un tableau "sources"
     const videos = [
       {
-        title: "Canal+ HD",
+        title: "Canal+",
         category: "Généraliste",
         icon: "icones/canal+.png",
         description: "Flux généraliste en direct.",
-        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528546.m3u8"
+        sources: [
+          { label: "Source HD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528546.m3u8" },
+          { label: "Source FHD (Lien Web)", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528545.m3u8" }
+        ]
       },
       {
-        title: "Canal+ FHD",
-        category: "Généraliste",
-        icon: "icones/canal+.png",
-        description: "Flux généraliste en direct (Lien Web).",
-        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528545.m3u8"
-      },
-      {
-        title: "M6 FHD",
+        title: "M6",
         category: "Généraliste",
         icon: "icones/M6.png",
         description: "Flux généraliste en direct.",
-        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8"
+        sources: [
+          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8" }
+        ]
       },
       {
-        title: "Disney Channel FHD",
+        title: "Disney Channel",
         category: "Jeunesse",
         icon: "icones/disneychannel.png",
         description: "Chaîne jeunesse en direct.",
-        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/198.m3u8"
+        sources: [
+          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/198.m3u8" },
+          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr" }
+        ]
       },
       {
-        title: "Disney Channel HD backup",
-        category: "Jeunesse",
-        icon: "icones/disneychannel.png",
-        description: "Chaîne jeunesse en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr"
-      },
-      {
-        title: "Ligue1+ HD",
+        title: "Ligue1+",
         category: "Sport",
         icon: "icones/ligue1+.png",
         description: "Chaîne sport en direct.",
-        videoUrl: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8"
+        sources: [
+          { label: "Source HD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8" },
+          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr" }
+        ]
       },
       {
-        title: "Syfy HD",
+        title: "Syfy",
         category: "Cinéma",
         icon: "icones/syfy.png",
         description: "Chaîne cinéma en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/35.m3u8"
+        sources: [
+          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/35.m3u8" },
+          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr" }
+        ]
       },
       {
-        title: "Syfy HD backup",
-        category: "Cinéma",
-        icon: "icones/syfy.png",
-        description: "Chaîne cinéma en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_SYFY%7Cgroup%3Afr"
-      },
-      {
-        title: "RMC Découverte HD",
+        title: "RMC Découverte",
         category: "Découverte",
         icon: "icones/rmcdecouverte.png",
         description: "Chaîne découverte en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr"
+        sources: [
+          { label: "Source HD", url: "https://livewatch.top/player?url=vavoo_RMC%2520DECOUVERTE%7Cgroup%3Afr" }
+        ]
       },
       {
-        title: "LCI HD",
+        title: "LCI",
         category: "Infos",
         icon: "icones/lci.png",
         description: "Chaîne info en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8"
+        sources: [
+          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8" },
+          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr" }
+        ]
       },
       {
-        title: "LCI HD backup",
-        category: "Infos",
-        icon: "icones/lci.png",
-        description: "Chaîne info en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr"
-      },
-      {
-        title: "Ligue1+ HD backup",
-        category: "Sport",
-        icon: "icones/ligue1+.png",
-        description: "Chaîne sport en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr"
-      },
-      {
-        title: "Manga HD",
+        title: "Manga",
         category: "Jeunesse",
         icon: "icones/mangas.png",
         description: "Chaîne manga en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8"
+        sources: [
+          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8" },
+          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr" }
+        ]
       },
       {
-        title: "Manga HD backup",
-        category: "Jeunesse",
-        icon: "icones/mangas.png",
-        description: "Chaîne manga en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr"
-      },
-      {
-        title: "Télétoon+ HD",
+        title: "Télétoon+",
         category: "Jeunesse",
         icon: "icones/teletoon+.png",
         description: "Chaîne jeunesse en direct.",
-        videoUrl: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8"
-      },
-      {
-        title: "Télétoon+ HD backup",
-        category: "Jeunesse",
-        icon: "icones/teletoon+.png",
-        description: "Chaîne jeunesse en direct (Lien Web).",
-        videoUrl: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr"
-      },
-      {
-        title: "Télétoon+ HD backup2",
-        category: "Jeunesse",
-        icon: "icones/teletoon+.png",
-        description: "Chaîne jeunesse en direct.",
-        videoUrl: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Rl6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8"
+        sources: [
+          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8" },
+          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr" },
+          { label: "Source HD Backup 2", url: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Rl6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8" }
+        ]
       }
     ];
 
@@ -621,6 +695,12 @@
     const heroPlayBtn = document.getElementById("heroPlayBtn");
     const heroFavoritesBtn = document.getElementById("heroFavoritesBtn");
 
+    // Modal DOM Elements
+    const sourceModal = document.getElementById("sourceModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSourceList = document.getElementById("modalSourceList");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+
     let started = false;
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     let history = JSON.parse(localStorage.getItem("watchHistory") || "[]");
@@ -640,7 +720,8 @@
     }
 
     function getVideoKey(video) {
-      return video.title + "|" + video.videoUrl;
+      // Clé simplifiée basée sur le titre unique de la chaîne
+      return video.title;
     }
 
     function startSite() {
@@ -701,9 +782,36 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* GESTION INTELLIGENTE INTEGREE / INTENT */
-    function launchWebVideoCaster(video) {
-      const url = video.videoUrl;
+    /* OUVERTURE DE LA MODALE DES SOURCES */
+    function openSourceModal(video) {
+      modalTitle.textContent = video.title;
+      modalSourceList.innerHTML = "";
+
+      video.sources.forEach((source) => {
+        const btn = document.createElement("button");
+        btn.className = "source-btn";
+        btn.innerHTML = `<span>▶ ${source.label}</span> ➔`;
+        btn.addEventListener("click", () => {
+          closeSourceModal();
+          launchWebVideoCaster(source.url, video);
+        });
+        modalSourceList.appendChild(btn);
+      });
+
+      sourceModal.classList.add("show");
+    }
+
+    function closeSourceModal() {
+      sourceModal.classList.remove("show");
+    }
+
+    closeModalBtn.addEventListener("click", closeSourceModal);
+    sourceModal.addEventListener("click", (e) => {
+      if (e.target === sourceModal) closeSourceModal();
+    });
+
+    /* EXECUTION DE L'INTENT WEB VIDEO CASTER */
+    function launchWebVideoCaster(url, video) {
       if (!url) return;
 
       addToHistory(video);
@@ -711,17 +819,13 @@
       const ua = navigator.userAgent.toLowerCase();
       const isAndroid = /android/i.test(ua);
       
-      // DETECTION : Si le site est déjà ouvert dans le navigateur web interne de Web Video Caster
       const isAlreadyInWebVideoCaster = ua.includes("wvc") || ua.includes("webvideocaster");
 
       if (isAndroid) {
         if (isAlreadyInWebVideoCaster) {
-          // Si on est déjà dedans, on ouvre simplement le lien brute directement.
-          // L'application va détecter le flux vidéo HLS et proposer de le caster sans planter.
           window.location.href = url;
           return;
         } else {
-          // Si on est sur Chrome externe, on force l'ouverture vers l'application principale
           const cleanUrl = url.replace(/^https?:\/\//, "");
           const scheme = url.startsWith("https") ? "https" : "http";
           window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;launchFlags=0x20000000;end`;
@@ -729,7 +833,6 @@
         }
       }
       
-      // Fallback PC / iOS / Télécommandes Web
       window.open(url, "_blank");
     }
 
@@ -740,6 +843,9 @@
       const card = document.createElement("article");
       card.className = "card";
 
+      // On affiche le nombre de sources disponibles sur le badge ou la description si besoin
+      const sourceCountText = video.sources.length > 1 ? `${video.sources.length} sources dispos` : "1 source dispo";
+
       card.innerHTML = `
         ${options.showRemoveHistory ? `<button class="remove-history-btn" type="button" title="Retirer de la reprise">✕</button>` : ""}
         <button class="favorite-btn ${isFavorite ? "active" : ""}" type="button" title="Favori">
@@ -749,7 +855,7 @@
           <img src="${video.icon}" alt="${video.title}" loading="lazy">
         </div>
         <div class="content">
-          <span class="tag">${video.category}</span>
+          <span class="tag">${video.category} • ${sourceCountText}</span>
           <h3>${video.title}</h3>
           <p>${video.description}</p>
           <button class="watch-btn" type="button">Regarder</button>
@@ -761,7 +867,7 @@
         removeBtn.addEventListener("click", (e) => { e.stopPropagation(); removeFromHistory(video); });
       }
       card.querySelector(".favorite-btn").addEventListener("click", (e) => { e.stopPropagation(); toggleFavorite(video); });
-      card.querySelector(".watch-btn").addEventListener("click", () => launchWebVideoCaster(video));
+      card.querySelector(".watch-btn").addEventListener("click", () => openSourceModal(video));
 
       return card;
     }
@@ -808,7 +914,9 @@
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
 
-    heroPlayBtn.addEventListener("click", () => { if(videos.length > 0) launchWebVideoCaster(getSortedVideos()[0]); });
+    heroPlayBtn.addEventListener("click", () => { 
+      if(videos.length > 0) openSourceModal(getSortedVideos()[0]); 
+    });
     heroFavoritesBtn.addEventListener("click", () => { favoritesSection.scrollIntoView({ behavior: 'smooth' }); });
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
