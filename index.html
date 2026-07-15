@@ -373,7 +373,7 @@
 
     .empty.active { display: block; }
 
-    /* STYLE DE LA FENETRE MODALE DE SOURCES */
+    /* STYLE DE LA FENETRE MODALE DE SOURCES (GROUPÉES PAR QUALITÉ) */
     .modal {
       position: fixed;
       inset: 0;
@@ -439,19 +439,70 @@
     .source-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .source-btn {
+    /* Styles pour l'accordéon par qualité */
+    .quality-group {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .quality-header {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      padding: 14px 18px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.05rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+
+    .quality-header:hover {
+      background: rgba(37, 99, 235, 0.08);
+    }
+
+    .quality-header .arrow {
+      font-size: 0.8rem;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .quality-group.expanded .quality-header .arrow {
+      transform: rotate(90deg);
+    }
+
+    .quality-sources {
+      display: none;
+      padding: 10px 14px;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .quality-group.expanded .quality-sources {
+      display: flex;
+    }
+
+    .source-sub-btn {
       width: 100%;
       border: 1px solid var(--border);
       background: var(--bg);
       color: var(--text);
-      padding: 14px 18px;
-      border-radius: 16px;
+      padding: 12px 16px;
+      border-radius: 12px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
       text-align: left;
       display: flex;
       align-items: center;
@@ -459,7 +510,7 @@
       transition: all 0.2s ease;
     }
 
-    .source-btn:hover {
+    .source-sub-btn:hover {
       background: var(--primary);
       color: white;
       border-color: transparent;
@@ -782,54 +833,101 @@
     }
 
     /* 
-       FONCTION POUR DÉTERMINER LE DEGRÉ DE QUALITÉ D'UN LABEL
-       Plus le score retourné est PETIT, plus la qualité est HAUTE (elle s'affichera donc en premier).
+       FONCTION POUR DÉTERMINER LA CATÉGORIE DE QUALITÉ D'UNE SOURCE
     */
-    function getQualityWeight(label) {
+    function getQualityCategory(label) {
       const l = label.toLowerCase();
-      let score = 30; // Score "HD" par défaut
-
-      if (l.includes("4k") || l.includes("2160") || l.includes("uhd")) {
-        score = 10; // Excellente qualité en haut de liste
-      } else if (l.includes("fhd") || l.includes("1080")) {
-        score = 20; // Full HD
-      } else if (l.includes("hd") || l.includes("720")) {
-        score = 30; // Simple HD
-      } else if (l.includes("sd") || l.includes("lq") || l.includes("480") || l.includes("360")) {
-        score = 40; // Basse définition
-      } else {
-        score = 50; // Qualités génériques non spécifiées
-      }
-
-      // Si c'est une source de secours/backup ou un lien web, on lui donne une légère pénalité
-      // pour s'assurer qu'elle arrive APRÈS les sources principales de même qualité.
-      if (l.includes("backup") || l.includes("lien web") || l.includes("web") || l.includes("player")) {
-        score += 5;
-      }
-
-      return score;
+      if (l.includes("4k") || l.includes("2160") || l.includes("uhd")) return "4K";
+      if (l.includes("fhd") || l.includes("1080")) return "FHD";
+      if (l.includes("hd") || l.includes("720")) return "HD";
+      if (l.includes("sd") || l.includes("lq") || l.includes("480") || l.includes("360")) return "SD";
+      return "Autre";
     }
 
-    /* OUVERTURE DE LA MODALE DES SOURCES AVEC TRI INTÉLLIGENT */
+    /* 
+       CONSTRUIT LA CHAINE DE COMPTEURS DES QUALITÉS (ex: "1 FHD • 1 HD")
+    */
+    function getQualityCountsText(video) {
+      const counts = {};
+      video.sources.forEach(s => {
+        const cat = getQualityCategory(s.label);
+        counts[cat] = (counts[cat] || 0) + 1;
+      });
+
+      const order = ["4K", "FHD", "HD", "SD", "Autre"];
+      const parts = [];
+      order.forEach(q => {
+        if (counts[q]) {
+          parts.push(`${counts[q]} ${q}`);
+        }
+      });
+      return parts.join(" • ");
+    }
+
+    /* OUVERTURE DE LA MODALE DES SOURCES AVEC GROUPEMENT & ACCORDÉONS */
     function openSourceModal(video) {
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      // On effectue une copie des sources afin de ne pas modifier l'index original,
-      // puis on les trie en comparant leurs "scores" de qualité.
-      const sortedSources = [...video.sources].sort((a, b) => {
-        return getQualityWeight(a.label) - getQualityWeight(b.label);
+      // Étape 1 : Grouper les sources par qualité
+      const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
+      video.sources.forEach(source => {
+        const cat = getQualityCategory(source.label);
+        groups[cat].push(source);
       });
 
-      sortedSources.forEach((source) => {
-        const btn = document.createElement("button");
-        btn.className = "source-btn";
-        btn.innerHTML = `<span>▶ ${source.label}</span> ➔`;
-        btn.addEventListener("click", () => {
-          closeSourceModal();
-          launchWebVideoCaster(source.url, video);
-        });
-        modalSourceList.appendChild(btn);
+      const order = ["4K", "FHD", "HD", "SD", "Autre"];
+      let isFirstExpanded = false; // Permet d'ouvrir automatiquement la meilleure qualité disponible
+
+      // Étape 2 : Créer un accordéon par groupe existant
+      order.forEach((cat) => {
+        const sourcesInCat = groups[cat];
+        if (sourcesInCat && sourcesInCat.length > 0) {
+          const groupDiv = document.createElement("div");
+          groupDiv.className = "quality-group";
+          
+          // Ouvre automatiquement la meilleure qualité
+          if (!isFirstExpanded) {
+            groupDiv.classList.add("expanded");
+            isFirstExpanded = true;
+          }
+
+          // Bouton d'en-tête de la qualité (déclencheur accordéon)
+          const headerBtn = document.createElement("button");
+          headerBtn.className = "quality-header";
+          headerBtn.type = "button";
+          
+          const countText = sourcesInCat.length > 1 ? `${sourcesInCat.length} sources` : "1 source";
+          headerBtn.innerHTML = `
+            <span>📺 ${cat} <small style="font-weight: normal; opacity: 0.7; margin-left: 6px;">(${countText})</small></span>
+            <span class="arrow">▶</span>
+          `;
+
+          // Conteneur des sources de cette qualité
+          const sourcesContainer = document.createElement("div");
+          sourcesContainer.className = "quality-sources";
+
+          sourcesInCat.forEach((source) => {
+            const subBtn = document.createElement("button");
+            subBtn.className = "source-sub-btn";
+            subBtn.type = "button";
+            subBtn.innerHTML = `<span>▶ ${source.label}</span> ➔`;
+            subBtn.addEventListener("click", () => {
+              closeSourceModal();
+              launchWebVideoCaster(source.url, video);
+            });
+            sourcesContainer.appendChild(subBtn);
+          });
+
+          // Événement d'ouverture / fermeture au clic sur le titre de la qualité
+          headerBtn.addEventListener("click", () => {
+            groupDiv.classList.toggle("expanded");
+          });
+
+          groupDiv.appendChild(headerBtn);
+          groupDiv.appendChild(sourcesContainer);
+          modalSourceList.appendChild(groupDiv);
+        }
       });
 
       sourceModal.classList.add("show");
@@ -877,7 +975,8 @@
       const card = document.createElement("article");
       card.className = "card";
 
-      const sourceCountText = video.sources.length > 1 ? `${video.sources.length} sources dispos` : "1 source dispo";
+      // Récupère la répartition textuelle des qualités de la chaîne
+      const sourceCountText = getQualityCountsText(video);
 
       card.innerHTML = `
         ${options.showRemoveHistory ? `<button class="remove-history-btn" type="button" title="Retirer de la reprise">✕</button>` : ""}
