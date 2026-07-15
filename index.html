@@ -583,7 +583,6 @@
   <div class="author">SnipDav</div>
   
   <script>
-    // Les chaînes sont désormais regroupées de façon unique avec un tableau "sources"
     const videos = [
       {
         title: "Canal+",
@@ -601,7 +600,8 @@
         icon: "icones/M6.png",
         description: "Flux généraliste en direct.",
         sources: [
-          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8" },{ label: "Source HD", url: "http://line.fire-4k.cc/live/290113/24475A/131047.m3u8" }
+          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8" },
+          { label: "Source HD", url: "http://line.fire-4k.cc/live/290113/24475A/131047.m3u8" }
         ]
       },
       {
@@ -720,7 +720,6 @@
     }
 
     function getVideoKey(video) {
-      // Clé simplifiée basée sur le titre unique de la chaîne
       return video.title;
     }
 
@@ -782,12 +781,47 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* OUVERTURE DE LA MODALE DES SOURCES */
+    /* 
+       FONCTION POUR DÉTERMINER LE DEGRÉ DE QUALITÉ D'UN LABEL
+       Plus le score retourné est PETIT, plus la qualité est HAUTE (elle s'affichera donc en premier).
+    */
+    function getQualityWeight(label) {
+      const l = label.toLowerCase();
+      let score = 30; // Score "HD" par défaut
+
+      if (l.includes("4k") || l.includes("2160") || l.includes("uhd")) {
+        score = 10; // Excellente qualité en haut de liste
+      } else if (l.includes("fhd") || l.includes("1080")) {
+        score = 20; // Full HD
+      } else if (l.includes("hd") || l.includes("720")) {
+        score = 30; // Simple HD
+      } else if (l.includes("sd") || l.includes("lq") || l.includes("480") || l.includes("360")) {
+        score = 40; // Basse définition
+      } else {
+        score = 50; // Qualités génériques non spécifiées
+      }
+
+      // Si c'est une source de secours/backup ou un lien web, on lui donne une légère pénalité
+      // pour s'assurer qu'elle arrive APRÈS les sources principales de même qualité.
+      if (l.includes("backup") || l.includes("lien web") || l.includes("web") || l.includes("player")) {
+        score += 5;
+      }
+
+      return score;
+    }
+
+    /* OUVERTURE DE LA MODALE DES SOURCES AVEC TRI INTÉLLIGENT */
     function openSourceModal(video) {
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      video.sources.forEach((source) => {
+      // On effectue une copie des sources afin de ne pas modifier l'index original,
+      // puis on les trie en comparant leurs "scores" de qualité.
+      const sortedSources = [...video.sources].sort((a, b) => {
+        return getQualityWeight(a.label) - getQualityWeight(b.label);
+      });
+
+      sortedSources.forEach((source) => {
         const btn = document.createElement("button");
         btn.className = "source-btn";
         btn.innerHTML = `<span>▶ ${source.label}</span> ➔`;
@@ -843,7 +877,6 @@
       const card = document.createElement("article");
       card.className = "card";
 
-      // On affiche le nombre de sources disponibles sur le badge ou la description si besoin
       const sourceCountText = video.sources.length > 1 ? `${video.sources.length} sources dispos` : "1 source dispo";
 
       card.innerHTML = `
