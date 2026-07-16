@@ -517,33 +517,6 @@
       transform: scale(1.01);
     }
 
-    /* VOYANTS DE STATUTS DES SOURCES */
-    .status-dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .status-dot.loading {
-      background: #eab308;
-      box-shadow: 0 0 8px #eab308;
-      animation: statusPulse 1.2s infinite ease-in-out;
-    }
-    .status-dot.online {
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-    }
-    .status-dot.offline {
-      background: #ef4444;
-      box-shadow: 0 0 8px #ef4444;
-    }
-
-    @keyframes statusPulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
-    }
-
     .author {
       position: fixed;
       right: 16px;
@@ -891,30 +864,7 @@
       return parts.join(" • ");
     }
 
-    /*
-       FONCTION DE VÉRIFICATION DU FLUX EN ARRIÈRE-PLAN
-       Tente d'accéder au flux. Si réponse positive du réseau (sans erreur fatale), retourne true.
-    */
-    async function checkStreamStatus(url) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 4000); // 4 sec d'attente max
-
-      try {
-        await fetch(url, {
-          method: 'GET',
-          mode: 'no-cors', // Évite le blocage CORS basique sur la plupart des navigateurs
-          signal: controller.signal,
-          referrerPolicy: 'no-referrer'
-        });
-        clearTimeout(timeoutId);
-        return true; // Le serveur est réactif
-      } catch (e) {
-        clearTimeout(timeoutId);
-        return false; // Erreur de réseau, de mixed-content ou timeout
-      }
-    }
-
-    /* OUVERTURE DE LA MODALE DES SOURCES AVEC ACCORDÉONS MODIFIÉS ET EN-TÊTE DE VOYANTS */
+    /* OUVERTURE DE LA MODALE DES SOURCES AVEC ACCORDÉONS MODIFIÉS */
     function openSourceModal(video) {
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
@@ -975,33 +925,13 @@
               extraInfo += " (Web)";
             }
 
-            // Affiche "Source 1", "Source 2" etc, avec un point jaune clignotant au début
-            subBtn.innerHTML = `
-              <span style="display: flex; align-items: center; gap: 8px;">
-                <span class="status-dot loading" title="Vérification en cours..."></span>
-                <span>▶ Source ${index + 1}${extraInfo}</span>
-              </span>
-              <span>➔</span>
-            `;
-
+            // Affiche proprement "Source 1", "Source 2", etc.
+            subBtn.innerHTML = `<span>▶ Source ${index + 1}${extraInfo}</span> ➔`;
             subBtn.addEventListener("click", () => {
               closeSourceModal();
               launchWebVideoCaster(source.url, video);
             });
             sourcesContainer.appendChild(subBtn);
-
-            // On lance la vérification en arrière-plan
-            const dot = subBtn.querySelector(".status-dot");
-            checkStreamStatus(source.url).then(isOnline => {
-              dot.classList.remove("loading");
-              if (isOnline) {
-                dot.classList.add("online");
-                dot.setAttribute("title", "Actif : Le flux répond");
-              } else {
-                dot.classList.add("offline");
-                dot.setAttribute("title", "Hors-ligne ou bloqué par sécurité de sécurité du navigateur (Mixed Content / CORS)");
-              }
-            });
           });
 
           // Événement d'ouverture / fermeture au clic sur le titre de la qualité
