@@ -216,11 +216,6 @@
       background: #2563eb;
     }
 
-    .hero-btn.secondary {
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
     .controls {
       display: grid;
       grid-template-columns: 1fr 240px;
@@ -592,13 +587,12 @@
       <div class="hero-content">
         <div class="hero-kicker">
           <span class="live-dot"></span>
-          <span>INTENT INTÉLLIGENT WEB VIDEO CASTER</span>
+          <span>DIRECT & STREAMING FLUIDE</span>
         </div>
         <h2>Vos flux sans aucune coupure.</h2>
         <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers l'application externe pour une lecture fluide et continue sur votre écran.</p>
         <div class="hero-actions">
-          <button class="hero-btn" id="heroPlayBtn">▶ Lancer la première chaîne</button>
-          <button class="hero-btn secondary" id="heroFavoritesBtn">★ Mes favoris</button>
+          <button class="hero-btn" id="heroFavoritesBtn">★ Mes favoris</button>
         </div>
       </div>
     </section>
@@ -743,7 +737,6 @@
     const favoritesSection = document.getElementById("favoritesSection");
     const favoritesRow = document.getElementById("favoritesRow");
 
-    const heroPlayBtn = document.getElementById("heroPlayBtn");
     const heroFavoritesBtn = document.getElementById("heroFavoritesBtn");
 
     // Modal DOM Elements
@@ -1061,9 +1054,6 @@
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
 
-    heroPlayBtn.addEventListener("click", () => { 
-      if(videos.length > 0) openSourceModal(getSortedVideos()[0]); 
-    });
     heroFavoritesBtn.addEventListener("click", () => { favoritesSection.scrollIntoView({ behavior: 'smooth' }); });
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
@@ -1073,4 +1063,3 @@
   </script>
 </body>
 </html>
- 
