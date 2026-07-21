@@ -37,7 +37,9 @@
     "description": "Chaîne sport en direct.",
     "sources": [
       { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8" },
-      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr" }
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612644.m3u8" },
+{ "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528127.m3u8" },
+      { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621895.m3u8?_lsr=mruttmup_12&_vnc=mruttmup_13" }
     ]
   },
   {
