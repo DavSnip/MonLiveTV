@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Canal+",
+    "category": "Généraliste",
+    "icon": "icones/canal+.png",
+    "description": "Flux généraliste en direct.",
+    "sources": [
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528546.m3u8" },
+      { "label": "Source HD", "url": "http://benchoda.xyz:8880/live/neil.woodward12/bjwseZ8JkH/3858556.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8000.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528545.m3u8" }
+    ]
+  },
+  {
+    "title": "M6",
+    "category": "Généraliste",
+    "icon": "icones/M6.png",
+    "description": "Flux généraliste en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131047.m3u8" }
+    ]
+  },
+  {
+    "title": "Disney Channel",
+    "category": "Jeunesse",
+    "icon": "icones/disneychannel.png",
+    "description": "Chaîne jeunesse en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/198.m3u8" },
+      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr" }
+    ]
+  },
+  {
+    "title": "Ligue1+",
+    "category": "Sport",
+    "icon": "icones/ligue1+.png",
+    "description": "Chaîne sport en direct.",
+    "sources": [
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8" },
+      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr" }
+    ]
+  },
+  {
+    "title": "Syfy",
+    "category": "Cinéma",
+    "icon": "icones/syfy.png",
+    "description": "Chaîne cinéma en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/61702.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8181.m3u8" }
+    ]
+  },
+  {
+    "title": "RMC Découverte",
+    "category": "Découverte",
+    "icon": "icones/rmcdecouverte.png",
+    "description": "Chaîne découverte en direct.",
+    "sources": [
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/608622.m3u8" }
+    ]
+  },
+  {
+    "title": "LCI",
+    "category": "Infos",
+    "icon": "icones/lci.png",
+    "description": "Chaîne info en direct.",
+    "sources": [
+      { "label": "Source HD", "url": "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8" },
+      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr" }
+    ]
+  },
+  {
+    "title": "Manga",
+    "category": "Jeunesse",
+    "icon": "icones/mangas.png",
+    "description": "Chaîne manga en direct.",
+    "sources": [
+      { "label": "Source HD", "url": "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8" },
+      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr" }
+    ]
+  },
+  {
+    "title": "Télétoon+",
+    "category": "Jeunesse",
+    "icon": "icones/teletoon+.png",
+    "description": "Chaîne jeunesse en direct.",
+    "sources": [
+      { "label": "Source HD", "url": "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8" },
+      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr" },
+      { "label": "Source HD Backup 2", "url": "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Rl6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8" }
+    ]
+  }
+]
