@@ -368,7 +368,7 @@
 
     .empty.active { display: block; }
 
-    /* STYLE DE LA FENETRE MODALE DE SOURCES (GROUPÉES PAR QUALITÉ) */
+    /* STYLE DE LA FENETRE MODALE DE SOURCES */
     .modal {
       position: fixed;
       inset: 0;
@@ -437,7 +437,6 @@
       gap: 12px;
     }
 
-    /* Styles pour l'accordéon par qualité */
     .quality-group {
       border: 1px solid var(--border);
       background: var(--bg);
@@ -628,100 +627,7 @@
   <div class="author">SnipDav</div>
   
   <script>
-    const videos = [
-      {
-        title: "Canal+",
-        category: "Généraliste",
-        icon: "icones/canal+.png",
-        description: "Flux généraliste en direct.",
-        sources: [
-          { label: "Source HD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528546.m3u8" },
-{ label: "Source HD", url: "http://benchoda.xyz:8880/live/neil.woodward12/bjwseZ8JkH/3858556.m3u8" },
-{ label: "Source HD", url: "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8000.m3u8" },
-          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528545.m3u8" }
-        ]
-      },
-      {
-        title: "M6",
-        category: "Généraliste",
-        icon: "icones/M6.png",
-        description: "Flux généraliste en direct.",
-        sources: [
-          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8" },
-          { label: "Source HD", url: "http://line.fire-4k.cc/live/290113/24475A/131047.m3u8" }
-        ]
-      },
-      {
-        title: "Disney Channel",
-        category: "Jeunesse",
-        icon: "icones/disneychannel.png",
-        description: "Chaîne jeunesse en direct.",
-        sources: [
-          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/198.m3u8" },
-          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_DISNEY%2520CHANNEL%7Cgroup%3Afr" }
-        ]
-      },
-      {
-        title: "Ligue1+",
-        category: "Sport",
-        icon: "icones/ligue1+.png",
-        description: "Chaîne sport en direct.",
-        sources: [
-          { label: "Source HD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/612643.m3u8" },
-          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_LIGUE%25201%252B%7Cgroup%3Afr" }
-        ]
-      },
-      {
-        title: "Syfy",
-        category: "Cinéma",
-        icon: "icones/syfy.png",
-        description: "Chaîne cinéma en direct.",
-        sources: [
-          { label: "Source FHD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/61702.m3u8" },
-          { label: "Source HD", url: "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8181.m3u8" }
-        ]
-      },
-      {
-        title: "RMC Découverte",
-        category: "Découverte",
-        icon: "icones/rmcdecouverte.png",
-        description: "Chaîne découverte en direct.",
-        sources: [
-          { label: "Source HD", url: "http://live.tvpython.net:2052/live/271020221929/27oct20221928/608622.m3u8" }
-        ]
-      },
-      {
-        title: "LCI",
-        category: "Infos",
-        icon: "icones/lci.png",
-        description: "Chaîne info en direct.",
-        sources: [
-          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8" },
-          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr" }
-        ]
-      },
-      {
-        title: "Manga",
-        category: "Jeunesse",
-        icon: "icones/mangas.png",
-        description: "Chaîne manga en direct.",
-        sources: [
-          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/62.m3u8" },
-          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_MANGAS%2520HD%7Cgroup%3Afr" }
-        ]
-      },
-      {
-        title: "Télétoon+",
-        category: "Jeunesse",
-        icon: "icones/teletoon+.png",
-        description: "Chaîne jeunesse en direct.",
-        sources: [
-          { label: "Source HD", url: "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/77.m3u8" },
-          { label: "Source HD Backup (Lien Web)", url: "https://livewatch.top/player?url=vavoo_TELETOON%252B%7Cgroup%3Afr" },
-          { label: "Source HD Backup 2", url: "https://td3wb1bchdvsahp.ngolpdkyoctjcddxshli469r.org/sunshine/VQ1EzFVLhpo6iZ8zi1qoNRFcQAQaCEVkzWq0EGmep7-3M9VGxWgmjTBp4CnHD-rw0lQvyOZjRpgtM3lENgoZFyblOuFquCCHe9fdoyfSqhHUsFH-2mZeyY5P5lgYGrtIC1W3sK-2OkfE0o7HEc8PojaPgKvuc7kG1cOPpXrtQWJga5YpwG2gIe4OwG2C_2ZVjwmdnYtI5Gk-9-VZzKXmZMFa1cVgLZt0wvhO4iywUv3lejb8-qly73Rl6wz8rr6cKoMHV9DjQktZvsAACzBlxA/hls/index.m3u8" }
-        ]
-      }
-    ];
+    let videos = [];
 
     const body = document.body;
     const introScreen = document.getElementById("introScreen");
@@ -755,6 +661,19 @@
     if (savedTheme === "dark") {
       body.classList.add("dark");
       themeToggle.textContent = "☀️ Mode clair";
+    }
+
+    // Chargement dynamique du fichier JSON externe
+    async function fetchVideos() {
+      try {
+        const response = await fetch("videos.json");
+        if (!response.ok) throw new Error("Erreur de chargement du fichier JSON");
+        videos = await response.json();
+        renderHomeRows();
+        renderVideos();
+      } catch (error) {
+        console.error("Impossible de récupérer les chaînes :", error);
+      }
     }
 
     function getSortedVideos(list = videos) {
@@ -827,9 +746,6 @@
       return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
     }
 
-    /* 
-       FONCTION POUR DÉTERMINER LA CATÉGORIE DE QUALITÉ D'UNE SOURCE
-    */
     function getQualityCategory(label) {
       const l = label.toLowerCase();
       if (l.includes("4k") || l.includes("2160") || l.includes("uhd")) return "4K";
@@ -839,9 +755,6 @@
       return "Autre";
     }
 
-    /* 
-       CONSTRUIT LA CHAINE DE COMPTEURS DES QUALITÉS SUR LES CARTES (ex: "1 FHD • 1 HD")
-    */
     function getQualityCountsText(video) {
       const counts = {};
       video.sources.forEach(s => {
@@ -859,12 +772,10 @@
       return parts.join(" • ");
     }
 
-    /* OUVERTURE DE LA MODALE DES SOURCES AVEC ACCORDÉONS MODIFIÉS */
     function openSourceModal(video) {
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      // Étape 1 : Grouper les sources par qualité
       const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
       video.sources.forEach(source => {
         const cat = getQualityCategory(source.label);
@@ -872,22 +783,19 @@
       });
 
       const order = ["4K", "FHD", "HD", "SD", "Autre"];
-      let isFirstExpanded = false; // Permet d'ouvrir automatiquement la meilleure qualité disponible
+      let isFirstExpanded = false;
 
-      // Étape 2 : Créer un accordéon par groupe existant
       order.forEach((cat) => {
         const sourcesInCat = groups[cat];
         if (sourcesInCat && sourcesInCat.length > 0) {
           const groupDiv = document.createElement("div");
           groupDiv.className = "quality-group";
           
-          // Ouvre automatiquement la meilleure qualité
           if (!isFirstExpanded) {
             groupDiv.classList.add("expanded");
             isFirstExpanded = true;
           }
 
-          // Bouton d'en-tête de l'accordéon : ex "Source FHD" à gauche, flèche à droite
           const headerBtn = document.createElement("button");
           headerBtn.className = "quality-header";
           headerBtn.type = "button";
@@ -897,7 +805,6 @@
             <span class="arrow">▶</span>
           `;
 
-          // Conteneur des sources de cette qualité
           const sourcesContainer = document.createElement("div");
           sourcesContainer.className = "quality-sources";
 
@@ -906,7 +813,6 @@
             subBtn.className = "source-sub-btn";
             subBtn.type = "button";
             
-            // Détection automatique des détails dans le titre original (Backup, Web...)
             let extraInfo = "";
             const labelLower = source.label.toLowerCase();
             
@@ -920,7 +826,6 @@
               extraInfo += " (Web)";
             }
 
-            // Affiche proprement "Source 1", "Source 2", etc.
             subBtn.innerHTML = `<span>▶ Source ${index + 1}${extraInfo}</span> ➔`;
             subBtn.addEventListener("click", () => {
               closeSourceModal();
@@ -929,7 +834,6 @@
             sourcesContainer.appendChild(subBtn);
           });
 
-          // Événement d'ouverture / fermeture au clic sur le titre de la qualité
           headerBtn.addEventListener("click", () => {
             groupDiv.classList.toggle("expanded");
           });
@@ -952,7 +856,6 @@
       if (e.target === sourceModal) closeSourceModal();
     });
 
-    /* EXECUTION DE L'INTENT WEB VIDEO CASTER */
     function launchWebVideoCaster(url, video) {
       if (!url) return;
 
@@ -960,7 +863,6 @@
 
       const ua = navigator.userAgent.toLowerCase();
       const isAndroid = /android/i.test(ua);
-      
       const isAlreadyInWebVideoCaster = ua.includes("wvc") || ua.includes("webvideocaster");
 
       if (isAndroid) {
@@ -985,7 +887,6 @@
       const card = document.createElement("article");
       card.className = "card";
 
-      // Récupère la répartition textuelle des qualités de la chaîne
       const sourceCountText = getQualityCountsText(video);
 
       card.innerHTML = `
@@ -1060,8 +961,8 @@
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
 
-    renderHomeRows();
-    renderVideos();
+    // Initialisation
+    fetchVideos();
   </script>
 </body>
 </html>
