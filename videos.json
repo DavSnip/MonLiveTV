@@ -45,6 +45,25 @@
 { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528127.m3u8" }
     ]
   },
+ {
+    "title": "Bein1",
+    "category": "Sport",
+    "icon": "icones/bein1.png",
+    "description": "Chaîne sport en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/530499.m3u8?_vnc=mrvyqivp_u" },
+{ "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/228.m3u8" },
+{ "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/35522.m3u8" },
+{ "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130937.m3u8" },
+{ "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131362.m3u8?_vnc=mrvyokd9_3" },
+{ "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/530500.m3u8" },
+{ "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/228.m3u8" },
+{ "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131363.m3u8" },
+{ "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/530501.m3u8" },
+{ "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12900.m3u8" },
+{ "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/50148.m3u8" }
+    ]
+  },
   {
     "title": "Syfy",
     "category": "Cinéma",
