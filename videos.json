@@ -96,7 +96,9 @@
     "icon": "icones/rmcdecouverte.png",
     "description": "Chaîne découverte en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/608622.m3u8" }
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/608622.m3u8" },
+{ "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131293.m3u8" },
+{ "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131292.m3u8" }
     ]
   },
   {
@@ -105,8 +107,9 @@
     "icon": "icones/lci.png",
     "description": "Chaîne info en direct.",
     "sources": [
-      { "label": "Source HD", "url": "https://cluone.dad/live/388FAA8743C4E2980F7B4089B7E81087/106.m3u8" },
-      { "label": "Source HD Backup (Lien Web)", "url": "https://livewatch.top/player?url=vavoo_LCI%7Cgroup%3Afr" }
+      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130903.m3u8" },
+ { "label": "Source HD", "url": "http://line.fire-4k.http://203.76.254.7/live/290113/24475A/131143.m3u8?token=SEReU0dfFg8WUVQBAVQGBlFUVgAAVVANAFRSClcGUFZQUlQCAQNSAAAWGxRGRUZWVl9tXVAWWAgAUwYHAh9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHBwEDAxcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYHBQUVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYGBg0HFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ==cc/live/290113/24475A/130903.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" }
     ]
   },
   {
