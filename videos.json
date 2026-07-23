@@ -40,6 +40,8 @@
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130983.m3u8" },
 { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131314.m3u8" },
+{ "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130983.m3u8" },
+{ "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1040.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131313.m3u8" }
     ]
   },
@@ -97,6 +99,8 @@
     "description": "Chaîne découverte en direct.",
     "sources": [
       { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/608622.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/310.m3u8" },
+{ "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2994.m3u8" },
 { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131293.m3u8" },
 { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131292.m3u8" }
     ]
@@ -108,6 +112,8 @@
     "description": "Chaîne info en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130903.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2734.m3u8" },
+{ "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1042.m3u8" },
  { "label": "Source HD", "url": "http://line.fire-4k.http://203.76.254.7/live/290113/24475A/131143.m3u8?token=SEReU0dfFg8WUVQBAVQGBlFUVgAAVVANAFRSClcGUFZQUlQCAQNSAAAWGxRGRUZWVl9tXVAWWAgAUwYHAh9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHBwEDAxcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYHBQUVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYGBg0HFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ==cc/live/290113/24475A/130903.m3u8" },
       { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" }
     ]
@@ -119,6 +125,8 @@
     "description": "Chaîne manga en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130997.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2570.m3u8" },
+{ "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23314.m3u8" },
 { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131342.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131341.m3u8" }
     ]
@@ -131,6 +139,8 @@
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130981.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131309.m3u8" },
+{ "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1912.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/994.m3u8" },
       { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131310.m3u8" }
     ]
   }
