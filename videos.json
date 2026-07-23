@@ -10,7 +10,9 @@
 { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/148474.m3u8" },
 { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131204.m3u8" },
 { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/11033.m3u8" },
+{ "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/13675.m3u8" },
 { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/247.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/248844.m3u8" },
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/528545.m3u8" }
     ]
   },
@@ -21,6 +23,12 @@
     "description": "Flux généraliste en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9562.m3u8" },
+ { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130810.m3u8" },
+ { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131048.m3u8" },
+{ "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/235.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/340395.m3u8" },
+{ "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/54666.m3u8" },
+{ "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/90.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131047.m3u8" }
     ]
   },
