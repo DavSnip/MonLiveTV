@@ -88,6 +88,10 @@
     "description": "Chaîne cinéma en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/61702.m3u8" },
+{ "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13698.m3u8" },
+{ "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13981.m3u8" },
+{ "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/397554.m3u8" },
+{ "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130820.m3u8" },
 { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131067.m3u8" },
 { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8?_t=1784813084538&_vnc=mrxjnexq_9&token=SEReU0dfFg8WBAcEU1ICBg5WAgUHBFddB1YOAQVSUlIBXgEFBlEHVw0WGxRGRUZWVl9tXVAWWAgAUwcFCR9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHCwcFABcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYGBgAVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYNAAcAFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ%3D%3D" },
       { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8181.m3u8" }
