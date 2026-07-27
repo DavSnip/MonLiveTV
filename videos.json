@@ -166,7 +166,7 @@
   {
     "title": "Eurosport2",
     "category": "Sport",
-    "icon": "icones/eurosport.png",
+    "icon": "icones/eurosport2.png",
     "description": "Chaîne sport en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130945.m3u8" },
