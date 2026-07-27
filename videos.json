@@ -246,6 +246,47 @@
     ]
   },
   {
+    "title": "Golf+",
+    "category": "Sport",
+    "icon": "icones/golf+.png",
+    "description": "Chaîne sport en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130950.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130950.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2575.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/54584.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/250662.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32844.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13734.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131384.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131384.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/57342.m3u8" },
+      { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621902.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/3755.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/242.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/117003.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131385.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131385.m3u8" },
+      { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/859.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12841.m3u8" }
+    ]
+  },
+  {
+    "title": "Automoto",
+    "category": "Sport",
+    "icon": "icones/automoto.png",
+    "description": "Chaîne sport en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/781.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/1035.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131380.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131380.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8085.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/9679.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/10173.m3u8" }
+    ]
+  },
+  {
     "title": "Syfy",
     "category": "Cinéma",
     "icon": "icones/syfy.png",
