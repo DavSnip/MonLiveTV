@@ -47,7 +47,7 @@
     ]
   },
   {
-    "title": "Ligue1+",
+    "title": "Ligue1+ 1",
     "category": "Sport",
     "icon": "icones/ligue1+.png",
     "description": "Chaîne sport en direct.",
@@ -63,7 +63,7 @@
     ]
   },
   {
-    "title": "BeinSport1",
+    "title": "BeinSport 1",
     "category": "Sport",
     "icon": "icones/bein1.png",
     "description": "Chaîne sport en direct.",
@@ -82,7 +82,7 @@
     ]
   },
   {
-    "title": "BeinSport2",
+    "title": "BeinSport 2",
     "category": "Sport",
     "icon": "icones/bein2.png",
     "description": "Chaîne sport en direct.",
@@ -110,7 +110,7 @@
     ]
   },
   {
-    "title": "BeinSport3",
+    "title": "BeinSport 3",
     "category": "Sport",
     "icon": "icones/bein3.png",
     "description": "Chaîne sport en direct.",
@@ -138,7 +138,7 @@
     ]
   },
   {
-    "title": "Eurosport1",
+    "title": "Eurosport 1",
     "category": "Sport",
     "icon": "icones/eurosport.png",
     "description": "Chaîne sport en direct.",
@@ -164,7 +164,7 @@
     ]
   },
   {
-    "title": "Eurosport2",
+    "title": "Eurosport 2",
     "category": "Sport",
     "icon": "icones/eurosport2.png",
     "description": "Chaîne sport en direct.",
