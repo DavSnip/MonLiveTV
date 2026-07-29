@@ -380,7 +380,7 @@
   {
     "title": "L'Équipe",
     "category": "Sport",
-    "icon": "icones/équipé.png",
+    "icon": "icones/equipe.png",
     "description": "Chaîne sport en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130943.m3u8" },
