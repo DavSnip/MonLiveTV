@@ -74,9 +74,20 @@
     "sources": [
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130983.m3u8" },
       { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131314.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130983.m3u8" },
       { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1040.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131313.m3u8" }
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131313.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130983.m3u8" },
+      { "label": "Source FHD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621897.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/198.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/35529.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13861.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131313.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8022.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1621.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/302.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/24946.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131314.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12863.m3u8" }
     ]
   },
   {
@@ -530,7 +541,17 @@
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130820.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131067.m3u8" },
       { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8?_t=1784813084538&_vnc=mrxjnexq_9&token=SEReU0dfFg8WBAcEU1ICBg5WAgUHBFddB1YOAQVSUlIBXgEFBlEHVw0WGxRGRUZWVl9tXVAWWAgAUwcFCR9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHCwcFABcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYGBgAVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYNAAcAFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ%3D%3D" },
-      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8181.m3u8" }
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8181.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130820.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32817.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/216772.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131067.m3u8" },
+      { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621842.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/194.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/318.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131068.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131068.m3u8" },
+      { "label": "Source SD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/39412.m3u8" }
     ]
   },
   {
@@ -556,7 +577,18 @@
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2734.m3u8" },
       { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1042.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.http://203.76.254.7/live/290113/24475A/131143.m3u8?token=SEReU0dfFg8WUVQBAVQGBlFUVgAAVVANAFRSClcGUFZQUlQCAQNSAAAWGxRGRUZWVl9tXVAWWAgAUwYHAh9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHBwEDAxcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYHBQUVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYGBg0HFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ==cc/live/290113/24475A/130903.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" }
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130903.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32763.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13727.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131143.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131143.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8128.m3u8" },
+      { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621896.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/14004.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131144.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12828.m3u8" },
+      { "label": "Source SD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/1042.m3u8" }
     ]
   },
   {
@@ -569,7 +601,15 @@
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2570.m3u8" },
       { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23314.m3u8" },
       { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131342.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131341.m3u8" }
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131341.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130997.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/274709.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13865.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131341.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8132.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/24932.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131342.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12824.m3u8" }
     ]
   },
   {
@@ -582,7 +622,22 @@
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131309.m3u8" },
       { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1912.m3u8" },
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/994.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131310.m3u8" }
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131310.m3u8" },
+      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130903.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130903.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2734.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32763.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13727.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131143.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131143.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8128.m3u8" },
+      { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621896.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1042.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/14004.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131144.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12828.m3u8" },
+      { "label": "Source SD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/1042.m3u8" }
     ]
   }
 ]
