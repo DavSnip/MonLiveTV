@@ -1,7 +1,7 @@
 [
   {
     "title": "Canal+",
-    "category": "Généraliste",
+    "category": "Cinéma",
     "icon": "icones/canal+.png",
     "description": "Flux généraliste en direct.",
     "sources": [
@@ -486,7 +486,7 @@
   },
   {
     "title": "Syfy",
-    "category": "Cinéma",
+    "category": "Divertissement",
     "icon": "icones/syfy.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
@@ -502,7 +502,7 @@
   },
   {
     "title": "RMC Découverte",
-    "category": "Découverte",
+    "category": "Documentaire",
     "icon": "icones/rmcdecouverte.png",
     "description": "Chaîne découverte en direct.",
     "sources": [
