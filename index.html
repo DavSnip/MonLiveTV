@@ -368,7 +368,7 @@
 
     .empty.active { display: block; }
 
-    /* STYLE DE LA FENETRE MODALE DE SOURCES */
+    /* STYLE DE LA FENETRE MODALE DE SOURCES (CORRIGÉ POUR SCROLL & ADAPTABILITÉ) */
     .modal {
       position: fixed;
       inset: 0;
@@ -381,6 +381,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
+      padding: 20px;
     }
 
     .modal.show {
@@ -391,7 +392,10 @@
     .modal-content {
       background: var(--card);
       color: var(--text);
-      width: min(440px, 90%);
+      width: min(440px, 100%);
+      max-height: 85vh; /* Limite la hauteur globale à 85% de la hauteur écran */
+      display: flex;
+      flex-direction: column;
       border-radius: 28px;
       padding: 26px;
       box-shadow: var(--shadow);
@@ -399,6 +403,7 @@
       position: relative;
       transform: translateY(25px);
       transition: transform 0.3s ease;
+      overflow: hidden;
     }
 
     .modal.show .modal-content {
@@ -423,11 +428,12 @@
     .modal h3 {
       margin: 0 0 6px;
       font-size: 1.4rem;
+      padding-right: 24px;
     }
 
     .modal-subtitle {
       color: var(--muted);
-      margin: 0 0 20px;
+      margin: 0 0 16px;
       font-size: 0.9rem;
     }
 
@@ -435,6 +441,9 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
+      overflow-y: auto; /* Active le défilement vertical si les groupes dépassent */
+      padding-right: 4px;
+      scrollbar-width: thin;
     }
 
     .quality-group {
@@ -442,6 +451,7 @@
       background: var(--bg);
       border-radius: 16px;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .quality-header {
@@ -481,6 +491,9 @@
       border-top: 1px solid var(--border);
       flex-direction: column;
       gap: 8px;
+      max-height: 280px; /* Limite la sous-liste si une catégorie a beaucoup de liens */
+      overflow-y: auto;  /* Permet de scroller au sein de la catégorie */
+      scrollbar-width: thin;
     }
 
     .quality-group.expanded .quality-sources {
@@ -502,6 +515,7 @@
       align-items: center;
       justify-content: space-between;
       transition: all 0.2s ease;
+      flex-shrink: 0;
     }
 
     .source-sub-btn:hover {
