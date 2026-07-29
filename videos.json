@@ -518,7 +518,7 @@
     ]
   },
   {
-    "title": "Syfy",
+    "title": "SyFy",
     "category": "Divertissement",
     "icon": "icones/syfy.png",
     "description": "Chaîne divertissement en direct.",
@@ -560,7 +560,7 @@
     ]
   },
   {
-    "title": "Manga",
+    "title": "Mangas",
     "category": "Jeunesse",
     "icon": "icones/mangas.png",
     "description": "Chaîne manga en direct.",
