@@ -368,12 +368,12 @@
 
     .empty.active { display: block; }
 
-    /* STYLE DE LA FENETRE MODALE DE SOURCES (CORRIGÉ POUR SCROLL & ADAPTABILITÉ) */
+    /* STYLE CORRIGÉ DE LA MODALE POUR ANDROID TV & SOURIS VIRTUELLE */
     .modal {
       position: fixed;
       inset: 0;
       z-index: 10000;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(6px);
       display: flex;
       align-items: center;
@@ -381,7 +381,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
-      padding: 20px;
+      padding: 16px;
     }
 
     .modal.show {
@@ -392,16 +392,16 @@
     .modal-content {
       background: var(--card);
       color: var(--text);
-      width: min(440px, 100%);
-      max-height: 85vh; /* Limite la hauteur globale à 85% de la hauteur écran */
+      width: min(480px, 100%);
+      max-height: 85vh;
       display: flex;
       flex-direction: column;
-      border-radius: 28px;
-      padding: 26px;
+      border-radius: 24px;
+      padding: 22px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
       position: relative;
-      transform: translateY(25px);
+      transform: translateY(20px);
       transition: transform 0.3s ease;
       overflow: hidden;
     }
@@ -412,38 +412,48 @@
 
     .close-modal {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
+      top: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.06);
       border: none;
       color: var(--text);
       font-size: 1.6rem;
       cursor: pointer;
-      line-height: 1;
-      opacity: 0.7;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      z-index: 5;
     }
 
-    .close-modal:hover { opacity: 1; }
+    body.dark .close-modal {
+      background: rgba(255,255,255,0.1);
+    }
 
     .modal h3 {
       margin: 0 0 6px;
       font-size: 1.4rem;
-      padding-right: 24px;
+      padding-right: 36px;
     }
 
     .modal-subtitle {
       color: var(--muted);
       margin: 0 0 16px;
       font-size: 0.9rem;
+      flex-shrink: 0;
     }
 
+    /* UN SEUL CONTENEUR DE SCROLL OPTIMISÉ TV */
     .source-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      overflow-y: auto; /* Active le défilement vertical si les groupes dépassent */
-      padding-right: 4px;
+      gap: 10px;
+      overflow-y: auto;
+      padding-right: 6px;
+      max-height: 100%;
       scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
     }
 
     .quality-group {
@@ -459,19 +469,20 @@
       border: none;
       background: transparent;
       color: var(--text);
-      padding: 14px 18px;
+      padding: 14px 16px;
       cursor: pointer;
       font-weight: bold;
-      font-size: 1.05rem;
+      font-size: 1rem;
       text-align: left;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.2s;
+      transition: background 0.2s, outline 0.2s;
     }
 
-    .quality-header:hover {
-      background: rgba(37, 99, 235, 0.08);
+    .quality-header:hover, .quality-header:focus {
+      background: rgba(37, 99, 235, 0.15);
+      outline: 2px solid var(--primary);
     }
 
     .quality-header .arrow {
@@ -484,16 +495,14 @@
       transform: rotate(90deg);
     }
 
+    /* DÉROULEMENT COMPLET SANS SECOND SCROLL */
     .quality-sources {
       display: none;
-      padding: 10px 14px;
+      padding: 10px;
       background: var(--card);
       border-top: 1px solid var(--border);
       flex-direction: column;
       gap: 8px;
-      max-height: 280px; /* Limite la sous-liste si une catégorie a beaucoup de liens */
-      overflow-y: auto;  /* Permet de scroller au sein de la catégorie */
-      scrollbar-width: thin;
     }
 
     .quality-group.expanded .quality-sources {
@@ -505,7 +514,7 @@
       border: 1px solid var(--border);
       background: var(--bg);
       color: var(--text);
-      padding: 12px 16px;
+      padding: 12px 14px;
       border-radius: 12px;
       cursor: pointer;
       font-weight: 600;
@@ -515,14 +524,13 @@
       align-items: center;
       justify-content: space-between;
       transition: all 0.2s ease;
-      flex-shrink: 0;
     }
 
-    .source-sub-btn:hover {
+    .source-sub-btn:hover, .source-sub-btn:focus {
       background: var(--primary);
       color: white;
       border-color: transparent;
-      transform: scale(1.01);
+      outline: 2px solid white;
     }
 
     .author {
@@ -625,13 +633,13 @@
 
       <select id="categorySelect">
         <option value="Tout">Tout</option>
-  <option value="Généraliste">Généraliste</option>
-  <option value="Jeunesse">Jeunesse</option>
-  <option value="Sport">Sport</option>
-  <option value="Cinéma">Cinéma</option>
-  <option value="Documentaire">Documentaire</option>
-  <option value="Divertissement">Divertissement</option>
-  <option value="Infos">Infos</option>
+        <option value="Généraliste">Généraliste</option>
+        <option value="Jeunesse">Jeunesse</option>
+        <option value="Sport">Sport</option>
+        <option value="Cinéma">Cinéma</option>
+        <option value="Documentaire">Documentaire</option>
+        <option value="Divertissement">Divertissement</option>
+        <option value="Infos">Infos</option>
       </select>
     </section>
 
@@ -814,6 +822,7 @@
           const headerBtn = document.createElement("button");
           headerBtn.className = "quality-header";
           headerBtn.type = "button";
+          headerBtn.tabIndex = 0;
           
           headerBtn.innerHTML = `
             <span>Source ${cat}</span>
@@ -827,6 +836,7 @@
             const subBtn = document.createElement("button");
             subBtn.className = "source-sub-btn";
             subBtn.type = "button";
+            subBtn.tabIndex = 0;
             
             let extraInfo = "";
             const labelLower = source.label.toLowerCase();
@@ -849,8 +859,20 @@
             sourcesContainer.appendChild(subBtn);
           });
 
+          // Accordéon à ouverture unique (referme les autres pour éviter de bloquer l'écran TV)
           headerBtn.addEventListener("click", () => {
-            groupDiv.classList.toggle("expanded");
+            const isCurrentlyExpanded = groupDiv.classList.contains("expanded");
+            
+            modalSourceList.querySelectorAll(".quality-group").forEach(g => {
+              g.classList.remove("expanded");
+            });
+
+            if (!isCurrentlyExpanded) {
+              groupDiv.classList.add("expanded");
+              setTimeout(() => {
+                groupDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              }, 100);
+            }
           });
 
           groupDiv.appendChild(headerBtn);
