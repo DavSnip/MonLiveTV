@@ -393,7 +393,7 @@
       background: var(--card);
       color: var(--text);
       width: min(520px, 98vw);
-      max-height: 90vh; /* Permet à la modale de monter jusqu'à 90% de l'écran */
+      max-height: 90vh;
       display: flex;
       flex-direction: column;
       border-radius: 24px;
@@ -403,7 +403,7 @@
       position: relative;
       transform: translateY(20px);
       transition: transform 0.3s ease;
-      overflow: hidden; /* Empêche tout débordement parasite */
+      overflow: hidden;
     }
 
     .modal.show .modal-content {
@@ -458,7 +458,6 @@
       overscroll-behavior: contain;
     }
 
-    /* BARRE DE SCROLL VISIBLE SUR TV POUR SOURIS */
     .source-list::-webkit-scrollbar {
       width: 8px;
     }
@@ -475,7 +474,7 @@
       background: var(--bg);
       border-radius: 16px;
       overflow: hidden;
-      flex-shrink: 0; /* Ne compresse pas la boîte */
+      flex-shrink: 0;
     }
 
     .quality-header {
@@ -509,7 +508,6 @@
       transform: rotate(90deg);
     }
 
-    /* LISTE ENTIÈREMENT DÉPLOYÉE SANS SOUS-SCROLL COMPLIQUÉ */
     .quality-sources {
       display: none;
       padding: 10px;
@@ -538,7 +536,7 @@
       align-items: center;
       justify-content: space-between;
       transition: all 0.2s ease;
-      flex-shrink: 0; /* Empêche le bouton de s'écraser */
+      flex-shrink: 0;
     }
 
     .source-sub-btn:hover, .source-sub-btn:focus {
@@ -814,7 +812,25 @@
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
+      // Priorités d'URL définies (P1 -> P8)
+      const urlPriorities = [
+        "http://troublessupport.my.to:80", // P1
+        "http://live.tvpython.net",        // P2
+        "http://4kpro2.com",               // P3
+        "http://line.fire-4k.cc",          // P4
+        "http://hnsefpop.top:8080",        // P5
+        "http://smartsat0326.vip",         // P6
+        "http://line.iptv-4k.cc",          // P7
+        "http://liontv.es"                 // P8
+      ];
+
+      function getUrlPriorityIndex(url) {
+        const index = urlPriorities.findIndex(prefix => url.startsWith(prefix));
+        return index !== -1 ? index : Infinity;
+      }
+
       const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
+      
       video.sources.forEach(source => {
         const cat = getQualityCategory(source.label);
         groups[cat].push(source);
@@ -824,8 +840,21 @@
       let isFirstExpanded = false;
 
       order.forEach((cat) => {
-        const sourcesInCat = groups[cat];
+        let sourcesInCat = groups[cat];
+        
         if (sourcesInCat && sourcesInCat.length > 0) {
+          
+          // Tri au sein de la même qualité par ordre de priorité P1 à P8
+          sourcesInCat.sort((a, b) => {
+            const priorityA = getUrlPriorityIndex(a.url);
+            const priorityB = getUrlPriorityIndex(b.url);
+
+            if (priorityA !== priorityB) {
+              return priorityA - priorityB;
+            }
+            return 0;
+          });
+
           const groupDiv = document.createElement("div");
           groupDiv.className = "quality-group";
           
@@ -868,7 +897,6 @@
 
             subBtn.innerHTML = `<span>▶ Source ${index + 1}${extraInfo}</span> ➔`;
             
-            // Auto scroll vers le bouton au survol du curseur TV pour ne jamais sortir de l'écran
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
             });
