@@ -368,7 +368,6 @@
 
     .empty.active { display: block; }
 
-    /* MODALE OPTIMISÉE POUR DÉFILEMENT TV & NO-BLOCAGE SOURIS */
     .modal {
       position: fixed;
       inset: 0;
@@ -445,7 +444,6 @@
       flex-shrink: 0;
     }
 
-    /* ZONE DE SCROLL UNIQUE, CONTINU ET FLUIDE */
     .source-list {
       display: flex;
       flex-direction: column;
@@ -699,7 +697,6 @@
       themeToggle.textContent = "☀️ Mode clair";
     }
 
-    // Chargement dynamique du fichier JSON externe
     async function fetchVideos() {
       try {
         const response = await fetch("videos.json");
@@ -812,9 +809,9 @@
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      // Priorités d'URL définies (P1 -> P8)
+      // Priorités P1 à P8
       const urlPriorities = [
-        "http://troublessupport.my.to:80", // P1
+        "http://troublessupport.my.to", // P1
         "http://live.tvpython.net",        // P2
         "http://4kpro2.com",               // P3
         "http://line.fire-4k.cc",          // P4
@@ -825,8 +822,18 @@
       ];
 
       function getUrlPriorityIndex(url) {
-        const index = urlPriorities.findIndex(prefix => url.startsWith(prefix));
-        return index !== -1 ? index : Infinity;
+        const cleanUrl = url.toLowerCase();
+        const index = urlPriorities.findIndex(prefix => cleanUrl.startsWith(prefix));
+        return index !== -1 ? index : 999;
+      }
+
+      function getDomainLabel(url) {
+        try {
+          const parsed = new URL(url);
+          return parsed.hostname;
+        } catch (e) {
+          return "";
+        }
       }
 
       const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
@@ -844,15 +851,10 @@
         
         if (sourcesInCat && sourcesInCat.length > 0) {
           
-          // Tri au sein de la même qualité par ordre de priorité P1 à P8
           sourcesInCat.sort((a, b) => {
             const priorityA = getUrlPriorityIndex(a.url);
             const priorityB = getUrlPriorityIndex(b.url);
-
-            if (priorityA !== priorityB) {
-              return priorityA - priorityB;
-            }
-            return 0;
+            return priorityA - priorityB;
           });
 
           const groupDiv = document.createElement("div");
@@ -882,20 +884,11 @@
             subBtn.type = "button";
             subBtn.tabIndex = 0;
             
-            let extraInfo = "";
-            const labelLower = source.label.toLowerCase();
-            
-            if (labelLower.includes("backup 2")) {
-              extraInfo += " (Backup 2)";
-            } else if (labelLower.includes("backup")) {
-              extraInfo += " (Backup)";
-            }
-            
-            if (labelLower.includes("lien web") || labelLower.includes("web")) {
-              extraInfo += " (Web)";
-            }
+            const domainName = getDomainLabel(source.url);
+            const pIndex = getUrlPriorityIndex(source.url);
+            const pBadge = pIndex !== 999 ? `[P${pIndex + 1}] ` : "";
 
-            subBtn.innerHTML = `<span>▶ Source ${index + 1}${extraInfo}</span> ➔`;
+            subBtn.innerHTML = `<span>▶ Source ${index + 1} <small style="opacity:0.75; font-weight:normal;">(${pBadge}${domainName})</small></span> ➔`;
             
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -1048,7 +1041,6 @@
     searchInput.addEventListener("input", renderVideos);
     categorySelect.addEventListener("change", renderVideos);
 
-    // Initialisation
     fetchVideos();
   </script>
 </body>
