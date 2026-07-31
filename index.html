@@ -809,31 +809,22 @@
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      // Priorités P1 à P8
+      // Priorités P1 à P8 basées sur le sous-domaine/domaine exact
       const urlPriorities = [
-        "http://troublessupport.my.to", // P1
-        "http://live.tvpython.net",        // P2
-        "http://4kpro2.com",               // P3
-        "http://line.fire-4k.cc",          // P4
-        "http://hnsefpop.top:8080",        // P5
-        "http://smartsat0326.vip",         // P6
-        "http://line.iptv-4k.cc",          // P7
-        "http://liontv.es"                 // P8
+        "troublesupport.my.to", // P1
+        "live.tvpython.net",    // P2
+        "4kpro2.com",           // P3
+        "line.fire-4k.cc",      // P4
+        "hnsefpop.top",         // P5
+        "smartsat0326.vip",     // P6
+        "line.iptv-4k.cc",      // P7
+        "liontv.es"             // P8
       ];
 
       function getUrlPriorityIndex(url) {
         const cleanUrl = url.toLowerCase();
-        const index = urlPriorities.findIndex(prefix => cleanUrl.startsWith(prefix));
+        const index = urlPriorities.findIndex(domain => cleanUrl.includes(domain));
         return index !== -1 ? index : 999;
-      }
-
-      function getDomainLabel(url) {
-        try {
-          const parsed = new URL(url);
-          return parsed.hostname;
-        } catch (e) {
-          return "";
-        }
       }
 
       const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
@@ -884,14 +875,11 @@
             subBtn.type = "button";
             subBtn.tabIndex = 0;
             
-            const domainName = getDomainLabel(source.url);
-            const pIndex = getUrlPriorityIndex(source.url);
-            const pBadge = pIndex !== 999 ? `[P${pIndex + 1}] ` : "";
-            
-            // Inclusion du libellé personnalisé provenant directement du JSON
-            const customLabel = source.label ? ` - ${source.label}` : "";
+            // Affiche le libellé du JSON (ex: "FHD (DNS)") ou par défaut "Source 1"
+            const displayLabel = source.label ? source.label : `Source ${index + 1}`;
 
-            subBtn.innerHTML = `<span>▶ Source ${index + 1}${customLabel} <small style="opacity:0.75; font-weight:normal;">(${pBadge}${domainName})</small></span> ➔`;
+            // Bouton épuré : pas d'URL ni de badge de priorité
+            subBtn.innerHTML = `<span>▶ ${displayLabel}</span> ➔`;
             
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
