@@ -581,7 +581,7 @@
 <body>
   <audio id="startSound" src="sound.wav" preload="auto"></audio>
 
-  <!-- Ecran d'introduction -->
+  <!-- Écran d'introduction -->
   <div class="intro-screen" id="introScreen">
     <div class="intro-content">
       <img src="logo.png" alt="MonLiveTv" class="intro-logo">
@@ -887,8 +887,11 @@
             const domainName = getDomainLabel(source.url);
             const pIndex = getUrlPriorityIndex(source.url);
             const pBadge = pIndex !== 999 ? `[P${pIndex + 1}] ` : "";
+            
+            // Inclusion du libellé personnalisé provenant directement du JSON
+            const customLabel = source.label ? ` - ${source.label}` : "";
 
-            subBtn.innerHTML = `<span>▶ Source ${index + 1} <small style="opacity:0.75; font-weight:normal;">(${pBadge}${domainName})</small></span> ➔`;
+            subBtn.innerHTML = `<span>▶ Source ${index + 1}${customLabel} <small style="opacity:0.75; font-weight:normal;">(${pBadge}${domainName})</small></span> ➔`;
             
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
