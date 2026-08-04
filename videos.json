@@ -34,6 +34,25 @@
     ]
   },
 {
+  "title": "Ciné+ Premier",
+  "category": "Cinéma",
+  "icon": "icones/c+premier.png",
+  "description": "Chaîne cinéma en direct.",
+  "sources": [
+    { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130837.m3u8" },
+    { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130837.m3u8" },
+    { "label": "Source FHD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621949.m3u8" },
+    { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13759.m3u8" },
+    { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131216.m3u8" },
+    { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131216.m3u8" },
+    { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621953.m3u8" },
+    { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/14021.m3u8" },
+    { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131217.m3u8" },
+    { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131217.m3u8" },
+    { "label": "Source SD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/28332.m3u8" }
+  ]
+},
+{
   "title": "Action",
   "category": "Cinéma",
   "icon": "icones/action.png",
