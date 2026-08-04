@@ -265,9 +265,8 @@
       { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23310.m3u8" },
       { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12833.m3u8" }
     ]
-  }
-],
-{
+  },
+  {
     "title": "Disney Junior",
     "category": "Jeunesse",
     "icon": "icones/disneyjunior.png",
@@ -290,31 +289,31 @@
       { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23298.m3u8" },
       { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12861.m3u8" }
     ]
-},
-{
-  "title": "Canal+ Kids",
-  "category": "Jeunesse",
-  "icon": "icones/c+kids.png",
-  "description": "Chaîne jeunesse en direct.",
-  "sources": [
-    { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130833.m3u8" },
-    { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130833.m3u8" },
-    { "label": "Source FHD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621922.m3u8" },
-    { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/64003.m3u8" },
-    { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32771.m3u8" },
-    { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/142060.m3u8" },
-    { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131210.m3u8" },
-    { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131210.m3u8" },
-    { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8004.m3u8" },
-    { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621957.m3u8" },
-    { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/163.m3u8" },
-    { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/251.m3u8" },
-    { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/142061.m3u8" },
-    { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131211.m3u8" },
-    { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131211.m3u8" },
-    { "label": "Source SD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621937.m3u8" }
-  ]
-},
+  },
+  {
+    "title": "Canal+ Kids",
+    "category": "Jeunesse",
+    "icon": "icones/c+kids.png",
+    "description": "Chaîne jeunesse en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130833.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130833.m3u8" },
+      { "label": "Source FHD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621922.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/64003.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32771.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/142060.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131210.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131210.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8004.m3u8" },
+      { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621957.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/163.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/251.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/142061.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131211.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131211.m3u8" },
+      { "label": "Source SD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621937.m3u8" }
+    ]
+  },
   {
     "title": "M6",
     "category": "Généraliste",
@@ -371,54 +370,54 @@
       { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12863.m3u8" }
     ]
   },
-{
-  "title": "Tiji",
-  "category": "Jeunesse",
-  "icon": "icones/tiji.png",
-  "description": "Chaîne jeunesse en direct.",
-  "sources": [
-    { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130980.m3u8" },
-    { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130980.m3u8" },
-    { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/456.m3u8" },
-    { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/148485.m3u8" },
-    { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32830.m3u8" },
-    { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13868.m3u8" },
-    { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131307.m3u8" },
-    { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131307.m3u8" },
-    { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8190.m3u8" },
-    { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1622.m3u8" },
-    { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/299.m3u8" },
-    { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/24949.m3u8" },
-    { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131308.m3u8" },
-    { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131308.m3u8" },
-    { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23343.m3u8" },
-    { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12772.m3u8" }
-  ]
-},
-{
-  "title": "Canal J",
-  "category": "Jeunesse",
-  "icon": "icones/canalj.png",
-  "description": "Chaîne jeunesse en direct.",
-  "sources": [
-    { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130996.m3u8" },
-    { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130996.m3u8" },
-    { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2556.m3u8" },
-    { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32828.m3u8" },
-    { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13764.m3u8" },
-    { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131327.m3u8" },
-    { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131327.m3u8" },
-    { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/7981.m3u8" },
-    { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/454.m3u8" },
-    { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/1222.m3u8" },
-    { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/297.m3u8" },
-    { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/24941.m3u8" },
-    { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131328.m3u8" },
-    { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131328.m3u8" },
-    { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23286.m3u8" },
-    { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12884.m3u8" }
-  ]
-},
+  {
+    "title": "Tiji",
+    "category": "Jeunesse",
+    "icon": "icones/tiji.png",
+    "description": "Chaîne jeunesse en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130980.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130980.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/456.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/148485.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32830.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13868.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131307.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131307.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8190.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1622.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/299.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/24949.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131308.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131308.m3u8" },
+      { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23343.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12772.m3u8" }
+    ]
+  },
+  {
+    "title": "Canal J",
+    "category": "Jeunesse",
+    "icon": "icones/canalj.png",
+    "description": "Chaîne jeunesse en direct.",
+    "sources": [
+      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130996.m3u8" },
+      { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130996.m3u8" },
+      { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2556.m3u8" },
+      { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32828.m3u8" },
+      { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13764.m3u8" },
+      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131327.m3u8" },
+      { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131327.m3u8" },
+      { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/7981.m3u8" },
+      { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/454.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/1222.m3u8" },
+      { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/297.m3u8" },
+      { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/24941.m3u8" },
+      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131328.m3u8" },
+      { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131328.m3u8" },
+      { "label": "Source SD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/23286.m3u8" },
+      { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12884.m3u8" }
+    ]
+  },
   {
     "title": "Ligue1+ 1",
     "category": "Sport",
@@ -869,7 +868,7 @@
       { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/397554.m3u8" },
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130820.m3u8" },
       { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131067.m3u8" },
-      { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8?_t=1784813084538&_vnc=mrxjnexq_9&token=SEReU0dfFg8WBAcEU1ICBg5WAgUHBFddB1YOAQVSUlIBXgEFBlEHVw0WGxRGRUZWVl9tXVAWWAgAUwcFCR9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHCwcFABcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYGBgAVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYNAAcAFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ%3D%3D" },
+      { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8" },
       { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8181.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130820.m3u8" },
       { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32817.m3u8" },
@@ -905,7 +904,6 @@
       { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130903.m3u8" },
       { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/2734.m3u8" },
       { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1042.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.http://203.76.254.7/live/290113/24475A/131143.m3u8?token=SEReU0dfFg8WUVQBAVQGBlFUVgAAVVANAFRSClcGUFZQUlQCAQNSAAAWGxRGRUZWVl9tXVAWWAgAUwYHAh9HQUADRG1dUxYPFgUBBgYGDQcVHhBAXVkHGwlSGxFBWgEWCUQHBwEDAxcYFlJOQVRGXVZebVBRQgtaVkANXURfCRgRCVhtUFJZVFpQFQwXARYfFVtBRBYODExfDhsRU1oRRlISUxAOFQYHBQUVGhdSW0ZZRkBNFg5Af2FAGxFUSxFRXRVfXVoVDhdZB0IOFx0WWkRtQFFHQBBcUg9SQRMJRwQRShRfVU9rVltaWVNWRV1cWUEQDhYFQBURD1hdWEcKRmwWX1YWDRYGBg0HFBkTQUBSQG1dRBZYGwpQGQIEAUsMC0gEAwQVSQ==cc/live/290113/24475A/130903.m3u8" },
       { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130903.m3u8" },
       { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/32763.m3u8" },
