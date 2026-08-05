@@ -34,6 +34,31 @@
     ]
   },
 {
+  "title": "Polar+",
+  "category": "Divertissement",
+  "icon": "icones/polar+.png",
+  "description": "Chaîne cinéma en direct.",
+  "sources": [
+    { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130866.m3u8" },
+    { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130866.m3u8" },
+    { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/683.m3u8" },
+    { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/116319.m3u8" },
+    { "label": "Source FHD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/250668.m3u8" },
+    { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/216785.m3u8" },
+    { "label": "Source FHD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/13763.m3u8" },
+    { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131094.m3u8" },
+    { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131094.m3u8" },
+    { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8168.m3u8" },
+    { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/8560.m3u8" },
+    { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/2719.m3u8" },
+    { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/25041.m3u8" },
+    { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131095.m3u8" },
+    { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131095.m3u8" },
+    { "label": "Source SD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/12794.m3u8" },
+    { "label": "Source SD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/39421.m3u8" }
+  ]
+},
+{
   "title": "Ciné+ Premier",
   "category": "Cinéma",
   "icon": "icones/c+premier.png",
