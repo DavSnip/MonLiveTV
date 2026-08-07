@@ -188,7 +188,7 @@
 {
   "title": "Ciné+ OCS",
   "category": "Cinéma",
-  "icon": "icones/c+osc.png",
+  "icon": "icones/c+ocs.png",
   "description": "Chaîne Ciné+ OCS en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724805.m3u8" },
