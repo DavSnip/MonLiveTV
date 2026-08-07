@@ -37,7 +37,7 @@
   "title": "Ciné+ Classic",
   "category": "Cinéma",
   "icon": "icones/c+classic.png",
-  "description": "Chaîne Ciné+ Classic en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130842.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131227.m3u8" },
@@ -63,7 +63,7 @@
   "title": "Ciné+ Club",
   "category": "Cinéma",
   "icon": "icones/c+club.png",
-  "description": "Chaîne Ciné+ Club en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724808.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130841.m3u8" },
@@ -80,7 +80,7 @@
   "title": "Ciné+ Emotion",
   "category": "Cinéma",
   "icon": "icones/c+emotion.png",
-  "description": "Chaîne Ciné+ Emotion en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/255.m3u8" },
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724810.m3u8" },
@@ -108,7 +108,7 @@
   "title": "Ciné+ Famiz",
   "category": "Cinéma",
   "icon": "icones/c+famiz.png",
-  "description": "Chaîne Ciné+ Famiz en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8012.m3u8" },
     { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/660.m3u8" },
@@ -136,7 +136,7 @@
   "title": "Ciné+ Festival",
   "category": "Cinéma",
   "icon": "icones/c+festival.png",
-  "description": "Chaîne Ciné+ Festival en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724806.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455717.m3u8" },
@@ -161,7 +161,7 @@
   "title": "Ciné+ Frisson",
   "category": "Cinéma",
   "icon": "icones/c+frisson.png",
-  "description": "Chaîne Ciné+ Frisson en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724811.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130838.m3u8" },
@@ -189,7 +189,7 @@
   "title": "Ciné+ OCS",
   "category": "Cinéma",
   "icon": "icones/c+ocs.png",
-  "description": "Chaîne Ciné+ OCS en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724805.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455714.m3u8" },
@@ -211,7 +211,7 @@
   "title": "Paramount Channel",
   "category": "Cinéma",
   "icon": "icones/paramountchannel.png",
-  "description": "Chaîne Paramount Channel en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130868.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131242.m3u8" },
@@ -232,7 +232,7 @@
   "title": "Paramount Décalé",
   "category": "Cinéma",
   "icon": "icones/paramountdecale.png",
-  "description": "Chaîne Paramount Décalé en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/274703.m3u8" },
     { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/4528.m3u8" },
@@ -250,7 +250,7 @@
   "title": "TCM Cinéma",
   "category": "Cinéma",
   "icon": "icones/tcmcinema.png",
-  "description": "Chaîne TCM Cinéma en direct.",
+  "description": "Chaîne cinéma en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1626.m3u8" },
     { "label": "Source HD", "url": "http://live.tvpython.net:2052/live/271020221929/27oct20221928/1414.m3u8" },
@@ -278,7 +278,7 @@
   "title": "W9",
   "category": "Généraliste",
   "icon": "icones/w9.png",
-  "description": "Chaîne W9 en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724796.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130816.m3u8" },
@@ -311,7 +311,7 @@
   "title": "TMC",
   "category": "Généraliste",
   "icon": "icones/tmc.png",
-  "description": "Chaîne TMC en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724795.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130819.m3u8" },
@@ -344,7 +344,7 @@
   "title": "TFX",
   "category": "Généraliste",
   "icon": "icones/tfx.png",
-  "description": "Chaîne TFX en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724792.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130812.m3u8" },
@@ -375,7 +375,7 @@
   "title": "6Ter",
   "category": "Généraliste",
   "icon": "icones/6ter.png",
-  "description": "Chaîne 6Ter en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724778.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130823.m3u8" },
@@ -405,7 +405,7 @@
   "title": "RTL9",
   "category": "Généraliste",
   "icon": "icones/rtl9.png",
-  "description": "Chaîne RTL9 en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724793.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130825.m3u8" },
@@ -435,7 +435,7 @@
   "title": "Téva",
   "category": "Généraliste",
   "icon": "icones/teva.png",
-  "description": "Chaîne Téva en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724769.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130824.m3u8" },
@@ -466,7 +466,7 @@
   "title": "Novelas",
   "category": "Généraliste",
   "icon": "icones/novelas.png",
-  "description": "Chaîne Novelas en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/336585.m3u8" },
     { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/248197.m3u8" },
@@ -496,7 +496,7 @@
   "title": "C Star",
   "category": "Généraliste",
   "icon": "icones/cstar.png",
-  "description": "Chaîne C Star en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8097.m3u8" },
     { "label": "Source HD", "url": "http://smartsat9326.vip/live/mbarekibo567/e531l6xcjo/14546.m3u8" },
@@ -529,10 +529,10 @@
   ]
 },
   {
-  "title": "Arte",
+  "title": "Arté",
   "category": "Généraliste",
   "icon": "icones/arte.png",
-  "description": "Chaîne Arte en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724797.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130870.m3u8" },
@@ -564,7 +564,7 @@
   "title": "France 2",
   "category": "Généraliste",
   "icon": "icones/fr2.png",
-  "description": "Chaîne France 2 en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724787.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1459842.m3u8" },
@@ -600,7 +600,7 @@
   "title": "France 3",
   "category": "Généraliste",
   "icon": "icones/fr3.png",
-  "description": "Chaîne France 3 en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724788.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1459843.m3u8" },
@@ -633,7 +633,7 @@
   "title": "France 5",
   "category": "Généraliste",
   "icon": "icones/fr5.png",
-  "description": "Chaîne France 5 en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724790.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130808.m3u8" },
@@ -663,7 +663,7 @@
   "title": "TF1",
   "category": "Généraliste",
   "icon": "icones/tf1.png",
-  "description": "Chaîne TF1 en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724786.m3u8" },
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/649231.m3u8" },
@@ -704,7 +704,7 @@
   "title": "TF1 Séries Films",
   "category": "Généraliste",
   "icon": "icones/tf1sf.png",
-  "description": "Chaîne TF1 Séries Films en direct.",
+  "description": "Chaîne généraliste en direct.",
   "sources": [
     { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131054.m3u8" },
     { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131054.m3u8" },
