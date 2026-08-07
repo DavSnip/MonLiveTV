@@ -143,7 +143,7 @@
 {
   "title": "France 24",
   "category": "Infos",
-  "icon": "icones/france24.png",
+  "icon": "icones/fr24.png",
   "description": "Chaîne infos en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724813.m3u8" },
@@ -171,7 +171,7 @@
 {
   "title": "France Info",
   "category": "Infos",
-  "icon": "icones/franceinfo.png",
+  "icon": "icones/frinfo.png",
   "description": "Chaîne infos en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724812.m3u8" },
@@ -222,7 +222,7 @@
 {
   "title": "La Chaine Météo",
   "category": "Infos",
-  "icon": "icones/lachainemeteo.png",
+  "icon": "icones/meteo.png",
   "description": "Chaîne infos en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724777.m3u8" },
@@ -371,7 +371,7 @@
 {
   "title": "Comédie+",
   "category": "Divertissement",
-  "icon": "icones/comedieplus.png",
+  "icon": "icones/comedie+.png",
   "description": "Chaîne divertissement en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://liontv.es/live/Edgari2023/Edgari2023/1621938.m3u8" },
@@ -400,7 +400,7 @@
 {
   "title": "Comédy Central",
   "category": "Divertissement",
-  "icon": "icones/comedycentral.png",
+  "icon": "icones/comediecentral.png",
   "description": "Chaîne divertissement en direct.",
   "sources": [
     { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724771.m3u8" },
