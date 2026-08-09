@@ -809,15 +809,14 @@
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      // Priorités P1 à P8 basées sur le sous-domaine/domaine exact
       const urlPriorities = [
-        "4kpro2.com",           // P1
-        "line.fire-4k.cc",      // P2
-        "live.tvpython.net",    // P3
-        "hnsefpop.top",         // P4
-        "smartsat0326.vip",     // P5
-        "line.iptv-4k.cc",      // P6
-        "liontv.es"             // P7
+        "4kpro2.com",
+        "line.fire-4k.cc",
+        "live.tvpython.net",
+        "hnsefpop.top",
+        "smartsat0326.vip",
+        "line.iptv-4k.cc",
+        "liontv.es"
       ];
 
       function getUrlPriorityIndex(url) {
@@ -874,10 +873,8 @@
             subBtn.type = "button";
             subBtn.tabIndex = 0;
             
-            // Affiche le libellé du JSON (ex: "FHD (DNS)") ou par défaut "Source 1"
             const displayLabel = source.label ? source.label : `Source ${index + 1}`;
 
-            // Bouton épuré : pas d'URL ni de badge de priorité
             subBtn.innerHTML = `<span>▶ ${displayLabel}</span> ➔`;
             
             subBtn.addEventListener("mouseenter", () => {
@@ -1004,7 +1001,14 @@
       const selectedCategory = categorySelect.value;
 
       const filteredVideos = getSortedVideos().filter((video) => {
-        const matchesSearch = video.title.toLowerCase().includes(search) || video.category.toLowerCase().includes(search) || video.description.toLowerCase().includes(search);
+        const matchesSearch = video.title.toLowerCase().includes(search) || 
+                              video.category.toLowerCase().includes(search) || 
+                              video.description.toLowerCase().includes(search) || 
+                              (video.sources && video.sources.some(s => 
+                                s.label.toLowerCase().includes(search) || 
+                                s.url.toLowerCase().includes(search)
+                              ));
+                              
         const matchesCategory = selectedCategory === "Tout" || video.category === selectedCategory;
         return matchesSearch && matchesCategory;
       });
