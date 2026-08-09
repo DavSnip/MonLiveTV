@@ -34,6 +34,36 @@
     ]
   },
   {
+  "title": "ToonBox",
+  "category": "Jeunesse",
+  "icon": "icones/toonbox.png",
+  "description": "Chaîne de dessins animés et héros en continu.",
+  "sources": [
+    { "label": "44 Chats - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/142693.m3u8" },
+    { "label": "Babar - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436299.m3u8" },
+    { "label": "Caillou - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/132901.m3u8" },
+    { "label": "Chuchu Tv - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/64608.m3u8" },
+    { "label": "Dora L'Exploratrice - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/6713.m3u8" },
+    { "label": "Dragon Ball Super - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436291.m3u8" },
+    { "label": "Dragon Ball Z - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436295.m3u8" },
+    { "label": "Foot 2 Rue - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436289.m3u8" },
+    { "label": "Katuri - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/132900.m3u8" },
+    { "label": "Le Monde Merveilleux De Mickey - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/38527.m3u8" },
+    { "label": "Les Lapins Cretins - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/437146.m3u8" },
+    { "label": "Monde Des Petits - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/91435.m3u8" },
+    { "label": "Oscar'S Oasis - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/136701.m3u8" },
+    { "label": "Peppa Pig - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/6700.m3u8" },
+    { "label": "Petit Ours Brun - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436293.m3u8" },
+    { "label": "Phineas Et Ferb - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436288.m3u8" },
+    { "label": "Regular Show - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436297.m3u8" },
+    { "label": "Sam Le Pompier - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/437147.m3u8" },
+    { "label": "Scooby-Doo - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/437746.m3u8" },
+    { "label": "Spider-Man - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/437745.m3u8" },
+    { "label": "Titeuf - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/436298.m3u8" },
+    { "label": "Tom And Jerry - HD", "url": "http://4kpro2.com/live/KMP63827/HBZ25174/6757.m3u8" }
+  ]
+},
+  {
   "title": "Planète+ Crime",
   "category": "Documentaire",
   "icon": "icones/planete+crime.png",
