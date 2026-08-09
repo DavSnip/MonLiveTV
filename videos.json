@@ -67,7 +67,7 @@
 {
   "title": "Chasse et Pêche",
   "category": "Documentaire",
-  "icon": "icones/chasseetpeche.png",
+  "icon": "icones/chasseetpeche.jpg",
   "description": "Chaîne découverte en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://hnsefpop.top:8080/live/6421764244994393/34a7ee79e3e8/8100.m3u8" },
