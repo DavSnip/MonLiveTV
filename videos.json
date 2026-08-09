@@ -117,7 +117,7 @@
 {
   "title": "Discovery Channel",
   "category": "Documentaire",
-  "icon": "icones/discoverychannel.png",
+  "icon": "icones/discoveychannel.png",
   "description": "Chaine documentaire en direct.",
   "sources": [
     { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130915.m3u8" },
