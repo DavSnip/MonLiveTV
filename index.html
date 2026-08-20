@@ -544,29 +544,6 @@
       outline: 2px solid white;
     }
 
-    /* Pastilles d'état */
-    .status-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 10px;
-      background-color: #f59e0b; /* Orange = test en cours */
-      box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-
-    .status-dot.online {
-      background-color: #10b981; /* Vert = actif */
-      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
-    }
-
-    .status-dot.offline {
-      background-color: #ef4444; /* Rouge = hors ligne */
-      box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
-    }
-
     .author {
       position: fixed;
       right: 16px;
@@ -718,37 +695,6 @@
     if (savedTheme === "dark") {
       body.classList.add("dark");
       themeToggle.textContent = "☀️ Mode clair";
-    }
-
-    // Vérification du contenu M3U8 avec relais CORS
-    async function checkStreamDirect(url, timeoutMs = 4000) {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), timeoutMs);
-
-      const testUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
-
-      try {
-        const response = await fetch(testUrl, {
-          method: "GET",
-          signal: controller.signal
-        });
-
-        clearTimeout(timer);
-
-        if (!response.ok) return false;
-
-        const text = await response.text();
-        return text.includes("#EXTM3U") || text.includes("#EXTINF") || text.includes(".ts");
-      } catch (error) {
-        try {
-          const backupUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
-          const backupResponse = await fetch(backupUrl, { method: "GET" });
-          const backupText = await backupResponse.text();
-          return backupText.includes("#EXTM3U") || backupText.includes("#EXTINF");
-        } catch (e) {
-          return false;
-        }
-      }
     }
 
     async function fetchVideos() {
@@ -929,19 +875,7 @@
             
             const displayLabel = source.label ? source.label : `Source ${index + 1}`;
 
-            subBtn.innerHTML = `
-              <span style="display: flex; align-items: center;">
-                <span class="status-dot"></span>
-                ▶ ${displayLabel}
-              </span>
-              ➔
-            `;
-
-            const dot = subBtn.querySelector(".status-dot");
-            checkStreamDirect(source.url).then((isAlive) => {
-              dot.className = "status-dot " + (isAlive ? "online" : "offline");
-              dot.title = isAlive ? "Flux actif" : "Flux hors ligne";
-            });
+            subBtn.innerHTML = `<span>▶ ${displayLabel}</span> ➔`;
             
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
