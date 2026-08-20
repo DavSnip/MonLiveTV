@@ -544,6 +544,29 @@
       outline: 2px solid white;
     }
 
+    /* Pastilles d'état des flux */
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 10px;
+      background-color: #f59e0b; /* Orange en attente */
+      box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .status-dot.online {
+      background-color: #10b981; /* Vert */
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
+    }
+
+    .status-dot.offline {
+      background-color: #ef4444; /* Rouge */
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
+    }
+
     .author {
       position: fixed;
       right: 16px;
@@ -661,6 +684,8 @@
   <div class="author">SnipDav</div>
   
   <script>
+    const WORKER_PROXY_URL = "https://iptv-checker.davidconeggo.workers.dev/";
+
     let videos = [];
 
     const body = document.body;
@@ -695,6 +720,17 @@
     if (savedTheme === "dark") {
       body.classList.add("dark");
       themeToggle.textContent = "☀️ Mode clair";
+    }
+
+    async function checkStreamWithWorker(url) {
+      try {
+        const res = await fetch(`${WORKER_PROXY_URL}?url=${encodeURIComponent(url)}`);
+        if (!res.ok) return false;
+        const data = await res.json();
+        return data.ok === true;
+      } catch (error) {
+        return false;
+      }
     }
 
     async function fetchVideos() {
@@ -875,7 +911,19 @@
             
             const displayLabel = source.label ? source.label : `Source ${index + 1}`;
 
-            subBtn.innerHTML = `<span>▶ ${displayLabel}</span> ➔`;
+            subBtn.innerHTML = `
+              <span style="display: flex; align-items: center;">
+                <span class="status-dot"></span>
+                ▶ ${displayLabel}
+              </span>
+              ➔
+            `;
+
+            const dot = subBtn.querySelector(".status-dot");
+            checkStreamWithWorker(source.url).then((isAlive) => {
+              dot.className = "status-dot " + (isAlive ? "online" : "offline");
+              dot.title = isAlive ? "Flux actif" : "Flux hors ligne";
+            });
             
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
