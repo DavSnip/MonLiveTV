@@ -544,26 +544,26 @@
       outline: 2px solid white;
     }
 
-    /* Pastilles d'état des flux */
+    /* Pastilles d'état */
     .status-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       display: inline-block;
       margin-right: 10px;
-      background-color: #f59e0b; /* Orange en attente */
+      background-color: #f59e0b; /* Orange = test en cours */
       box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
       flex-shrink: 0;
       transition: all 0.3s ease;
     }
 
     .status-dot.online {
-      background-color: #10b981; /* Vert */
+      background-color: #10b981; /* Vert = actif */
       box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
     }
 
     .status-dot.offline {
-      background-color: #ef4444; /* Rouge */
+      background-color: #ef4444; /* Rouge = hors ligne */
       box-shadow: 0 0 8px rgba(239, 68, 68, 0.8);
     }
 
@@ -684,8 +684,6 @@
   <div class="author">SnipDav</div>
   
   <script>
-    const WORKER_PROXY_URL = "https://iptv-checker.davidconeggo.workers.dev/";
-
     let videos = [];
 
     const body = document.body;
@@ -722,15 +720,60 @@
       themeToggle.textContent = "☀️ Mode clair";
     }
 
-    async function checkStreamWithWorker(url) {
-      try {
-        const res = await fetch(`${WORKER_PROXY_URL}?url=${encodeURIComponent(url)}`);
-        if (!res.ok) return false;
-        const data = await res.json();
-        return data.ok === true;
-      } catch (error) {
-        return false;
-      }
+    // Vérification directe du flux en arrière-plan
+    function checkStreamDirect(url, timeoutMs = 3500) {
+      return new Promise((resolve) => {
+        let resolved = false;
+
+        const media = document.createElement("video");
+        media.muted = true;
+        media.preload = "auto";
+
+        const timer = setTimeout(() => {
+          if (!resolved) {
+            resolved = true;
+            cleanup();
+            resolve(false);
+          }
+        }, timeoutMs);
+
+        function cleanup() {
+          media.removeAttribute("src");
+          media.load();
+          media.remove();
+        }
+
+        media.onloadeddata = media.onloadedmetadata = media.oncanplay = () => {
+          if (!resolved) {
+            resolved = true;
+            clearTimeout(timer);
+            cleanup();
+            resolve(true);
+          }
+        };
+
+        media.onerror = () => {
+          fetch(url, { method: "HEAD", mode: "no-cors" })
+            .then(() => {
+              if (!resolved) {
+                resolved = true;
+                clearTimeout(timer);
+                cleanup();
+                resolve(true);
+              }
+            })
+            .catch(() => {
+              if (!resolved) {
+                resolved = true;
+                clearTimeout(timer);
+                cleanup();
+                resolve(false);
+              }
+            });
+        };
+
+        media.src = url;
+      });
     }
 
     async function fetchVideos() {
@@ -920,7 +963,7 @@
             `;
 
             const dot = subBtn.querySelector(".status-dot");
-            checkStreamWithWorker(source.url).then((isAlive) => {
+            checkStreamDirect(source.url).then((isAlive) => {
               dot.className = "status-dot " + (isAlive ? "online" : "offline");
               dot.title = isAlive ? "Flux actif" : "Flux hors ligne";
             });
