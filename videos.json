@@ -5,13 +5,9 @@
     "icon": "icones/canal+.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130830.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131204.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/649232.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/649232.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130830.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131204.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131205.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131205.m3u8" }
     ]
   },
@@ -28,10 +24,6 @@
     "icon": "icones/planete+crime.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724839.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130912.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131266.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131267.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724839.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130912.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131266.m3u8" },
@@ -44,10 +36,6 @@
     "icon": "icones/planete+aventure.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724838.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130911.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131264.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131265.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724838.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130911.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131264.m3u8" },
@@ -60,10 +48,6 @@
     "icon": "icones/crimedistrict.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724822.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130867.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131240.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131241.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724822.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130867.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131240.m3u8" },
@@ -76,10 +60,6 @@
     "icon": "icones/c+docs.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724785.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/677772.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/677771.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/677773.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724785.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/677772.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/677771.m3u8" },
@@ -92,10 +72,6 @@
     "icon": "icones/tlc.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724794.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1680253.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1680254.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1680255.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724794.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1680253.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1680254.m3u8" },
@@ -108,9 +84,6 @@
     "icon": "icones/discoveychannel.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130915.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131272.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131273.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130915.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131272.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131273.m3u8" }
@@ -122,9 +95,6 @@
     "icon": "icones/id.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130917.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131276.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131277.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130917.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131276.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131277.m3u8" }
@@ -136,18 +106,10 @@
     "icon": "icones/nationalgeo.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724833.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130913.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131268.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131269.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724833.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130913.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131268.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131269.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724834.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130914.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131270.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131271.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724834.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130914.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131270.m3u8" },
@@ -160,11 +122,7 @@
     "icon": "icones/histoire.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724836.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724836.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130922.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131286.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131287.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130922.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131286.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131287.m3u8" }
@@ -176,10 +134,6 @@
     "icon": "icones/trek.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724840.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130920.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131282.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131283.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724840.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130920.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131282.m3u8" },
@@ -192,11 +146,7 @@
     "icon": "icones/seasons.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724841.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724841.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130923.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131288.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131289.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130923.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131288.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131289.m3u8" }
@@ -208,7 +158,6 @@
     "icon": "icones/sv.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131290.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131290.m3u8" }
     ]
   },
@@ -218,10 +167,6 @@
     "icon": "icones/ushuaia.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724843.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130926.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131294.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131295.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724843.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130926.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131294.m3u8" },
@@ -234,13 +179,9 @@
     "icon": "icones/mzn.png",
     "description": "Chaine documentaire en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/386750.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/386749.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/386751.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/386750.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/386749.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/386751.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1287650.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1287650.m3u8" }
     ]
   },
@@ -250,10 +191,6 @@
     "icon": "icones/animaux.png",
     "description": "Chaîne découverte en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724844.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130928.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131298.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131299.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724844.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130928.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131298.m3u8" },
@@ -266,11 +203,7 @@
     "icon": "icones/chasseetpeche.png",
     "description": "Chaîne découverte en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724845.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724845.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130929.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131300.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131301.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130929.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131300.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131301.m3u8" }
@@ -282,7 +215,6 @@
     "icon": "icones/20minutes.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1453837.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1453837.m3u8" }
     ]
   },
@@ -292,10 +224,6 @@
     "icon": "icones/bfmtv.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724816.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130899.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131137.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131138.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724816.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130899.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131137.m3u8" },
@@ -315,10 +243,6 @@
     "icon": "icones/cnews.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724814.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130897.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131133.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131134.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724814.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130897.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131133.m3u8" },
@@ -331,10 +255,6 @@
     "icon": "icones/euronews.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724815.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130902.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131141.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131142.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724815.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130902.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131141.m3u8" },
@@ -347,10 +267,6 @@
     "icon": "icones/fr24.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724813.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130906.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131149.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131150.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724813.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130906.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131149.m3u8" },
@@ -363,10 +279,6 @@
     "icon": "icones/frinfo.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724812.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130898.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131135.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131136.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724812.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130898.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131135.m3u8" },
@@ -379,10 +291,6 @@
     "icon": "icones/i24news.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724820.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130907.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131151.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131152.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724820.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130907.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131151.m3u8" },
@@ -395,9 +303,6 @@
     "icon": "icones/meteo.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724777.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131131.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/722500.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724777.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131131.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/722500.m3u8" }
@@ -409,10 +314,6 @@
     "icon": "icones/lcp.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724819.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130904.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131145.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131146.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724819.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130904.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131145.m3u8" },
@@ -425,10 +326,6 @@
     "icon": "icones/13rue.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724826.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130821.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131069.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131070.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724826.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130821.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131069.m3u8" },
@@ -441,10 +338,6 @@
     "icon": "icones/ab1.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724779.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130878.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131108.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131109.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724779.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130878.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131108.m3u8" },
@@ -457,10 +350,6 @@
     "icon": "icones/ab3.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724780.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130879.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1287660.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131111.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724780.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130879.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1287660.m3u8" },
@@ -473,10 +362,6 @@
     "icon": "icones/cherie25.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724830.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130872.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131102.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131103.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724830.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130872.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131102.m3u8" },
@@ -489,10 +374,6 @@
     "icon": "icones/comedie+.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724770.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130876.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131104.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131105.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724770.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130876.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131104.m3u8" },
@@ -505,10 +386,6 @@
     "icon": "icones/comediecentral.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724771.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130863.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131088.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131089.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724771.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130863.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131088.m3u8" },
@@ -521,9 +398,6 @@
     "icon": "icones/nrj12.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130817.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131061.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131062.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130817.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131061.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131062.m3u8" }
@@ -535,10 +409,6 @@
     "icon": "icones/parispremiere.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724772.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130881.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131114.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131115.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724772.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130881.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131114.m3u8" },
@@ -551,10 +421,6 @@
     "icon": "icones/rmcstory.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724829.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130871.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131100.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131101.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724829.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130871.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131100.m3u8" },
@@ -567,10 +433,6 @@
     "icon": "icones/serieclub.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724825.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130880.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131112.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131113.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724825.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130880.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131112.m3u8" },
@@ -583,10 +445,6 @@
     "icon": "icones/tv5monde.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724775.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130905.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131147.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131148.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724775.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130905.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131147.m3u8" },
@@ -599,15 +457,10 @@
     "icon": "icones/warnertv.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724776.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/772390.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/772391.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/772392.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724776.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/772390.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/772391.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/772392.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1453838.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1453838.m3u8" }
     ]
   },
@@ -617,9 +470,6 @@
     "icon": "icones/c+classic.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130842.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131227.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131228.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130842.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131227.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131228.m3u8" }
@@ -631,10 +481,6 @@
     "icon": "icones/c+club.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724808.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130841.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131225.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131226.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724808.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130841.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131225.m3u8" },
@@ -647,10 +493,6 @@
     "icon": "icones/c+emotion.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724810.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130839.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131221.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131222.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724810.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130839.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131221.m3u8" },
@@ -663,10 +505,6 @@
     "icon": "icones/c+famiz.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724809.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130840.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131223.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131224.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724809.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130840.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131223.m3u8" },
@@ -679,10 +517,6 @@
     "icon": "icones/c+festival.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724806.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455717.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455716.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455715.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724806.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1455717.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1455716.m3u8" },
@@ -695,10 +529,6 @@
     "icon": "icones/c+frisson.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724811.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130838.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131219.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131220.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724811.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130838.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131219.m3u8" },
@@ -711,10 +541,6 @@
     "icon": "icones/c+ocs.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724805.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455714.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455713.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/1455712.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724805.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1455714.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1455713.m3u8" },
@@ -727,9 +553,6 @@
     "icon": "icones/paramountchannel.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130868.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131242.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131243.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130868.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131242.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131243.m3u8" }
@@ -741,9 +564,6 @@
     "icon": "icones/paramountdecale.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130869.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131096.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131097.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130869.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131096.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131097.m3u8" }
@@ -755,9 +575,6 @@
     "icon": "icones/tcmcinema.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130875.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131246.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131247.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130875.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131246.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131247.m3u8" }
@@ -769,10 +586,6 @@
     "icon": "icones/w9.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724796.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130816.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131059.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131060.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724796.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130816.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131059.m3u8" },
@@ -785,10 +598,6 @@
     "icon": "icones/tmc.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724795.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130819.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131065.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131066.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724795.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130819.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131065.m3u8" },
@@ -801,10 +610,6 @@
     "icon": "icones/tfx.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724792.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130812.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131051.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131052.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724792.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130812.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131051.m3u8" },
@@ -817,10 +622,6 @@
     "icon": "icones/6ter.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724778.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130823.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131071.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131072.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724778.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130823.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131071.m3u8" },
@@ -833,10 +634,6 @@
     "icon": "icones/rtl9.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724793.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130825.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131081.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131082.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724793.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130825.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131081.m3u8" },
@@ -849,10 +646,6 @@
     "icon": "icones/teva.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724769.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130824.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131075.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131076.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724769.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130824.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131075.m3u8" },
@@ -865,10 +658,6 @@
     "icon": "icones/novelas.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724798.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130865.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131092.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131093.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724798.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130865.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131092.m3u8" },
@@ -881,15 +670,10 @@
     "icon": "icones/cstar.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724799.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130818.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131063.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131064.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724799.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130818.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131063.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131064.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/386817.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/386817.m3u8" }
     ]
   },
@@ -899,10 +683,6 @@
     "icon": "icones/arte.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724797.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130870.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131098.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131099.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724797.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130870.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131098.m3u8" },
@@ -915,11 +695,6 @@
     "icon": "icones/fr2.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724787.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1459842.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130804.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131035.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/712245.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724787.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1459842.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130804.m3u8" },
@@ -933,11 +708,6 @@
     "icon": "icones/fr3.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724788.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1459843.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130805.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131037.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131038.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724788.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1459843.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130805.m3u8" },
@@ -951,10 +721,6 @@
     "icon": "icones/fr5.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724790.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130808.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131043.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131044.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724790.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130808.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131043.m3u8" },
@@ -967,11 +733,6 @@
     "icon": "icones/tf1.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724786.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/649231.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130803.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131033.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131034.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724786.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/649231.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130803.m3u8" },
@@ -985,11 +746,7 @@
     "icon": "icones/tf1sf.png",
     "description": "Chaîne généraliste en direct.",
     "sources": [
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131054.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131054.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724791.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130813.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131053.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724791.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130813.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131053.m3u8" }
@@ -1001,11 +758,8 @@
     "icon": "icones/polar+.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130866.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130866.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131094.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131094.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131095.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131095.m3u8" }
     ]
   },
@@ -1015,11 +769,8 @@
     "icon": "icones/c+premier.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130837.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130837.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131216.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131216.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131217.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131217.m3u8" }
     ]
   },
@@ -1029,13 +780,9 @@
     "icon": "icones/action.png",
     "description": "Chaîne cinéma en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724804.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724804.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130874.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131244.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130874.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131244.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131245.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131245.m3u8" }
     ]
   },
@@ -1045,11 +792,8 @@
     "icon": "icones/cartoonnetwork.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130994.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130994.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131323.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131323.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131324.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131324.m3u8" }
     ]
   },
@@ -1059,11 +803,8 @@
     "icon": "icones/cartoonito.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1287121.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1287121.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1287672.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1287672.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/1286775.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1286775.m3u8" }
     ]
   },
@@ -1073,11 +814,8 @@
     "icon": "icones/nickelodeon.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130988.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130988.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131335.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131335.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131336.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131336.m3u8" }
     ]
   },
@@ -1087,11 +825,8 @@
     "icon": "icones/nickelodeonjunior.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130987.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130987.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131333.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131333.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131334.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131334.m3u8" }
     ]
   },
@@ -1101,11 +836,8 @@
     "icon": "icones/nickelodeonteen.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130990.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130990.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131339.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131339.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131340.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131340.m3u8" }
     ]
   },
@@ -1115,11 +847,8 @@
     "icon": "icones/piwi+.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130979.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130979.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131305.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131305.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131306.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131306.m3u8" }
     ]
   },
@@ -1129,11 +858,8 @@
     "icon": "icones/boomerang.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130992.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130992.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131319.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131319.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131320.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131320.m3u8" }
     ]
   },
@@ -1143,11 +869,8 @@
     "icon": "icones/nickelodeon+1.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130989.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130989.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131337.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131337.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131338.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131338.m3u8" }
     ]
   },
@@ -1157,11 +880,8 @@
     "icon": "icones/teletoon+1.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130982.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130982.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131311.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131311.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131312.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131312.m3u8" }
     ]
   },
@@ -1171,11 +891,8 @@
     "icon": "icones/jone.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130998.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130998.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131343.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131343.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131344.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131344.m3u8" }
     ]
   },
@@ -1185,11 +902,8 @@
     "icon": "icones/disneyjunior.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130985.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130985.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131329.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131329.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131330.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131330.m3u8" }
     ]
   },
@@ -1199,11 +913,8 @@
     "icon": "icones/c+kids.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130833.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130833.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131210.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131210.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131211.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131211.m3u8" }
     ]
   },
@@ -1213,14 +924,9 @@
     "icon": "icones/M6.png",
     "description": "Chaine généraliste en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130810.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131048.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131047.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130810.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131047.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131048.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1724768.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/1459844.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1724768.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1459844.m3u8" }
     ]
@@ -1231,9 +937,6 @@
     "icon": "icones/disneychannel.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130983.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131314.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131313.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130983.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131313.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131314.m3u8" }
@@ -1245,11 +948,8 @@
     "icon": "icones/tiji.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130980.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130980.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131307.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131307.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131308.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131308.m3u8" }
     ]
   },
@@ -1259,11 +959,8 @@
     "icon": "icones/canalj.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130996.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130996.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131327.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131327.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131328.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131328.m3u8" }
     ]
   },
@@ -1373,11 +1070,7 @@
     "icon": "icones/bein1.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1726822.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1726822.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130937.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131362.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131363.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130937.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131362.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131363.m3u8" }
@@ -1389,11 +1082,7 @@
     "icon": "icones/bein2.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1726823.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1726823.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130939.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131364.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131365.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130939.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131364.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131365.m3u8" }
@@ -1405,11 +1094,7 @@
     "icon": "icones/bein3.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1726824.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1726824.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/130940.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131366.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131367.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130940.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131366.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131367.m3u8" }
@@ -1421,11 +1106,8 @@
     "icon": "icones/eurosport.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130944.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130944.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131374.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131374.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131375.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131375.m3u8" }
     ]
   },
@@ -1435,11 +1117,8 @@
     "icon": "icones/eurosport2.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130945.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130945.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131376.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131376.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131377.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131377.m3u8" }
     ]
   },
@@ -1449,11 +1128,8 @@
     "icon": "icones/c+foot.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/670133.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670133.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/670132.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670132.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/670134.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670134.m3u8" }
     ]
   },
@@ -1462,10 +1138,7 @@
     "category": "Sport",
     "icon": "icones/c+sport.png",
     "description": "Chaîne sport en direct.",
-    "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130835.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131215.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "Canal+ Sport 360",
@@ -1473,9 +1146,7 @@
     "icon": "icones/c+sport360.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/670131.m3u8" },
       { "label": "Source HD", "url": "http://192.142.25.182/live/play/WkRSTU1rRkhSalpoTUhSeVlWWk9Xa2QxZEhwU1dFeEpPR1JTWWxWclFrZFJTRzUzVmpZMlpqQm9aejA9/249790" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/670135.m3u8" },
       { "label": "Source SD", "url": "http://192.142.25.182/live/play/WkRSTU1rRkhSalpoTUhSeVlWWk9Xa2QxZEhwU1dFeEpPR1JTWWxWclFrZFJTRzUzVmpZMlpqQm9aejA9/249790" }
     ]
   },
@@ -1485,11 +1156,8 @@
     "icon": "icones/golf+.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130950.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130950.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131384.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131384.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131385.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131385.m3u8" }
     ]
   },
@@ -1499,7 +1167,6 @@
     "icon": "icones/automoto.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131380.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131380.m3u8" }
     ]
   },
@@ -1509,13 +1176,9 @@
     "icon": "icones/rmc1.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/1351778.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130933.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1351778.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130933.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131354.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131354.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131355.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131355.m3u8" }
     ]
   },
@@ -1525,9 +1188,7 @@
     "icon": "icones/rmc2.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130934.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130934.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131356.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131356.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131357.m3u8" }
     ]
@@ -1538,11 +1199,8 @@
     "icon": "icones/rmc3.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/359754.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/359754.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/359756.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/359756.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/359757.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/359757.m3u8" }
     ]
   },
@@ -1552,11 +1210,8 @@
     "icon": "icones/is+.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130942.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130942.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131370.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131370.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131371.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131371.m3u8" }
     ]
   },
@@ -1566,11 +1221,8 @@
     "icon": "icones/equipe.png",
     "description": "Chaîne sport en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130943.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130943.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131372.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131372.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131373.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131373.m3u8" }
     ]
   },
@@ -1579,45 +1231,35 @@
     "category": "Sport",
     "icon": "icones/c+sport1.png",
     "description": "Chaîne sport en direct.",
-    "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/312324.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "Canal+ Af Sport 2",
     "category": "Sport",
     "icon": "icones/c+sport2.png",
     "description": "Chaîne sport en direct.",
-    "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/312323.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "Canal+ Af Sport 3",
     "category": "Sport",
     "icon": "icones/c+sport3.png",
     "description": "Chaîne sport en direct.",
-    "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/312322.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "Canal+ Af Sport 4",
     "category": "Sport",
     "icon": "icones/c+sport4.png",
     "description": "Chaîne sport en direct.",
-    "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/312321.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "Canal+ Af Sport 5",
     "category": "Sport",
     "icon": "icones/c+sport5.png",
     "description": "Chaîne sport en direct.",
-    "sources": [
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/312320.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "SyFy",
@@ -1625,12 +1267,9 @@
     "icon": "icones/syfy.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130820.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131067.m3u8" },
       { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130820.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131067.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131068.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131068.m3u8" }
     ]
   },
@@ -1639,10 +1278,7 @@
     "category": "Documentaire",
     "icon": "icones/rmcdecouverte.png",
     "description": "Chaîne documentaire en direct.",
-    "sources": [
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131293.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131292.m3u8" }
-    ]
+    "sources": []
   },
   {
     "title": "LCI",
@@ -1650,10 +1286,7 @@
     "icon": "icones/lci.png",
     "description": "Chaîne infos en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130903.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130903.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131143.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131143.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131144.m3u8" }
     ]
@@ -1664,9 +1297,6 @@
     "icon": "icones/mangas.png",
     "description": "Chaîne manga en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130997.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131342.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131341.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130997.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131341.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131342.m3u8" }
@@ -1678,14 +1308,8 @@
     "icon": "icones/teletoon+.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130981.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131309.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131310.m3u8" },
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130903.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130903.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131143.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131143.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131144.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131144.m3u8" }
     ]
   },
@@ -1695,11 +1319,8 @@
     "icon": "icones/gulli.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130995.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130995.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131325.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131325.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131326.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131326.m3u8" }
     ]
   },
@@ -1709,11 +1330,8 @@
     "icon": "icones/fr4.png",
     "description": "Chaîne jeunesse en direct.",
     "sources": [
-      { "label": "Source FHD", "url": "http://line.fire-4k.cc/live/290113/24475A/130807.m3u8" },
       { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130807.m3u8" },
-      { "label": "Source HD", "url": "http://line.fire-4k.cc/live/290113/24475A/131041.m3u8" },
       { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131041.m3u8" },
-      { "label": "Source SD", "url": "http://line.fire-4k.cc/live/290113/24475A/131042.m3u8" },
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131042.m3u8" }
     ]
   }
