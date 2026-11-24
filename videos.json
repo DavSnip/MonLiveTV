@@ -970,8 +970,6 @@
   "icon": "icones/ligue1+.png",
   "description": "Chaîne sport en direct.",
   "sources": [
-    { "label": "Source HD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1441888.m3u8" },
-    { "label": "Source FHD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/1441887.m3u8" },
     { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/120701.m3u8" },
     { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/174040.m3u8" },
     { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470096.m3u8" },
