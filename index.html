@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>MonLiveTv</title>
   <link rel="icon" type="image/png" href="logo.png">
-  
+
   <style>
     :root {
       --bg: #f5f7fb;
@@ -290,7 +290,7 @@
     .favorite-btn.active {
       background: #2563eb;
     }
-    
+
     .remove-history-btn {
       position: absolute;
       top: 12px;
@@ -544,6 +544,63 @@
       outline: 2px solid white;
     }
 
+    /* Styles pour la modale de choix du lecteur */
+    .player-choice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .player-btn {
+      width: 100%;
+      border: none;
+      border-radius: 16px;
+      padding: 16px 18px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.02rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .player-btn:hover, .player-btn:focus {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .player-btn-castify {
+      background: linear-gradient(135deg, #2563eb, #9333ea);
+    }
+
+    .player-btn-wvc {
+      background: linear-gradient(135deg, #ea580c, #f59e0b);
+    }
+
+    .back-source-btn {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 12px 14px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-top: 4px;
+      transition: background 0.2s ease;
+    }
+
+    .back-source-btn:hover, .back-source-btn:focus {
+      background: rgba(37, 99, 235, 0.12);
+      outline: 2px solid var(--primary);
+    }
+
     .author {
       position: fixed;
       right: 16px;
@@ -599,6 +656,26 @@
     </div>
   </div>
 
+  <!-- Fenêtre Modale de Choix du Lecteur -->
+  <div class="modal" id="playerModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closePlayerModalBtn" title="Fermer">×</button>
+      <h3 id="playerModalTitle">Ouvrir le flux</h3>
+      <p class="modal-subtitle" id="playerModalSubtitle">Choisissez votre application de lecture :</p>
+      <div class="player-choice-list">
+        <button class="player-btn player-btn-castify" id="chooseCastifyBtn" type="button">
+          <span>📺 Castify</span>
+          <span>➔</span>
+        </button>
+        <button class="player-btn player-btn-wvc" id="chooseWvcBtn" type="button">
+          <span>📡 Web Video Caster</span>
+          <span>➔</span>
+        </button>
+        <button class="back-source-btn" id="backToSourcesBtn" type="button">← Retour aux sources</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Application Web Principale -->
   <main class="app" id="app">
     <header>
@@ -608,7 +685,7 @@
         </div>
         <div>
           <h1>MonLiveTv</h1>
-          <p class="subtitle">Lecture continue optimisée dans Castify.</p>
+          <p class="subtitle">Lecture continue optimisée dans Castify et Web Video Caster.</p>
         </div>
       </div>
 
@@ -622,7 +699,7 @@
           <span>DIRECT & STREAMING</span>
         </div>
         <h2>Vos flux optimisés</h2>
-        <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers Castify pour une lecture fluide sur votre écran.</p>
+        <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers Castify ou Web Video Caster pour une lecture fluide sur votre écran.</p>
         <div class="hero-actions">
           <button class="hero-btn" id="heroFavoritesBtn">★ Mes favoris</button>
         </div>
@@ -659,7 +736,7 @@
   </main>
 
   <div class="author">SnipDav</div>
-  
+
   <script>
     let videos = [];
 
@@ -681,15 +758,25 @@
 
     const heroFavoritesBtn = document.getElementById("heroFavoritesBtn");
 
-    // Modal DOM Elements
+    // Modal Sources DOM Elements
     const sourceModal = document.getElementById("sourceModal");
     const modalTitle = document.getElementById("modalTitle");
     const modalSourceList = document.getElementById("modalSourceList");
     const closeModalBtn = document.getElementById("closeModalBtn");
 
+    // Modal Lecteur DOM Elements
+    const playerModal = document.getElementById("playerModal");
+    const playerModalTitle = document.getElementById("playerModalTitle");
+    const playerModalSubtitle = document.getElementById("playerModalSubtitle");
+    const closePlayerModalBtn = document.getElementById("closePlayerModalBtn");
+    const chooseCastifyBtn = document.getElementById("chooseCastifyBtn");
+    const chooseWvcBtn = document.getElementById("chooseWvcBtn");
+    const backToSourcesBtn = document.getElementById("backToSourcesBtn");
+
     let started = false;
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     let history = JSON.parse(localStorage.getItem("watchHistory") || "[]");
+    let pendingStream = { url: null, label: "", video: null };
 
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -737,9 +824,9 @@
     function startSite() {
       if (started) return;
       started = true;
-      
+
       const fallbackTimer = setTimeout(showSite, 800);
-      
+
       startSound.volume = 1;
       startSound.currentTime = 0;
       startSound.play()
@@ -836,7 +923,7 @@
       modalSourceList.innerHTML = "";
 
       const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
-      
+
       (video.sources || []).forEach(source => {
         const cat = getQualityCategory(source.label);
         groups[cat].push(source);
@@ -847,11 +934,11 @@
 
       order.forEach((cat) => {
         const sourcesInCat = groups[cat];
-        
+
         if (sourcesInCat && sourcesInCat.length > 0) {
           const groupDiv = document.createElement("div");
           groupDiv.className = "quality-group";
-          
+
           if (!isFirstExpanded) {
             groupDiv.classList.add("expanded");
             isFirstExpanded = true;
@@ -861,7 +948,7 @@
           headerBtn.className = "quality-header";
           headerBtn.type = "button";
           headerBtn.tabIndex = 0;
-          
+
           headerBtn.innerHTML = `
             <span>Source ${cat}</span>
             <span class="arrow">▶</span>
@@ -875,25 +962,25 @@
             subBtn.className = "source-sub-btn";
             subBtn.type = "button";
             subBtn.tabIndex = 0;
-            
+
             const displayLabel = source.label ? source.label : `Source ${index + 1}`;
 
             subBtn.innerHTML = `<span>▶ ${displayLabel}</span> ➔`;
-            
+
             subBtn.addEventListener("mouseenter", () => {
               subBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
             });
 
             subBtn.addEventListener("click", () => {
               closeSourceModal();
-              launchCastify(source.url, video);
+              openPlayerModal(source.url, displayLabel, video);
             });
             sourcesContainer.appendChild(subBtn);
           });
 
           headerBtn.addEventListener("click", () => {
             const isCurrentlyExpanded = groupDiv.classList.contains("expanded");
-            
+
             modalSourceList.querySelectorAll(".quality-group").forEach(g => {
               g.classList.remove("expanded");
             });
@@ -921,33 +1008,85 @@
       sourceModal.classList.remove("show");
     }
 
+    function openPlayerModal(url, label, video) {
+      pendingStream = { url, label, video };
+      playerModalTitle.textContent = video.title;
+      playerModalSubtitle.textContent = `Source : ${label} — Choisissez votre lecteur :`;
+      playerModal.classList.add("show");
+      chooseCastifyBtn.focus();
+    }
+
+    function closePlayerModal() {
+      playerModal.classList.remove("show");
+    }
+
     closeModalBtn.addEventListener("click", closeSourceModal);
     sourceModal.addEventListener("click", (e) => {
       if (e.target === sourceModal) closeSourceModal();
     });
 
-    function launchCastify(url, video) {
+    closePlayerModalBtn.addEventListener("click", closePlayerModal);
+    playerModal.addEventListener("click", (e) => {
+      if (e.target === playerModal) closePlayerModal();
+    });
+
+    backToSourcesBtn.addEventListener("click", () => {
+      const videoToReopen = pendingStream.video;
+      closePlayerModal();
+      if (videoToReopen) openSourceModal(videoToReopen);
+    });
+
+    chooseCastifyBtn.addEventListener("click", () => {
+      const { url, video } = pendingStream;
+      closePlayerModal();
+      launchPlayer("castify", url, video);
+    });
+
+    chooseWvcBtn.addEventListener("click", () => {
+      const { url, video } = pendingStream;
+      closePlayerModal();
+      launchPlayer("wvc", url, video);
+    });
+
+    function launchPlayer(player, url, video) {
       if (!url) return;
 
-      addToHistory(video);
+      if (video) addToHistory(video);
 
       const ua = navigator.userAgent.toLowerCase();
       const isAndroid = /android/i.test(ua);
-      const isAlreadyInCastify = ua.includes("castify");
+      const isIOS = /iphone|ipad|ipod/i.test(ua);
+      const cleanUrl = url.replace(/^https?:\/\//, "");
+      const scheme = url.startsWith("https") ? "https" : "http";
 
-      if (isAndroid) {
-        if (isAlreadyInCastify) {
-          window.location.href = url;
-          return;
-        } else {
-          const cleanUrl = url.replace(/^https?:\/\//, "");
-          const scheme = url.startsWith("https") ? "https" : "http";
-          window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.castify;launchFlags=0x20000000;end`;
+      if (player === "castify") {
+        if (isAndroid) {
+          if (ua.includes("castify")) {
+            window.location.href = url;
+          } else {
+            window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.castify;launchFlags=0x20000000;end`;
+          }
           return;
         }
+        window.open(url, "_blank");
+        return;
       }
-      
-      window.open(url, "_blank");
+
+      if (player === "wvc") {
+        if (isAndroid) {
+          if (ua.includes("wvc") || ua.includes("webvideocaster")) {
+            window.location.href = url;
+          } else {
+            window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;launchFlags=0x20000000;end`;
+          }
+          return;
+        }
+        if (isIOS) {
+          window.location.href = `wvc-x-callback://open?url=${encodeURIComponent(url)}`;
+          return;
+        }
+        window.open(url, "_blank");
+      }
     }
 
     function createCard(video, mode = "grid", options = {}) {
@@ -1017,7 +1156,7 @@
                                 (s.label || "").toLowerCase().includes(search) || 
                                 (s.url || "").toLowerCase().includes(search)
                               );
-                              
+
         const matchesCategory = selectedCategory === "Tout" || video.category === selectedCategory;
         return matchesSearch && matchesCategory;
       });
