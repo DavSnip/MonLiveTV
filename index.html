@@ -592,7 +592,7 @@
   <!-- Fenêtre Modale de Sélection de Sources -->
   <div class="modal" id="sourceModal">
     <div class="modal-content">
-      <button class="close-modal" id="closeModalBtn" title="Fermer">&times;</button>
+      <button class="close-modal" id="closeModalBtn" title="Fermer">×</button>
       <h3 id="modalTitle">Nom de la Chaîne</h3>
       <p class="modal-subtitle">Choisissez une source de lecture :</p>
       <div class="source-list" id="modalSourceList" tabindex="0"></div>
@@ -608,7 +608,7 @@
         </div>
         <div>
           <h1>MonLiveTv</h1>
-          <p class="subtitle">Lecture continue optimisée dans Web Video Caster.</p>
+          <p class="subtitle">Lecture continue optimisée dans Castify.</p>
         </div>
       </div>
 
@@ -622,7 +622,7 @@
           <span>DIRECT & STREAMING</span>
         </div>
         <h2>Vos flux optimisés</h2>
-        <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers l'application externe pour une lecture fluide sur votre écran.</p>
+        <p>Ajoutez vos chaînes préférées en favoris et basculez instantanément vers Castify pour une lecture fluide sur votre écran.</p>
         <div class="hero-actions">
           <button class="hero-btn" id="heroFavoritesBtn">★ Mes favoris</button>
         </div>
@@ -883,7 +883,7 @@
 
             subBtn.addEventListener("click", () => {
               closeSourceModal();
-              launchWebVideoCaster(source.url, video);
+              launchCastify(source.url, video);
             });
             sourcesContainer.appendChild(subBtn);
           });
@@ -923,23 +923,23 @@
       if (e.target === sourceModal) closeSourceModal();
     });
 
-    function launchWebVideoCaster(url, video) {
+    function launchCastify(url, video) {
       if (!url) return;
 
       addToHistory(video);
 
       const ua = navigator.userAgent.toLowerCase();
       const isAndroid = /android/i.test(ua);
-      const isAlreadyInWebVideoCaster = ua.includes("wvc") || ua.includes("webvideocaster");
+      const isAlreadyInCastify = ua.includes("castify");
 
       if (isAndroid) {
-        if (isAlreadyInWebVideoCaster) {
+        if (isAlreadyInCastify) {
           window.location.href = url;
           return;
         } else {
           const cleanUrl = url.replace(/^https?:\/\//, "");
           const scheme = url.startsWith("https") ? "https" : "http";
-          window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.instantbits.cast.webvideo;launchFlags=0x20000000;end`;
+          window.location.href = `intent://${cleanUrl}#Intent;scheme=${scheme};type=video/*;package=com.castify;launchFlags=0x20000000;end`;
           return;
         }
       }
