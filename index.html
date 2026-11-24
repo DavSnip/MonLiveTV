@@ -700,12 +700,14 @@
     async function fetchVideos() {
       try {
         const response = await fetch("videos.json");
-        if (!response.ok) throw new Error("Erreur de chargement du fichier JSON");
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         videos = await response.json();
         renderHomeRows();
         renderVideos();
       } catch (error) {
         console.error("Impossible de récupérer les chaînes :", error);
+        emptyState.textContent = "Erreur de chargement : vérifiez que le fichier videos.json existe bien (attention aux majuscules/minuscules) et que le site est ouvert via un serveur (GitHub Pages).";
+        emptyState.classList.add("active");
       }
     }
 
@@ -724,9 +726,21 @@
     function startSite() {
       if (started) return;
       started = true;
+      
+      // Sécurité : ouvre le site même si le fichier audio met du temps ou est bloqué
+      const fallbackTimer = setTimeout(showSite, 800);
+      
       startSound.volume = 1;
       startSound.currentTime = 0;
-      startSound.play().then(() => setTimeout(showSite, 700)).catch(() => showSite());
+      startSound.play()
+        .then(() => {
+          clearTimeout(fallbackTimer);
+          setTimeout(showSite, 700);
+        })
+        .catch(() => {
+          clearTimeout(fallbackTimer);
+          showSite();
+        });
     }
 
     function showSite() {
@@ -776,7 +790,9 @@
     }
 
     function getVideosFromKeys(keys) {
-      return keys.map(key => videos.find(video => getVideoKey(video) === key)).filter(Boolean);
+      return keys
+        .map(key => videos.find(video => getVideoKey(video) === key))
+        .filter(video => video && video.sources && video.sources.length > 0);
     }
 
     function getQualityCategory(label) {
@@ -1001,13 +1017,16 @@
       const selectedCategory = categorySelect.value;
 
       const filteredVideos = getSortedVideos().filter((video) => {
+        // Masque les chaînes qui n'ont aucune source configurée
+        if (!video.sources || video.sources.length === 0) return false;
+
         const matchesSearch = video.title.toLowerCase().includes(search) || 
                               video.category.toLowerCase().includes(search) || 
                               video.description.toLowerCase().includes(search) || 
-                              (video.sources && video.sources.some(s => 
+                              video.sources.some(s => 
                                 s.label.toLowerCase().includes(search) || 
                                 s.url.toLowerCase().includes(search)
-                              ));
+                              );
                               
         const matchesCategory = selectedCategory === "Tout" || video.category === selectedCategory;
         return matchesSearch && matchesCategory;
@@ -1028,6 +1047,7 @@
         videoGrid.appendChild(createCard(video));
       });
 
+      emptyState.textContent = "Aucun résultat trouvé.";
       emptyState.classList.toggle("active", filteredVideos.length === 0);
     }
 
