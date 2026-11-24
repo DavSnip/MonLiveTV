@@ -655,7 +655,7 @@
     </section>
 
     <section class="grid" id="videoGrid"></section>
-    <div class="empty" id="emptyState">Aucun résultat trouvé.</div>
+    <div class="empty" id="emptyState">Chargement des chaînes...</div>
   </main>
 
   <div class="author">SnipDav</div>
@@ -699,23 +699,34 @@
 
     async function fetchVideos() {
       try {
-        const response = await fetch("videos.json");
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        videos = await response.json();
+        // Le paramètre ?v=... empêche le cache de bloquer les mises à jour de videos.json
+        const response = await fetch(`videos.json?v=${Date.now()}`);
+        if (!response.ok) {
+          throw new Error(`Fichier videos.json introuvable (Code HTTP ${response.status})`);
+        }
+        const data = await response.json();
+        if (!Array.isArray(data)) {
+          throw new Error("Le contenu de videos.json doit être une liste [ ... ]");
+        }
+        videos = data;
         renderHomeRows();
         renderVideos();
       } catch (error) {
         console.error("Impossible de récupérer les chaînes :", error);
-        emptyState.textContent = "Erreur de chargement : vérifiez que le fichier videos.json existe bien (attention aux majuscules/minuscules) et que le site est ouvert via un serveur (GitHub Pages).";
+        emptyState.innerHTML = `<strong>Erreur de chargement :</strong> ${error.message}<br><small>Vérifiez le nom exact du fichier (videos.json en minuscules) et sa syntaxe JSON.</small>`;
         emptyState.classList.add("active");
       }
     }
 
     function getSortedVideos(list = videos) {
       return [...list].sort((a, b) => {
-        const catCompare = a.category.localeCompare(b.category, "fr", { sensitivity: "base" });
+        const catA = a.category || "Autre";
+        const catB = b.category || "Autre";
+        const titleA = a.title || "";
+        const titleB = b.title || "";
+        const catCompare = catA.localeCompare(catB, "fr", { sensitivity: "base" });
         if (catCompare !== 0) return catCompare;
-        return a.title.localeCompare(b.title, "fr", { sensitivity: "base" });
+        return titleA.localeCompare(titleB, "fr", { sensitivity: "base" });
       });
     }
 
@@ -727,7 +738,6 @@
       if (started) return;
       started = true;
       
-      // Sécurité : ouvre le site même si le fichier audio met du temps ou est bloqué
       const fallbackTimer = setTimeout(showSite, 800);
       
       startSound.volume = 1;
@@ -792,11 +802,11 @@
     function getVideosFromKeys(keys) {
       return keys
         .map(key => videos.find(video => getVideoKey(video) === key))
-        .filter(video => video && video.sources && video.sources.length > 0);
+        .filter(video => video && Array.isArray(video.sources) && video.sources.length > 0);
     }
 
     function getQualityCategory(label) {
-      const l = label.toLowerCase();
+      const l = (label || "").toLowerCase();
       if (l.includes("4k") || l.includes("2160") || l.includes("uhd")) return "4K";
       if (l.includes("fhd") || l.includes("1080")) return "FHD";
       if (l.includes("hd") || l.includes("720")) return "HD";
@@ -806,7 +816,7 @@
 
     function getQualityCountsText(video) {
       const counts = {};
-      video.sources.forEach(s => {
+      (video.sources || []).forEach(s => {
         const cat = getQualityCategory(s.label);
         counts[cat] = (counts[cat] || 0) + 1;
       });
@@ -825,25 +835,9 @@
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      const urlPriorities = [
-        "4kpro2.com",
-        "line.fire-4k.cc",
-        "live.tvpython.net",
-        "hnsefpop.top",
-        "smartsat0326.vip",
-        "line.iptv-4k.cc",
-        "liontv.es"
-      ];
-
-      function getUrlPriorityIndex(url) {
-        const cleanUrl = url.toLowerCase();
-        const index = urlPriorities.findIndex(domain => cleanUrl.includes(domain));
-        return index !== -1 ? index : 999;
-      }
-
       const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
       
-      video.sources.forEach(source => {
+      (video.sources || []).forEach(source => {
         const cat = getQualityCategory(source.label);
         groups[cat].push(source);
       });
@@ -852,16 +846,9 @@
       let isFirstExpanded = false;
 
       order.forEach((cat) => {
-        let sourcesInCat = groups[cat];
+        const sourcesInCat = groups[cat];
         
         if (sourcesInCat && sourcesInCat.length > 0) {
-          
-          sourcesInCat.sort((a, b) => {
-            const priorityA = getUrlPriorityIndex(a.url);
-            const priorityB = getUrlPriorityIndex(b.url);
-            return priorityA - priorityB;
-          });
-
           const groupDiv = document.createElement("div");
           groupDiv.className = "quality-group";
           
@@ -983,7 +970,7 @@
         <div class="content">
           <span class="tag">${video.category} • ${sourceCountText}</span>
           <h3>${video.title}</h3>
-          <p>${video.description}</p>
+          <p>${video.description || ""}</p>
           <button class="watch-btn" type="button">Regarder</button>
         </div>
       `;
@@ -1017,15 +1004,18 @@
       const selectedCategory = categorySelect.value;
 
       const filteredVideos = getSortedVideos().filter((video) => {
-        // Masque les chaînes qui n'ont aucune source configurée
-        if (!video.sources || video.sources.length === 0) return false;
+        if (!Array.isArray(video.sources) || video.sources.length === 0) return false;
 
-        const matchesSearch = video.title.toLowerCase().includes(search) || 
-                              video.category.toLowerCase().includes(search) || 
-                              video.description.toLowerCase().includes(search) || 
+        const title = (video.title || "").toLowerCase();
+        const category = (video.category || "").toLowerCase();
+        const description = (video.description || "").toLowerCase();
+
+        const matchesSearch = title.includes(search) || 
+                              category.includes(search) || 
+                              description.includes(search) || 
                               video.sources.some(s => 
-                                s.label.toLowerCase().includes(search) || 
-                                s.url.toLowerCase().includes(search)
+                                (s.label || "").toLowerCase().includes(search) || 
+                                (s.url || "").toLowerCase().includes(search)
                               );
                               
         const matchesCategory = selectedCategory === "Tout" || video.category === selectedCategory;
