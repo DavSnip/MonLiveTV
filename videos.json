@@ -969,20 +969,23 @@
       { "label": "Source SD", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131328.m3u8" }
     ]
   },
-  {
+ {
   "title": "Ligue1+ 1",
   "category": "Sport",
   "icon": "icones/ligue1+.png",
   "description": "Chaîne sport en direct.",
   "sources": [
+    { "label": "Source FHD", "url": "http://mag.turbohdtv.com/live/MRUJKD/6SF9GJ/1258813.m3u8" },
+    { "label": "Source FHD EVENT", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470065.m3u8" },
+    { "label": "Source FHD EVENT", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470065.m3u8" },
     { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/120701.m3u8" },
-    { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/174040.m3u8" },
     { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470096.m3u8" },
     { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470096.m3u8" },
-    { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470066.m3u8" },
     { "label": "Source HD", "url": "http://112911.vip:7355/live/31554314015048772/U09ZEDdu%406X%21PeD/283313.m3u8" },
     { "label": "Source HD", "url": "http://mag.turbohdtv.com/live/MRUJKD/6SF9GJ/1258814.m3u8" },
-    { "label": "Source HD", "url": "http://mag.turbohdtv.com/live/MRUJKD/6SF9GJ/1258786.m3u8" }
+    { "label": "Source HD", "url": "http://mag.turbohdtv.com/live/MRUJKD/6SF9GJ/1258786.m3u8" },
+    { "label": "Source HD EVENT", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470066.m3u8" },
+    { "label": "Source SD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/174040.m3u8" }
   ]
 },
   {
