@@ -901,6 +901,13 @@
       return "Autre";
     }
 
+    function getSourcePriority(label) {
+      const l = (label || "").toLowerCase();
+      if (l.includes("dns")) return 2;
+      if (l.includes("event")) return 1;
+      return 0;
+    }
+
     function getQualityCountsText(video) {
       const counts = {};
       (video.sources || []).forEach(s => {
@@ -936,6 +943,17 @@
         const sourcesInCat = groups[cat];
 
         if (sourcesInCat && sourcesInCat.length > 0) {
+          // Tri interne : Classique (0) -> EVENT (1) -> DNS (2), puis ordre naturel
+          sourcesInCat.sort((a, b) => {
+            const prioA = getSourcePriority(a.label);
+            const prioB = getSourcePriority(b.label);
+            if (prioA !== prioB) return prioA - prioB;
+            return (a.label || "").localeCompare(b.label || "", "fr", {
+              sensitivity: "base",
+              numeric: true
+            });
+          });
+
           const groupDiv = document.createElement("div");
           groupDiv.className = "quality-group";
 
