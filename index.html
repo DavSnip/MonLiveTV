@@ -778,6 +778,9 @@
     let history = JSON.parse(localStorage.getItem("watchHistory") || "[]");
     let pendingStream = { url: null, label: "", video: null };
 
+    // Ordre d'affichage centralisé des qualités
+    const QUALITY_ORDER = ["4K", "UHD", "HEVC", "H.265", "FHD", "HD", "SD", "Autre"];
+
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       body.classList.add("dark");
@@ -894,10 +897,13 @@
 
     function getQualityCategory(label) {
       const l = (label || "").toLowerCase();
-      if (l.includes("4k") || l.includes("2160") || l.includes("uhd")) return "4K";
-      if (l.includes("fhd") || l.includes("1080")) return "FHD";
+      if (l.includes("4k") || l.includes("2160")) return "4K";
+      if (l.includes("uhd")) return "UHD";
+      if (l.includes("hevc")) return "HEVC";
+      if (l.includes("h.265") || l.includes("h265") || l.includes("x265")) return "H.265";
+      if (l.includes("fhd") || l.includes("1080") || l.includes("full hd") || l.includes("fullhd")) return "FHD";
       if (l.includes("hd") || l.includes("720")) return "HD";
-      if (l.includes("sd") || l.includes("lq") || l.includes("480") || l.includes("360")) return "SD";
+      if (l.includes("sd") || l.includes("lq") || l.includes("480") || l.includes("360") || l.includes("576")) return "SD";
       return "Autre";
     }
 
@@ -915,9 +921,8 @@
         counts[cat] = (counts[cat] || 0) + 1;
       });
 
-      const order = ["4K", "FHD", "HD", "SD", "Autre"];
       const parts = [];
-      order.forEach(q => {
+      QUALITY_ORDER.forEach(q => {
         if (counts[q]) {
           parts.push(`${counts[q]} ${q}`);
         }
@@ -929,17 +934,16 @@
       modalTitle.textContent = video.title;
       modalSourceList.innerHTML = "";
 
-      const groups = { "4K": [], "FHD": [], "HD": [], "SD": [], "Autre": [] };
-
+      const groups = {};
       (video.sources || []).forEach(source => {
         const cat = getQualityCategory(source.label);
+        if (!groups[cat]) groups[cat] = [];
         groups[cat].push(source);
       });
 
-      const order = ["4K", "FHD", "HD", "SD", "Autre"];
       let isFirstExpanded = false;
 
-      order.forEach((cat) => {
+      QUALITY_ORDER.forEach((cat) => {
         const sourcesInCat = groups[cat];
 
         if (sourcesInCat && sourcesInCat.length > 0) {
