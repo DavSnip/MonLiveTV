@@ -1,19 +1,27 @@
 [
   {
-    "title": "Canal+",
-    "category": "Cinéma",
-    "icon": "icones/canal+.png",
-    "description": "Chaîne cinéma en direct.",
-    "sources": [
-      { "label": "Source FHD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/649232.m3u8" },
-      { "label": "Source FHD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130830.m3u8" },
-      { "label": "Source FHD", "url": "http://mag.turbohdtv.com/live/MRUJKD/6SF9GJ/936869.m3u8" },
-      { "label": "Source HD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131204.m3u8" },
-      { "label": "Source HD", "url": "http://firstaru.pro:8080/live/Martinjac2025/Jacmartin2025/3240.m3u8" },
-      { "label": "Source SD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131205.m3u8" },
-      { "label": "Source SD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2570.m3u8" }
-    ]
-  },
+  "title": "Canal+",
+  "category": "Cinéma",
+  "icon": "icones/canal+.png",
+  "description": "Chaîne cinéma en direct.",
+  "sources": [
+    { "label": "Source FHD", "url": "http://mag.turbohdtv.com/live/MRUJKD/6SF9GJ/936869.m3u8" },
+    { "label": "Source FHD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/936869.m3u8" },
+    { "label": "Source FHD", "url": "http://016783.me/live/qMhP6682/N4RS2853/820858.m3u8" },
+    { "label": "Source FHD ESP", "url": "http://31.43.191.142:8080/live/701778322424/f651639b6118/8000.m3u8" },
+    { "label": "Source FHD ESP", "url": "http://31.43.191.142:8080/live/701778322424/f651639b6118/74061.m3u8" },
+    { "label": "Source FHD ESP", "url": "http://31.43.191.142:8080/live/701778322424/f651639b6118/74062.m3u8" },
+    { "label": "Source FHD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/649232.m3u8" },
+    { "label": "Source FHD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130830.m3u8" },
+    { "label": "Source HD", "url": "http://firstaru.pro:8080/live/Martinjac2025/Jacmartin2025/3240.m3u8" },
+    { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2852.m3u8" },
+    { "label": "Source HD ESP", "url": "http://31.43.191.142:8080/live/701778322424/f651639b6118/74063.m3u8" },
+    { "label": "Source HD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131204.m3u8" },
+    { "label": "Source SD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2570.m3u8" },
+    { "label": "Source SD", "url": "http://016783.me/live/qMhP6682/N4RS2853/831898.m3u8" },
+    { "label": "Source SD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131205.m3u8" }
+  ]
+},
   {
     "title": "ToonBox",
     "category": "Jeunesse",
