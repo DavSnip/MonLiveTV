@@ -1145,8 +1145,15 @@
     "description": "Chaîne sport en direct.",
     "sources": [
       { "label": "Source FHD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670133.m3u8" },
+      { "label": "Source FHD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941405.m3u8" },
+      { "label": "Source FHD", "url": "http://016783.me/live/qMhP6682/N4RS2853/832105.m3u8" },
       { "label": "Source HD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670132.m3u8" },
-      { "label": "Source SD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670134.m3u8" }
+      { "label": "Source HD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941406.m3u8" },
+      { "label": "Source HD", "url": "http://smarthead.getpoison.com:8080/live/GoncaloMendes2023/01122023GM/307790.m3u8" },
+      { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2645.m3u8" },
+      { "label": "Source SD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/670134.m3u8" },
+      { "label": "Source SD", "url": "http://firstaru.pro:8080/live/Martinjac2025/Jacmartin2025/332210.m3u8" },
+      { "label": "Source SD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2646.m3u8" }
     ]
   },
   {
@@ -1154,7 +1161,19 @@
     "category": "Sport",
     "icon": "icones/c+sport.png",
     "description": "Chaîne sport en direct.",
-    "sources": []
+    "sources": [
+      { "label": "Source FHD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941408.m3u8" },
+      { "label": "Source HD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941409.m3u8" },
+      { "label": "Source HD", "url": "http://smarthead.getpoison.com:8080/live/GoncaloMendes2023/01122023GM/307720.m3u8" },
+      { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470283.m3u8" },
+      { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470304.m3u8" },
+      { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2847.m3u8" },
+      { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470283.m3u8" },
+      { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470304.m3u8" },
+      { "label": "Source HD", "url": "http://016783.me/live/qMhP6682/N4RS2853/832102.m3u8" },
+      { "label": "Source SD", "url": "http://firstaru.pro:8080/live/Martinjac2025/Jacmartin2025/3246.m3u8" },
+      { "label": "Source SD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2565.m3u8" }
+    ]
   },
   {
     "title": "Canal+ Sport 360",
@@ -1162,8 +1181,21 @@
     "icon": "icones/c+sport360.png",
     "description": "Chaîne sport en direct.",
     "sources": [
+      { "label": "Source H.265", "url": "http://016783.me/live/qMhP6682/N4RS2853/832100.m3u8" },
+      { "label": "Source FHD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941411.m3u8" },
+      { "label": "Source FHD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470300.m3u8" },
+      { "label": "Source FHD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470300.m3u8" },
+      { "label": "Source FHD", "url": "http://016783.me/live/qMhP6682/N4RS2853/832101.m3u8" },
       { "label": "Source HD", "url": "http://192.142.25.182/live/play/WkRSTU1rRkhSalpoTUhSeVlWWk9Xa2QxZEhwU1dFeEpPR1JTWWxWclFrZFJTRzUzVmpZMlpqQm9aejA9/249790" },
-      { "label": "Source SD", "url": "http://192.142.25.182/live/play/WkRSTU1rRkhSalpoTUhSeVlWWk9Xa2QxZEhwU1dFeEpPR1JTWWxWclFrZFJTRzUzVmpZMlpqQm9aejA9/249790" }
+      { "label": "Source HD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941412.m3u8" },
+      { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470282.m3u8" },
+      { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/470303.m3u8" },
+      { "label": "Source HD", "url": "http://longsat.xyz/live/anasaboulkacem1/ancien44444/2487.m3u8" },
+      { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470282.m3u8" },
+      { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/470303.m3u8" },
+      { "label": "Source HD", "url": "http://016783.me/live/qMhP6682/N4RS2853/832099.m3u8" },
+      { "label": "Source SD", "url": "http://192.142.25.182/live/play/WkRSTU1rRkhSalpoTUhSeVlWWk9Xa2QxZEhwU1dFeEpPR1JTWWxWclFrZFJTRzUzVmpZMlpqQm9aejA9/249790" },
+      { "label": "Source SD", "url": "http://firstaru.pro:8080/live/Martinjac2025/Jacmartin2025/313754.m3u8" }
     ]
   },
   {
