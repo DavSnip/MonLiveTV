@@ -811,7 +811,7 @@
     "description": "Chaîne jeunesse en direct.",
     "sources": [
       { "label": "Source FHD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941721.m3u8" },
-      { "label": "Source SD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941720.m3u8" },
+      { "label": "Source SD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/941720.m3u8" }
     ]
   },
   {
