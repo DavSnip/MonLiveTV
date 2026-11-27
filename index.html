@@ -637,7 +637,6 @@
 
 <body>
   <audio id="startSound" src="sound.wav" preload="auto"></audio>
-  <audio id="introMusic" src="OP.mp3" loop preload="auto"></audio>
 
   <!-- Écran d'introduction -->
   <div class="intro-screen" id="introScreen">
@@ -745,7 +744,6 @@
     const introScreen = document.getElementById("introScreen");
     const app = document.getElementById("app");
     const startSound = document.getElementById("startSound");
-    const introMusic = document.getElementById("introMusic");
 
     const themeToggle = document.getElementById("themeToggle");
     const searchInput = document.getElementById("searchInput");
@@ -789,14 +787,6 @@
       themeToggle.textContent = "☀️ Mode clair";
     }
 
-    // Tente de lancer OP.mp3 à 50% dès l'ouverture de la page
-    window.addEventListener("load", () => {
-      introMusic.volume = 0.5;
-      introMusic.play().catch(() => {
-        console.log("Lecture auto de OP.mp3 bloquée par le navigateur avant interaction.");
-      });
-    });
-
     async function fetchVideos() {
       try {
         // Le paramètre ?v=... empêche le cache de bloquer les mises à jour de videos.json
@@ -838,13 +828,9 @@
       if (started) return;
       started = true;
 
-      // Coupe la musique d'intro au clic
-      introMusic.pause();
-      introMusic.currentTime = 0;
-
       const fallbackTimer = setTimeout(showSite, 800);
 
-      startSound.volume = 0.5;
+      startSound.volume = 0.3;
       startSound.currentTime = 0;
       startSound.play()
         .then(() => {
