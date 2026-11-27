@@ -1325,15 +1325,26 @@
     "description": "Chaîne sport en direct.",
     "sources": []
   },
-  {
+ {
     "title": "SyFy",
     "category": "Divertissement",
     "icon": "icones/syfy.png",
     "description": "Chaîne divertissement en direct.",
     "sources": [
-      { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8" },
+      { "label": "Source FHD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/59.m3u8" },
+      { "label": "Source FHD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/59.m3u8" },
+      { "label": "Source FHD", "url": "http://016783.me/live/qMhP6682/N4RS2853/820820.m3u8" },
       { "label": "Source FHD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/130820.m3u8" },
+      { "label": "Source HD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/936909.m3u8" },
+      { "label": "Source HD", "url": "http://smarthead.getpoison.com:8080/live/GoncaloMendes2023/01122023GM/307755.m3u8" },
+      { "label": "Source HD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/58.m3u8" },
+      { "label": "Source HD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/58.m3u8" },
       { "label": "Source HD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131067.m3u8" },
+      { "label": "Source SD", "url": "http://203.76.253.100/live/290113/24475A/131068.m3u8" },
+      { "label": "Source SD", "url": "http://line.turbohdtv.com/live/CDS6EH/W8CJ94/936910.m3u8" },
+      { "label": "Source SD", "url": "http://tv.ipcover.lol:8080/live/SDE4Mdq5JRRR/mEySA6rnekz3/138151.m3u8" },
+      { "label": "Source SD", "url": "http://76376432.xyz:8080/live/xfaLcUnXRA5Z/Yzv8QzucEfz9/138151.m3u8" },
+      { "label": "Source SD", "url": "http://016783.me/live/qMhP6682/N4RS2853/831901.m3u8" },
       { "label": "Source SD DNS", "url": "http://line.iptv-4k.cc/live/4F1443/C3C243/131068.m3u8" }
     ]
   },
